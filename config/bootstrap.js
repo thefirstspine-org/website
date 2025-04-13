@@ -33,6 +33,9 @@ module.exports.bootstrap = async function(cb) {
     schedule.scheduleJob(item.interval, sails.config.crontab[item.method]);
   });
 
+  // Load appoptics config
+  require('appoptics-apm');
+
   sails.moment = require('moment');
   cb();
 

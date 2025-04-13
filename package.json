@@ -11,6 +11,7 @@
     "@sailshq/socket.io-redis": "^6.1.2",
     "@thefirstspine/logs": "^8.1.4",
     "@types/node": "^22.13.10",
+    "appoptics-apm": "^10.2.2",
     "axios": "^1.8.2",
     "bulma": "^1.0.3",
     "connect-flash": "^0.1.1",
