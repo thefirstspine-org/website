@@ -25,7 +25,7 @@
     "sails": "^1.5.14",
     "sails-hook-grunt": "^5.0.0",
     "sails-hook-orm": "^4.0.3",
-    "sails-hook-sockets": "^3.0.1",
+    "sails-hook-sockets": "^3.0.2",
     "sails-postgresql": "^5.0.1",
     "sass": "^1.83.0"
   },
