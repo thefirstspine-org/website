@@ -30,4 +30,4 @@ jobs:
           atlassianUserEmail: 'teddy@thefirstspine.fr'
           gatewayDomain: 'thefirstspine.atlassian.net'
           metricSourceId: 'ari:cloud:compass:6ea2c72c-9b15-49d9-bd9d-72a5b6d1b3e1:metric-source/f792fe52-6af8-47ca-9398-ce0c44305c1b/f86e9499-d5e0-4816-a131-13389049058b'
-          serviceUrl: 'https://arena.thefirstspine.fr/status'
+          serviceUrl: 'https://www.thefirstspine.fr'
