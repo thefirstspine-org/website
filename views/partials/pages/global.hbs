@@ -1,0 +1,26 @@
+{{#if data.title}}
+  <h1 class="text-7xl">
+    {{ data.title }}
+  </h1>
+{{/if}}
+
+
+<ul>
+  {{#each data.blocks}}
+    <li>
+      {{ this.title }}
+      <ul>
+        {{#each this.content}}
+          <li>
+            {{#ifEquals this.__component 'shared.rich-text'}}
+              {{> components/richtext this }}
+            {{/ifEquals}}
+            {{#ifEquals this.__component 'shared.button'}}
+              {{> components/button this }}
+            {{/ifEquals}}
+          </li>
+        {{/each}}
+      </ul>
+    </li>
+  {{/each}}
+</ul>
