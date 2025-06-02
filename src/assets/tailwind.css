@@ -7,10 +7,55 @@
   body {
     @apply bg-black text-gray-200;
   }
+
   html {
     font-family: "Lora", serif;
     font-optical-sizing: auto;
     font-style: normal;
+  }
+
+  .markdown {
+    h2 {
+      @apply text-2xl font-bold my-4;
+    }
+    h3 {
+      @apply text-3xl font-bold my-4;
+    }
+    p {
+      @apply my-4;
+    }
+  }
+
+  .button {
+    @apply focus:outline-none text-white me-2 mb-2 focus:ring-2 rounded-full font-semibold;
+    &.primary {
+      @apply bg-linear-to-b from-amber-400 to-amber-600 hover:to-amber-500 focus:ring-amber-600;
+    }
+    &.warning {
+      @apply bg-linear-to-b from-orange-400 to-orange-600 hover:to-orange-500 focus:ring-orange-400;
+    }
+    &.danger {
+      @apply bg-linear-to-b from-red-500 to-red-700 hover:to-red-600 focus:ring-red-500;
+    }
+    &.small {
+      @apply px-5 py-2 my-5;
+    }
+    &.medium {
+      @apply px-7 py-3 my-7 text-lg;
+    }
+    &.big {
+      @apply px-10 py-4 my-10 text-xl;
+    }
+  }
+
+  .separator {
+    width: 100%;
+    height: 80px;
+    background-image: url(separator.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    margin-bottom: -20px;
+    @apply mt-8;
   }
 }
 

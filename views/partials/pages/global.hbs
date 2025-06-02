@@ -1,26 +1,28 @@
 {{#if data.title}}
-  <h1 class="text-7xl">
+  <h1 class="text-4xl mt-8 text-center">
     {{ data.title }}
   </h1>
 {{/if}}
 
+{{#each data.blocks}}
+  <div class="mt-8 mb-8">
+    <div class="separator"></div>
+    <div class="max-w-5xl px-4 xl:px-0 mx-auto">
+      {{#if data.showTitle}}
+      <h1 class="text-2xl mb-8 text-center">
+        {{ data.title }}
+      </h1>
+      {{/if}}
+      {{#each this.content}}
+        {{#ifEquals this.__component 'shared.rich-text'}}
+          {{> components/richtext this }}
+        {{/ifEquals}}
+        {{#ifEquals this.__component 'shared.button'}}
+          {{> components/button this }}
+        {{/ifEquals}}
+      {{/each}}
+    </div>
+  </div>
+{{/each}}
 
-<ul>
-  {{#each data.blocks}}
-    <li>
-      {{ this.title }}
-      <ul>
-        {{#each this.content}}
-          <li>
-            {{#ifEquals this.__component 'shared.rich-text'}}
-              {{> components/richtext this }}
-            {{/ifEquals}}
-            {{#ifEquals this.__component 'shared.button'}}
-              {{> components/button this }}
-            {{/ifEquals}}
-          </li>
-        {{/each}}
-      </ul>
-    </li>
-  {{/each}}
-</ul>
+<code class="text-grey-400 text-monospace text-xs">{{{ json data }}}</code>

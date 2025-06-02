@@ -1,4 +1,33 @@
-button
-<a class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900">
-  {{ label }}
-</a>
+<div class="mt-8 mb-8 text-center">
+  <a class="
+    button
+    {{#ifEquals style 'Primary'}}
+      primary
+    {{/ifEquals}}
+    {{#ifEquals style 'Warning'}}
+      warning
+    {{/ifEquals}}
+    {{#ifEquals style 'Danger'}}
+      danger
+    {{/ifEquals}}
+    {{#ifEquals size 'Small'}}
+      small
+    {{/ifEquals}}
+    {{#ifEquals size 'Medium'}}
+      medium
+    {{/ifEquals}}
+    {{#ifEquals size 'Big'}}
+      big
+    {{/ifEquals}}
+    "
+    {{#if openInNewTab}}
+      target="_blank"
+    {{/if}}
+    href="{{ link }}"
+  >
+    {{#if icon}}
+      <i class="fa-solid {{ icon }}"></i>
+    {{/if}}
+    {{ label }}
+  </a>
+</div>

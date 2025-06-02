@@ -3,6 +3,7 @@ import { NestExpressApplication } from '@nestjs/platform-express';
 import { join } from 'path';
 import { AppModule } from './app.module';
 import * as hbs from 'hbs';
+import * as showdown from 'showdown';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
@@ -16,7 +17,11 @@ async function bootstrap() {
   });
   hbs.registerHelper('ifEquals', function(arg1, arg2, options) {
     return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
-});
+  });
+  hbs.registerHelper('md', function(context) {
+    const converter = new showdown.Converter();
+    return converter.makeHtml(context);
+  });
 
   await app.listen(process.env.PORT ?? 3000);
 }
