@@ -1,17 +1,31 @@
 {{#if data.title}}
-  <h1 class="text-4xl mt-8 text-center">
+  <h1 class="text-6xl mt-8 text-center text-amber-500 tracking-widest uppercase">
     {{ data.title }}
   </h1>
 {{/if}}
 
 {{#each data.blocks}}
-  <div class="mt-8 mb-8">
+  <div
+    class="block"
+    {{#if this.background.formats.medium }}
+      style="background-image: url('https://dev.cms.thefirstspine.fr/{{ this.background.formats.medium.url }}');"
+    {{else if this.background.formats.small }}
+      style="background-image: url('https://dev.cms.thefirstspine.fr/{{ this.background.formats.small.url }}');"
+    {{/if}}
+  >
     <div class="separator"></div>
-    <div class="max-w-5xl px-4 xl:px-0 mx-auto">
-      {{#if data.showTitle}}
-      <h1 class="text-2xl mb-8 text-center">
-        {{ data.title }}
-      </h1>
+    <div class="container max-w-7xl">
+      {{#if this.showTitle}}
+        <h1 class="text-4xl mt-16 mb-8 text-center text-amber-500 tracking-widest uppercase">
+          {{ this.title }}
+        </h1>
+      {{/if}}
+      {{#if this.image }}
+        <img
+          class="mx-auto my-8 rounded-lg shadow-lg"
+          src="https://dev.cms.thefirstspine.fr/{{ this.image.formats.medium.url }}"
+          alt="{{ this.image.alternativeText }}"
+        >
       {{/if}}
       {{#each this.content}}
         {{#ifEquals this.__component 'shared.rich-text'}}
@@ -25,4 +39,8 @@
   </div>
 {{/each}}
 
-<code class="text-grey-400 text-monospace text-xs">{{{ json data }}}</code>
+<!--
+<div class="container max-w-7xl mt-16 bg-neutral-950 p-8 rounded-lg">
+  <code class="text-grey-400 text-monospace text-xs mt-8">{{{ json data }}}</code>
+</div>
+-->

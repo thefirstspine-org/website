@@ -4,6 +4,9 @@ import * as axios from 'axios';
 @Injectable()
 export class AppService {
 
+  private readonly apiUrl = 'https://dev.cms.thefirstspine.fr/api';
+  private readonly cache: Map<string, CachedRequest> = new Map();
+
   async getPageData(path: string | null): Promise<PageData | null> {
     // Get the page
     const pages = await this.callApi(`pages?populate=*&filters${( path ? `[canonicalUrl][$eq]=${path}` : '[canonicalUrl][$notNull]' )}`);
@@ -14,14 +17,23 @@ export class AppService {
 
     // Get the blocks
     const blocks = await this.callApi(`blocks?populate=*&filters[page][documentId][$eq]=${page.documentId}`);
-    page.blocks = blocks;
+    page.blocks = page.blocks.map((block: Document) => {
+      return blocks.find((b: Document) => b.documentId === block.documentId) || block;
+    });
 
     return page;
   }
 
   async callApi(path: string): Promise<any[]> {
+    // Check cache
+    if (this.cache.has(path)) {
+      const cached = this.cache.get(path);
+      if (cached && cached.expires > Date.now()) {
+        return cached.data;
+      }
+    }
     const response = await axios.default.get(
-      `https://dev.cms.thefirstspine.fr/api/${path}`,
+      `${this.apiUrl}/${path}`,
       {
         headers: {
           'Content-Type': 'application/json',
@@ -30,9 +42,19 @@ export class AppService {
       }
     );
     console.log({path, response: response.data});
+    // Cache the response
+    this.cache.set(path, {
+      expires: Date.now() + 1000 * 10, // Cache for 1 minute
+      data: response.data.data
+    });
     return response.data.data;
   }
 
+}
+
+export interface CachedRequest {
+  expires: number;
+  data: any[];
 }
 
 export interface Document {
@@ -48,9 +70,29 @@ export interface PageData extends Document {
 }
 
 export interface Block extends Document {
-  image: string | null;
-  background: string | null;
+  image: Media | null;
+  background: Media | null;
   content: Array<ComponentRichText | ComponentButton>;
+}
+
+export interface Media extends Document {
+  formats: {
+    small: MediaFormat | null;
+    medium: MediaFormat | null;
+    large: MediaFormat | null;
+    thumbnail: MediaFormat | null;
+  }
+}
+
+export interface MediaFormat {
+  url: string;
+  width: number;
+  height: number;
+  ext: string;
+  hash: string;
+  mime: string;
+  name: string;
+  size: number;
 }
 
 export interface Component {

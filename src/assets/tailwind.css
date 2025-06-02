@@ -6,6 +6,7 @@
 @layer base {
   body {
     @apply bg-black text-gray-200;
+    font-size: 18px;
   }
 
   html {
@@ -15,6 +16,9 @@
   }
 
   .markdown {
+    h1 {
+      @apply text-4xl my-8 text-amber-500 tracking-widest uppercase;
+    }
     h2 {
       @apply text-2xl font-bold my-4;
     }
@@ -27,9 +31,9 @@
   }
 
   .button {
-    @apply focus:outline-none text-white me-2 mb-2 focus:ring-2 rounded-full font-semibold;
+    @apply text-white me-2 mb-2 focus:ring-2 rounded-full;
     &.primary {
-      @apply bg-linear-to-b from-amber-400 to-amber-600 hover:to-amber-500 focus:ring-amber-600;
+      @apply bg-linear-to-b from-amber-400 to-amber-600 hover:to-amber-500 focus:ring-amber-600 text-amber-950;
     }
     &.warning {
       @apply bg-linear-to-b from-orange-400 to-orange-600 hover:to-orange-500 focus:ring-orange-400;
@@ -54,8 +58,22 @@
     background-image: url(separator.png);
     background-repeat: no-repeat;
     background-position: top center;
-    margin-bottom: -20px;
+    margin-bottom: -60px;
+    opacity: .8;
     @apply mt-8;
+  }
+
+  .block {
+    @apply my-16 bg-top bg-no-repeat bg-fixed;
+    &:first-of-type {
+      .separator {
+        display: none;
+      }
+    }
+  }
+
+  .container {
+    @apply relative w-full p-5 md:items-center md:py-0 mx-2 lg:mx-auto;
   }
 }
 
