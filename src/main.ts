@@ -19,7 +19,7 @@ async function bootstrap() {
     return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
   });
   hbs.registerHelper('md', function(context) {
-    const converter = new showdown.Converter();
+    const converter = new showdown.Converter({simpleLineBreaks: true});
     return converter.makeHtml(context);
   });
 

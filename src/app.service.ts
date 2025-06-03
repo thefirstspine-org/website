@@ -76,6 +76,9 @@ export interface Block extends Document {
 }
 
 export interface Media extends Document {
+  url: string;
+  alternativeText: string | null;
+  caption: string | null;
   formats: {
     small: MediaFormat | null;
     medium: MediaFormat | null;

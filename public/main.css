@@ -14,9 +14,9 @@
     --color-orange-400: oklch(75% 0.183 55.934);
     --color-orange-500: oklch(70.5% 0.213 47.604);
     --color-orange-600: oklch(64.6% 0.222 41.116);
+    --color-amber-300: oklch(87.9% 0.169 91.605);
     --color-amber-400: oklch(82.8% 0.189 84.429);
     --color-amber-500: oklch(76.9% 0.188 70.08);
-    --color-amber-600: oklch(66.6% 0.179 58.318);
     --color-amber-950: oklch(27.9% 0.077 45.635);
     --color-gray-200: oklch(92.8% 0.006 264.531);
     --color-neutral-300: oklch(87% 0 0);
@@ -242,9 +242,6 @@
   }
   .my-8 {
     margin-block: calc(var(--spacing) * 8);
-  }
-  .my-16 {
-    margin-block: calc(var(--spacing) * 16);
   }
   .mt-4 {
     margin-top: calc(var(--spacing) * 4);
@@ -573,6 +570,9 @@
     font-optical-sizing: auto;
     font-style: normal;
   }
+  #content {
+    margin-top: -75px;
+  }
   .markdown {
     h1 {
       margin-block: calc(var(--spacing) * 8);
@@ -580,20 +580,19 @@
       line-height: var(--tw-leading, var(--text-4xl--line-height));
       --tw-tracking: var(--tracking-widest);
       letter-spacing: var(--tracking-widest);
-      color: var(--color-amber-500);
       text-transform: uppercase;
     }
     h2 {
       margin-block: calc(var(--spacing) * 4);
-      font-size: var(--text-2xl);
-      line-height: var(--tw-leading, var(--text-2xl--line-height));
+      font-size: var(--text-3xl);
+      line-height: var(--tw-leading, var(--text-3xl--line-height));
       --tw-font-weight: var(--font-weight-bold);
       font-weight: var(--font-weight-bold);
     }
     h3 {
       margin-block: calc(var(--spacing) * 4);
-      font-size: var(--text-3xl);
-      line-height: var(--tw-leading, var(--text-3xl--line-height));
+      font-size: var(--text-2xl);
+      line-height: var(--tw-leading, var(--text-2xl--line-height));
       --tw-font-weight: var(--font-weight-bold);
       font-weight: var(--font-weight-bold);
     }
@@ -616,19 +615,19 @@
         --tw-gradient-position: to bottom in oklab;
       }
       background-image: linear-gradient(var(--tw-gradient-stops));
-      --tw-gradient-from: var(--color-amber-400);
+      --tw-gradient-from: var(--color-amber-300);
       --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
-      --tw-gradient-to: var(--color-amber-600);
+      --tw-gradient-to: var(--color-amber-500);
       --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
       color: var(--color-amber-950);
       &:hover {
         @media (hover: hover) {
-          --tw-gradient-to: var(--color-amber-500);
+          --tw-gradient-to: var(--color-amber-400);
           --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
         }
       }
       &:focus {
-        --tw-ring-color: var(--color-amber-600);
+        --tw-ring-color: var(--color-amber-400);
       }
     }
     &.warning {
@@ -691,25 +690,28 @@
       line-height: var(--tw-leading, var(--text-xl--line-height));
     }
   }
-  .separator {
-    width: 100%;
-    height: 80px;
-    background-image: url(separator.png);
-    background-repeat: no-repeat;
-    background-position: top center;
-    margin-bottom: -60px;
-    opacity: .8;
-    margin-top: calc(var(--spacing) * 8);
-  }
-  .block {
-    margin-block: calc(var(--spacing) * 16);
+  .components-block {
     background-attachment: fixed;
     background-position: top;
     background-repeat: no-repeat;
+    padding-bottom: calc(var(--spacing) * 16);
+    .separator {
+      width: 100%;
+      height: 66px;
+      background-image: url(separator.png);
+      background-repeat: no-repeat;
+      background-position: bottom center;
+      margin-bottom: -60px;
+      opacity: .8;
+    }
     &:first-of-type {
+      padding-top: 75px;
       .separator {
         display: none;
       }
+    }
+    &:last-child {
+      margin-bottom: 0;
     }
   }
   .container {

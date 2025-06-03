@@ -1,29 +1,30 @@
 {{#if data.title}}
-  <h1 class="text-6xl mt-8 text-center text-amber-500 tracking-widest uppercase">
-    {{ data.title }}
-  </h1>
+  <div
+    class="components-block">
+    <h1 class="text-6xl mt-8 text-center text-amber-500 tracking-widest uppercase">
+      {{ data.title }}
+    </h1>
+  </div>
 {{/if}}
 
 {{#each data.blocks}}
   <div
-    class="block"
-    {{#if this.background.formats.medium }}
-      style="background-image: url('https://dev.cms.thefirstspine.fr/{{ this.background.formats.medium.url }}');"
-    {{else if this.background.formats.small }}
-      style="background-image: url('https://dev.cms.thefirstspine.fr/{{ this.background.formats.small.url }}');"
+    class="components-block"
+    {{#if this.background.url }}
+      style="background-image: url('https://dev.cms.thefirstspine.fr/{{ this.background.url }}');"
     {{/if}}
   >
     <div class="separator"></div>
     <div class="container max-w-7xl">
       {{#if this.showTitle}}
-        <h1 class="text-4xl mt-16 mb-8 text-center text-amber-500 tracking-widest uppercase">
+        <h1 class="text-4xl mt-16 mb-8 text-center tracking-widest uppercase">
           {{ this.title }}
         </h1>
       {{/if}}
       {{#if this.image }}
         <img
           class="mx-auto my-8 rounded-lg shadow-lg"
-          src="https://dev.cms.thefirstspine.fr/{{ this.image.formats.medium.url }}"
+          src="https://dev.cms.thefirstspine.fr/{{ this.image.url }}"
           alt="{{ this.image.alternativeText }}"
         >
       {{/if}}
@@ -33,6 +34,9 @@
         {{/ifEquals}}
         {{#ifEquals this.__component 'shared.button'}}
           {{> components/button this }}
+        {{/ifEquals}}
+        {{#ifEquals this.__component 'shared.spacer'}}
+          {{> components/spacer this }}
         {{/ifEquals}}
       {{/each}}
     </div>
