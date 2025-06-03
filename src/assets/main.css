@@ -15,10 +15,6 @@
     font-style: normal;
   }
 
-  #content {
-    margin-top: -75px;
-  }
-
   .markdown {
     h1 {
       @apply text-4xl my-8 tracking-widest uppercase;

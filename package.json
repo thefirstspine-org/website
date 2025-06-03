@@ -6,11 +6,12 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "build": "nest build",
-    "build:css": "postcss src/assets/tailwind.css -o public/main.css",
+    "build": "npm run build:css && npm run build:js && nest build",
+    "build:css": "postcss src/assets/main.css -o public/main.css",
+    "build:js": "webpack --config webpack.config.js",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
-    "start:dev": "postcss src/assets/tailwind.css -o public/main.css && nest start --watch",
+    "start:dev": "npm run build:css && npm run build:js && nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
@@ -60,7 +61,10 @@
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.7.3",
-    "typescript-eslint": "^8.20.0"
+    "typescript-eslint": "^8.20.0",
+    "vue": "^3.5.16",
+    "webpack": "^5.99.9",
+    "webpack-cli": "^6.0.1"
   },
   "jest": {
     "moduleFileExtensions": [
