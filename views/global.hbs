@@ -11,10 +11,8 @@
   <main id="app">
     <div>
       {{> menu data=templateData.navigation }}
-      <div class="relative overflow-hidden">
-        <div class="relative z-10">
-          {{> (lookup . 'page') data=pageData }}
-        </div>
+      <div class="overflow-hidden">
+        {{> (lookup . 'page') data=pageData }}
       </div>
     </div>
   </main>

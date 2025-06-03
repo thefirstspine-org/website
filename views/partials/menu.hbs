@@ -31,6 +31,50 @@
           </div>
         </li>
 
+        <li class="block relative">
+          <div class="menu-item">
+            <a class="cursor-pointer" @click="toggleOn('Play')" v-click-outside="toggleOff('Play')">
+              <span>Play</span>
+              <span class="ml-4 text-amber-500">
+                <i class="fa-solid fa-chevron-down"></i>
+              </span>
+            </a>
+            <div class="submenu" v-if="isToggled('Play')">
+              <ul class="submenu-list">
+                {{#each data}}
+                  {{#ifEquals this.parent 'Play'}}
+                    <li>
+                      <a class="submenu-item" href="{{this.link}}">{{this.label}}</a>
+                    </li>
+                  {{/ifEquals}}
+                {{/each}}
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="block relative">
+          <div class="menu-item">
+            <a class="cursor-pointer" @click="toggleOn('About')" v-click-outside="toggleOff('About')">
+              <span>About</span>
+              <span class="ml-4 text-amber-500">
+                <i class="fa-solid fa-chevron-down"></i>
+              </span>
+            </a>
+            <div class="submenu" v-if="isToggled('About')">
+              <ul class="submenu-list">
+                {{#each data}}
+                  {{#ifEquals this.parent 'About'}}
+                    <li>
+                      <a class="submenu-item" href="{{this.link}}">{{this.label}}</a>
+                    </li>
+                  {{/ifEquals}}
+                {{/each}}
+              </ul>
+            </div>
+          </div>
+        </li>
+
       </ul>
     </div>
   </div>

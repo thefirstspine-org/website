@@ -21,15 +21,18 @@
     background-repeat: no-repeat;
     background-position: center;
     .menu {
-      @apply flex w-full flex-wrap items-center h-10;
+      @apply flex w-full flex-wrap items-center h-10 z-2;
       .menu-item {
         @apply flex items-center h-10 leading-10 px-8 rounded no-underline hover:no-underline transition-colors duration-100 mx-1 text-white;
         .submenu {
-          @apply absolute bg-neutral-800/90 text-white rounded shadow-lg p-8;
+          @apply absolute bg-neutral-800/90 text-white rounded shadow-lg p-4 z-1;
           position: absolute;
           top: 40px;
           left: 0;
           width: 100%;
+          a {
+            @apply block text-lg my-4 hover:text-amber-300;
+          }
         }
       }
     }
