@@ -17,7 +17,7 @@
     <div class="separator"></div>
     <div class="container max-w-7xl">
       {{#if this.showTitle}}
-        <h1 class="text-4xl mt-16 mb-8 text-center tracking-widest uppercase">
+        <h1 class="text-4xl mt-16 mb-8 text-center text-amber-500  tracking-widest uppercase">
           {{ this.title }}
         </h1>
       {{/if}}
@@ -29,22 +29,18 @@
         >
       {{/if}}
       {{#each this.content}}
-        {{#ifEquals this.__component 'shared.rich-text'}}
-          {{> components/richtext this }}
-        {{/ifEquals}}
-        {{#ifEquals this.__component 'shared.button'}}
-          {{> components/button this }}
-        {{/ifEquals}}
-        {{#ifEquals this.__component 'shared.spacer'}}
-          {{> components/spacer this }}
-        {{/ifEquals}}
+        <div class="my-8 text-center">
+          {{#ifEquals this.__component 'shared.rich-text'}}
+            {{> components/richtext this }}
+          {{/ifEquals}}
+          {{#ifEquals this.__component 'shared.button'}}
+            {{> components/button this }}
+          {{/ifEquals}}
+          {{#ifEquals this.__component 'shared.spacer'}}
+            {{> components/spacer this }}
+          {{/ifEquals}}
+        </div>
       {{/each}}
     </div>
   </div>
 {{/each}}
-
-<!--
-<div class="container max-w-7xl mt-16 bg-neutral-950 p-8 rounded-lg">
-  <code class="text-grey-400 text-monospace text-xs mt-8">{{{ json data }}}</code>
-</div>
--->

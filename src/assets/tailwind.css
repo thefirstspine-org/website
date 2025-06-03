@@ -35,7 +35,7 @@
   }
 
   .button {
-    @apply text-white me-2 mb-2 focus:ring-2 rounded-full;
+    @apply text-white me-2 focus:ring-2 rounded-full;
     &.primary {
       @apply bg-linear-to-b from-amber-300 to-amber-500 hover:to-amber-400 focus:ring-amber-400 text-amber-950;
     }

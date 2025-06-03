@@ -10,7 +10,7 @@
     "build:css": "postcss src/assets/tailwind.css -o public/main.css",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
-    "start:dev": "nest start --watch",
+    "start:dev": "postcss src/assets/tailwind.css -o public/main.css && nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
