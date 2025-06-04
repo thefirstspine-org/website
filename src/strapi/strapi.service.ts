@@ -41,7 +41,7 @@ export class StrapiService {
     }
     // Fetch data from API
     const response = await axios.default.get(
-      `${process.env.CMS_URL}/${path}`,
+      `${process.env.CMS_URL}/api/${path}`,
       {
         headers: {
           'Content-Type': 'application/json',
