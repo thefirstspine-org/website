@@ -4,8 +4,7 @@ import * as axios from 'axios';
 @Injectable()
 export class StrapiService {
 
-  private readonly apiUrl = 'https://dev.cms.thefirstspine.fr/api'; // TODO: Move to config
-  private readonly activateCache = false; // Enable or disable caching
+  private readonly activateCache = true; // Enable or disable caching
   private readonly cache: Map<string, CachedRequest> = new Map();
   private readonly cacheDuration = 1000 * 60; // Cache duration in milliseconds (1 minute)
 
@@ -42,15 +41,14 @@ export class StrapiService {
     }
     // Fetch data from API
     const response = await axios.default.get(
-      `${this.apiUrl}/${path}`,
+      `${process.env.CMS_URL}/${path}`,
       {
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer 24b1f7fdcfda1db33ee2e10b16f1d4280425ada71a28ece51c85e1888852a3d654102c8837972ebfca72588addecd2f482072980aff5eeff1f648b4874b0b6e4e7c6ed65cdf3db603d37e9b78f49fa44de3327be30a9f63e12f49cec37567c78357b7978591125a8f7d376933960c23d6dd2f10efcae4d79b51034c645387c2e`, // TODO: Move to config
+          'Authorization': `Bearer ${process.env.CMS_TOKEN}`,
         },
       }
     );
-    console.log({path, response: response.data});
     // Cache the response
     if (this.activateCache) {
       this.cache.set(path, {
