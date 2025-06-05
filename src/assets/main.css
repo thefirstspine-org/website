@@ -15,6 +15,11 @@
     font-style: normal;
   }
 
+  .main-content {
+    @apply overflow-hidden;
+    margin-top: -80px;
+  }
+
   .is-16by9 {
     aspect-ratio: 16 / 9;
     width: 100%; /* change this to a fixed width, or create a container with a width. */

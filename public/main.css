@@ -251,9 +251,6 @@
   .cursor-pointer {
     cursor: pointer;
   }
-  .overflow-hidden {
-    overflow: hidden;
-  }
   .rounded-lg {
     border-radius: var(--radius-lg);
   }
@@ -305,6 +302,10 @@
     font-family: "Lora", serif;
     font-optical-sizing: auto;
     font-style: normal;
+  }
+  .main-content {
+    overflow: hidden;
+    margin-top: -80px;
   }
   .is-16by9 {
     aspect-ratio: 16 / 9;
