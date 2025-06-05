@@ -39,6 +39,9 @@
           {{#ifEquals this.__component 'shared.spacer'}}
             {{> components/spacer this }}
           {{/ifEquals}}
+          {{#ifEquals this.__component 'shared.video'}}
+            {{> components/video this }}
+          {{/ifEquals}}
         </div>
       {{/each}}
     </div>

@@ -15,6 +15,12 @@
     font-style: normal;
   }
 
+  .is-16by9 {
+    aspect-ratio: 16 / 9;
+    width: 100%; /* change this to a fixed width, or create a container with a width. */
+    height: 100%;
+  }
+
   .menu-bar {
     @apply py-5 px-5 shadow-xl;
     background-image: url('menu.png');
@@ -43,10 +49,10 @@
       @apply text-4xl my-8 tracking-widest uppercase;
     }
     h2 {
-      @apply text-3xl font-bold my-4;
+      @apply text-3xl my-4;
     }
     h3 {
-      @apply text-2xl font-bold my-4;
+      @apply text-2xl my-4;
     }
     p {
       @apply my-4;
