@@ -42,6 +42,9 @@
           {{#ifEquals this.__component 'shared.video'}}
             {{> components/video this }}
           {{/ifEquals}}
+          {{#ifEquals this.__component 'shared.buttons-bar'}}
+            {{> components/buttonsbar this }}
+          {{/ifEquals}}
         </div>
       {{/each}}
     </div>

@@ -23,7 +23,7 @@ export class StrapiService {
     const page = pages[0];
 
     // Get the blocks
-    const blocks = await this.callApi(`blocks?populate=*&filters[page][documentId][$eq]=${page.documentId}`);
+    const blocks = await this.callApi(`blocks?populate[0]=content&populate[1]=content.button1&populate[2]=content.button2&populate[3]=content.button3&populate[4]=background&populate[5]=image&filters[page][documentId][$eq]=${page.documentId}`);
     page.blocks = page.blocks.map((block: Document) => {
       return blocks.find((b: Document) => b.documentId === block.documentId) || block;
     });
