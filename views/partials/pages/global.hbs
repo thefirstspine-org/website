@@ -48,6 +48,9 @@
           {{#ifEquals this.__component 'shared.media'}}
             {{> components/media this }}
           {{/ifEquals}}
+          {{#ifEquals this.__component 'shared.quote'}}
+            {{> components/quote this }}
+          {{/ifEquals}}
         </div>
       {{/each}}
     </div>
