@@ -49,9 +49,12 @@
       }
     }
     @media (width < 48rem) {
-      @apply bg-black;
+      @apply bg-black p-4 m-0;
       background-image: none;
-      margin: 0;
+      .container {
+        @apply my-0 py-0;
+        margin: 0;
+      }
       .menu {
         height: auto;
         display: block;
@@ -73,43 +76,29 @@
     }
   }
 
-  .markdown {
-    h1 {
-      @apply text-4xl my-8 tracking-widest uppercase;
-    }
-    h2 {
-      @apply text-3xl my-4;
-    }
-    h3 {
-      @apply text-2xl my-4;
-    }
-    p {
-      @apply my-4;
-    }
-  }
-
   .button {
-    @apply text-white me-2 focus:ring-2 rounded-full inline-block transition-colors duration-200;
+    @apply text-white me-2 rounded-full inline-block transition-colors duration-200 border-2 border-zinc-300/50 shadow-lg;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
     &.primary {
-      @apply bg-linear-to-b from-amber-300 to-amber-500 hover:to-amber-400 focus:ring-amber-400 text-amber-950;
+      @apply bg-linear-to-b from-amber-300 to-amber-500 hover:to-amber-400 text-amber-950;
     }
     &.warning {
-      @apply bg-linear-to-b from-orange-400 to-orange-600 hover:to-orange-500 focus:ring-orange-400 text-white;
+      @apply bg-linear-to-b from-orange-400 to-orange-600 hover:to-orange-500 text-white;
     }
     &.danger {
-      @apply bg-linear-to-b from-red-500 to-red-700 hover:to-red-600 focus:ring-red-500 text-white;
+      @apply bg-linear-to-b from-red-500 to-red-700 hover:to-red-600 text-white;
     }
     &.youtube {
-      @apply bg-linear-to-b from-red-500 to-red-700 hover:to-red-600 focus:ring-red-500 text-white;
+      @apply bg-linear-to-b from-red-500 to-red-700 hover:to-red-600 text-white;
     }
     &.facebook {
-      @apply bg-linear-to-b from-blue-500 to-blue-700 hover:to-blue-600 focus:ring-blue-500 text-white;
+      @apply bg-linear-to-b from-blue-500 to-blue-700 hover:to-blue-600 text-white;
     }
     &.discord {
-      @apply bg-linear-to-b from-violet-500 to-violet-700 hover:to-violet-600 focus:ring-violet-500 text-white;
+      @apply bg-linear-to-b from-violet-500 to-violet-700 hover:to-violet-600 text-white;
     }
     &.twitter {
-      @apply bg-linear-to-b from-sky-500 to-sky-700 hover:to-sky-600 focus:ring-sky-500 text-white;
+      @apply bg-linear-to-b from-sky-500 to-sky-700 hover:to-sky-600 text-white;
     }
     &.small {
       @apply px-5 py-2 my-5;
@@ -145,6 +134,24 @@
 
     .media img {
       @apply inline-block;
+    }
+
+    .markdown {
+      h1 {
+        @apply text-4xl my-8 tracking-widest uppercase;
+      }
+      h2 {
+        @apply text-3xl my-4;
+      }
+      h3 {
+        @apply text-2xl my-4;
+      }
+      p {
+        @apply my-4;
+      }
+      ul {
+        @apply list-disc list-inside my-4;
+      }
     }
   }
 
