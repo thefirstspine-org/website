@@ -1,0 +1,17 @@
+<div class="m-auto grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-3">
+  {{#each video }}
+  <div class="mt-8">
+    <iframe
+      class="is-16by9"
+      src="https://www.youtube.com/embed/{{ this.youtubeId }}"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen="allowfullscreen"
+      class="has-ratio"
+    ></iframe>
+  </div>
+  {{/each}}
+  </div>
+</div>
+

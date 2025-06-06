@@ -51,6 +51,9 @@
           {{#ifEquals this.__component 'shared.quote'}}
             {{> components/quote this }}
           {{/ifEquals}}
+          {{#ifEquals this.__component 'shared.video-gallery'}}
+            {{> components/videogallery this }}
+          {{/ifEquals}}
         </div>
       {{/each}}
     </div>
