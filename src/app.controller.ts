@@ -15,9 +15,9 @@ export class AppController {
   async homepage(@Req() req: Request) {
     const pageData = await this.strapiService.getPageData(null);
     const templateData = await this.strapiService.getGlobalData();
-    console.log({ pageData, templateData });
     return {
       page: 'pages/global',
+      seo: templateData?.defaultSeo,
       pageData,
       templateData,
     };
@@ -38,6 +38,7 @@ export class AppController {
     }
     return {
       page: 'pages/global',
+      seo: pageData?.seo && pageData?.seo.length >= 1 ? pageData.seo[0] : templateData?.defaultSeo,
       pageData,
       templateData,
     };

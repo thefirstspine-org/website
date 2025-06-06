@@ -1,3 +1,15 @@
-<div class="markdown text-shadow-lg">
+<div class="
+  markdown
+  text-shadow-lg
+  {{#ifEquals alignement 'Left'}}
+  text-left
+  {{/ifEquals}}
+  {{#ifEquals alignement 'Center'}}
+  text-center
+  {{/ifEquals}}
+  {{#ifEquals alignement 'Right'}}
+  text-right
+  {{/ifEquals}}
+  ">
   {{{ md body }}}
 </div>

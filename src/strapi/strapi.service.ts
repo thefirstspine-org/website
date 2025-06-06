@@ -10,13 +10,13 @@ export class StrapiService {
 
   async getGlobalData(): Promise<GlobalData | null> {
     // Get the page
-    const data = await this.callApi(`global?populate=*`);
+    const data = await this.callApi(`global?populate[0]=defaultSeo&populate[1]=defaultSeo.shareImage&populate[2]=navigation`);
     return data;
   }
 
   async getPageData(path: string | null): Promise<PageData | null> {
     // Get the page
-    const pages = await this.callApi(`pages?populate=*&filters${( path ? `[canonicalUrl][$eq]=${path}` : '[canonicalUrl][$notNull]' )}`);
+    const pages = await this.callApi(`pages?populate[0]=seo&populate[1]=seo.shareImage&populate[2]=blocks&filters${( path ? `[canonicalUrl][$eq]=${path}` : '[canonicalUrl][$notNull]' )}`);
     if (pages.length === 0) {
       return null;
     }
@@ -40,23 +40,28 @@ export class StrapiService {
       }
     }
     // Fetch data from API
-    const response = await axios.default.get(
-      `${process.env.CMS_URL}/api/${path}`,
-      {
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${process.env.CMS_TOKEN}`,
-        },
+    try {
+        const response = await axios.default.get(
+        `${process.env.CMS_URL}/api/${path}`,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${process.env.CMS_TOKEN}`,
+          },
+        }
+      );
+      // Cache the response
+      if (this.activateCache) {
+        this.cache.set(path, {
+          expires: Date.now() + this.cacheDuration,
+          data: response.data.data
+        });
       }
-    );
-    // Cache the response
-    if (this.activateCache) {
-      this.cache.set(path, {
-        expires: Date.now() + this.cacheDuration,
-        data: response.data.data
-      });
+      return response.data.data;
+    } catch (error) {
+      console.error(`Error fetching data from Strapi API: ${JSON.stringify(error?.response?.data) || error.message}`);
+      return null;
     }
-    return response.data.data;
   }
 
 }
@@ -79,12 +84,13 @@ export interface SEO {
   id: number;
   metaTitle: string | null;
   metaDescription: string | null;
+  shareImage: Media | null;
 }
 
 export interface PageData extends Document {
   canonicalUrl: string | null;
   blocks: Block[];
-  seo: SEO | null;
+  seo: Array<SEO>;
 }
 
 export interface Block extends Document {

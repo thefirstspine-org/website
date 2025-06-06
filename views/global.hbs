@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>{{ seo.metaTitle }} - {{ templateData.siteName }}</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ seo.metaTitle }} - {{ templateData.siteName }}" />
+    <meta property="og:description" content="{{ seo.metaDescription }}" />
+    <meta property="og:image" content="{{{env 'CMS_URL' }}}{{ seo.shareImage.url }}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link href="/main.css" rel="stylesheet">
   </head>
@@ -16,6 +21,10 @@
       </div>
     </div>
   </main>
+
+  <div class="container max-w-7xl mt-8 bg-neutral-950 p-4 rounded-lg">
+    <code class="text-grey-400 text-monospace text-xs mt-8" style="word-wrap: break-word">{{{ json seo }}}</code>
+  </div>
 
   <div class="container max-w-7xl mt-8 bg-neutral-950 p-4 rounded-lg">
     <code class="text-grey-400 text-monospace text-xs mt-8" style="word-wrap: break-word">{{{ json templateData }}}</code>

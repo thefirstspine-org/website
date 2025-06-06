@@ -28,6 +28,10 @@ async function bootstrap() {
     const converter = new showdown.Converter({simpleLineBreaks: true});
     return converter.makeHtml(context);
   });
+  hbs.registerHelper('env', function(arg1, options) {
+    console.log({arg1});
+    return process.env[arg1];
+  });
 
   await app.listen(process.env.PORT ?? 3000);
 }
