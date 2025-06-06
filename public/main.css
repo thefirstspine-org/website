@@ -257,9 +257,6 @@
   .max-w-7xl {
     max-width: var(--container-7xl);
   }
-  .grow {
-    flex-grow: 1;
-  }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
   }
@@ -669,6 +666,9 @@
     }
     &:last-child {
       margin-bottom: 0;
+    }
+    .media img {
+      display: inline-block;
     }
   }
   .container {

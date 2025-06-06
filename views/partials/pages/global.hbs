@@ -45,6 +45,9 @@
           {{#ifEquals this.__component 'shared.buttons-bar'}}
             {{> components/buttonsbar this }}
           {{/ifEquals}}
+          {{#ifEquals this.__component 'shared.media'}}
+            {{> components/media this }}
+          {{/ifEquals}}
         </div>
       {{/each}}
     </div>

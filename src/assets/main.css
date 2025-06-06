@@ -142,6 +142,10 @@
     &:last-child {
       margin-bottom: 0;
     }
+
+    .media img {
+      @apply inline-block;
+    }
   }
 
   .container {
