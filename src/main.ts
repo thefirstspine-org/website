@@ -29,7 +29,6 @@ async function bootstrap() {
     return converter.makeHtml(context);
   });
   hbs.registerHelper('env', function(arg1, options) {
-    console.log({arg1});
     return process.env[arg1];
   });
 

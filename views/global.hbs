@@ -18,21 +18,66 @@
       {{> menu data=templateData.navigation }}
       <div class="main-content">
         {{> (lookup . 'page') data=pageData }}
+
+        <div
+          class="components-block">
+          <div class="separator"></div>
+          <div class="container max-w-7xl my-8">
+            <div class="m-auto grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-3">
+              <div class="mt-8">
+                <a href="https://fb.com/thefirstspine" target="_blank" class="button small primary facebook">
+                  <i class="fab fa-facebook-square"></i>
+                </a>
+                <a href="https://www.youtube.com/channel/UCW2snzxKIZd76fWQ55FgVyQ" target="_blank" class="button small primary youtube">
+                  <i class="fab fa-youtube-square"></i>
+                </a>
+                <a href="https://twitter.com/TheFirstSpine" target="_blank" class="button small primary twitter">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://discord.gg/7DWtSw8hn6" target="_blank" class="button small primary discord">
+                  <i class="fab fa-discord"></i>
+                </a>
+              </div>
+              <div class="mt-8">
+                {{#each templateData.navigation}}
+                  <p>
+                    <a href="{{this.link}}">{{this.label}}</a>
+                  </p>
+                {{/each}}
+              </div>
+              <div class="mt-8">
+                <p>
+                  <a href="#">FR</a>
+                </p>
+                <p>
+                  <a href="#">EN</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container max-w-7xl mt-8">
+          <a @click="toggleOn('debug')" v-if="!isToggled('debug')" class="text-xs cursor-pointer">debug</a>
+          <div v-if="isToggled('debug')">
+            <p>Debug information for the SEO component:</p>
+            <div class="mt-8 bg-neutral-950 p-4 rounded-lg">
+              <code class="text-grey-400 text-monospace text-xs mt-8" style="word-wrap: break-word">{{{ json seo }}}</code>
+            </div>
+            <p>Debug information for the template:</p>
+            <div class="mt-8 bg-neutral-950 p-4 rounded-lg">
+              <code class="text-grey-400 text-monospace text-xs mt-8" style="word-wrap: break-word">{{{ json templateData }}}</code>
+            </div>
+            <p>Debug information for the current page:</p>
+            <div class="mt-8 bg-neutral-950 p-4 rounded-lg">
+              <code class="text-grey-400 text-monospace text-xs mt-8" style="word-wrap: break-word">{{{ json pageData }}}</code>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </main>
-
-  <div class="container max-w-7xl mt-8 bg-neutral-950 p-4 rounded-lg">
-    <code class="text-grey-400 text-monospace text-xs mt-8" style="word-wrap: break-word">{{{ json seo }}}</code>
-  </div>
-
-  <div class="container max-w-7xl mt-8 bg-neutral-950 p-4 rounded-lg">
-    <code class="text-grey-400 text-monospace text-xs mt-8" style="word-wrap: break-word">{{{ json templateData }}}</code>
-  </div>
-
-  <div class="container max-w-7xl mt-8 bg-neutral-950 p-4 rounded-lg">
-    <code class="text-grey-400 text-monospace text-xs mt-8" style="word-wrap: break-word">{{{ json pageData }}}</code>
-  </div>
 
   <script src="/bundle.js" defer></script>
 

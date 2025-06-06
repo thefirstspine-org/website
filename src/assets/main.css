@@ -71,10 +71,22 @@
       @apply bg-linear-to-b from-amber-300 to-amber-500 hover:to-amber-400 focus:ring-amber-400 text-amber-950;
     }
     &.warning {
-      @apply bg-linear-to-b from-orange-400 to-orange-600 hover:to-orange-500 focus:ring-orange-400;
+      @apply bg-linear-to-b from-orange-400 to-orange-600 hover:to-orange-500 focus:ring-orange-400 text-white;
     }
     &.danger {
-      @apply bg-linear-to-b from-red-500 to-red-700 hover:to-red-600 focus:ring-red-500;
+      @apply bg-linear-to-b from-red-500 to-red-700 hover:to-red-600 focus:ring-red-500 text-white;
+    }
+    &.youtube {
+      @apply bg-linear-to-b from-red-500 to-red-700 hover:to-red-600 focus:ring-red-500 text-white;
+    }
+    &.facebook {
+      @apply bg-linear-to-b from-blue-500 to-blue-700 hover:to-blue-600 focus:ring-blue-500 text-white;
+    }
+    &.discord {
+      @apply bg-linear-to-b from-violet-500 to-violet-700 hover:to-violet-600 focus:ring-violet-500 text-white;
+    }
+    &.twitter {
+      @apply bg-linear-to-b from-sky-500 to-sky-700 hover:to-sky-600 focus:ring-sky-500 text-white;
     }
     &.small {
       @apply px-5 py-2 my-5;
