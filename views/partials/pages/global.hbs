@@ -54,6 +54,9 @@
           {{#ifEquals this.__component 'shared.video-gallery'}}
             {{> components/videogallery this }}
           {{/ifEquals}}
+          {{#ifEquals this.__component 'shared.slider'}}
+            {{> components/slider this }}
+          {{/ifEquals}}
         </div>
       {{/each}}
     </div>
