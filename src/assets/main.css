@@ -153,6 +153,11 @@
         @apply list-disc list-inside my-4;
       }
     }
+    
+    .article-cover {
+      @apply w-full block bg-cover bg-center;
+      height: 8rem;
+    }
   }
 
   .container {

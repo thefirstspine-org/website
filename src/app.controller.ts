@@ -13,13 +13,23 @@ export class AppController {
   @Get('/')
   @Render('global')
   async homepage(@Req() req: Request) {
-    const pageData = await this.strapiService.getPageData(null);
+    return this.getPage(null);
+  }
+
+  @Get('/blog')
+  @Render('global')
+  async blog(@Req() req: Request) {
     const templateData = await this.strapiService.getGlobalData();
+    const articles: any[] = await this.strapiService.getArticles();
+    const featuredArticle = articles.splice(0, 1)[0];
     return {
-      page: 'pages/global',
+      page: 'pages/blog',
       seo: templateData?.defaultSeo,
-      pageData,
       templateData,
+      pageData: {
+        articles,
+        featuredArticle,
+      },
     };
   }
 
@@ -31,8 +41,17 @@ export class AppController {
   @Get('*')
   @Render('global')
   async root(@Req() req: Request) {
-    const pageData = await this.strapiService.getPageData(req.url.replace(/^\//, ''));
+    return this.getPage(req.url.replace(/^\//, ''));
+  }
+
+  /**
+   * Generate a base
+   * @param page The page path
+   * @returns Rendered page based on the URL
+   */
+  async getPage(page: string | null) {
     const templateData = await this.strapiService.getGlobalData();
+    const pageData = await this.strapiService.getPageData(page);
     if (!pageData) {
       return { page: 'pages/404', templateData };
     }

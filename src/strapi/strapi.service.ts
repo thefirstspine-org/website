@@ -14,6 +14,12 @@ export class StrapiService {
     return data;
   }
 
+  async getArticles(): Promise<any | null> {
+    // Get the page
+    const data = await this.callApi(`articles?populate=*&sort=createdAt:desc`);
+    return data;
+  }
+
   async getPageData(path: string | null): Promise<PageData | null> {
     // Get the page
     const pages = await this.callApi(`pages?populate[0]=seo&populate[1]=seo.shareImage&populate[2]=blocks&filters${( path ? `[canonicalUrl][$eq]=${path}` : '[canonicalUrl][$notNull]' )}`);

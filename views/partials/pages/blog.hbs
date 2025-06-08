@@ -1,0 +1,48 @@
+<div
+  class="components-block">
+  <h1 class="text-6xl mt-8 text-center text-amber-500 tracking-widest uppercase text-shadow-lg">
+    Blog
+  </h1>
+</div>
+
+<div
+  class="components-block"
+  >
+  <div class="separator"></div>
+  <div class="container max-w-7xl">
+    <h1 class="text-4xl mt-16 mb-8 text-center text-amber-500 tracking-widest uppercase text-shadow-lg">
+      Featured post<br />
+      {{ data.featuredArticle.title }}
+    </h1>
+    <div class="my-8 text-center">
+      {{ data.featuredArticle.description }}
+    </div>
+    <div class="mt-8 text-center">
+      <a class="button primary big m-0" href="/blog/{{ data.featuredArticle.slug }}">
+        Read more
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="components-block">
+  <div class="separator"></div>
+  <div class="container max-w-7xl">
+    <div class="m-auto grid grid-cols-1 gap-8 md:grid-cols-3 lg:grid-cols-3 mt-16">
+      {{#each data.articles}}
+      <div>
+        <h3 class="text-xl mb-4 text-center text-amber-500 tracking-widest uppercase text-shadow-lg">
+          {{ this.title }}
+        </h3>
+        <div class="article-cover mb-4" style="background-image: url('{{{env 'CMS_URL' }}}{{ this.cover.url }}');"></div>
+        <p class="mb-4">
+          {{ this.description }}
+        </p>
+        <p class="text-center">
+          <a class="button primary medium m-0" href="/blog/{{ this.slug }}">Read more</a>
+        </p>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</div>
