@@ -101,13 +101,13 @@
       @apply bg-linear-to-b from-sky-500 to-sky-700 hover:to-sky-600 text-white;
     }
     &.small {
-      @apply px-5 py-2 my-5;
+      @apply px-5 py-2;
     }
     &.medium {
-      @apply px-7 py-3 my-7 text-lg;
+      @apply px-7 py-3 text-lg;
     }
     &.big {
-      @apply px-10 py-4 my-10 text-xl;
+      @apply px-10 py-4 text-xl;
     }
   }
 

@@ -786,19 +786,16 @@
       }
     }
     &.small {
-      margin-block: calc(var(--spacing) * 5);
       padding-inline: calc(var(--spacing) * 5);
       padding-block: calc(var(--spacing) * 2);
     }
     &.medium {
-      margin-block: calc(var(--spacing) * 7);
       padding-inline: calc(var(--spacing) * 7);
       padding-block: calc(var(--spacing) * 3);
       font-size: var(--text-lg);
       line-height: var(--tw-leading, var(--text-lg--line-height));
     }
     &.big {
-      margin-block: calc(var(--spacing) * 10);
       padding-inline: calc(var(--spacing) * 10);
       padding-block: calc(var(--spacing) * 4);
       font-size: var(--text-xl);
