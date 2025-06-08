@@ -25,6 +25,7 @@
           <div class="container max-w-7xl my-8">
             <div class="m-auto grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-3">
               <div class="mt-8">
+                <h5 class="text-xl mb-4 text-amber-500">We are social</h5>
                 <a href="https://fb.com/thefirstspine" target="_blank" class="button small primary facebook">
                   <i class="fab fa-facebook-square"></i>
                 </a>
@@ -39,24 +40,46 @@
                 </a>
               </div>
               <div class="mt-8">
+                <h5 class="text-xl mb-4 text-amber-500">News</h5>
                 {{#each templateData.navigation}}
-                  <p>
+                  {{#ifEquals this.parent 'News'}}
+                  <p class="text-sm">
                     <a href="{{this.link}}">{{this.label}}</a>
                   </p>
+                  {{/ifEquals}}
+                {{/each}}
+                <h5 class="text-xl my-4 text-amber-500">Play</h5>
+                {{#each templateData.navigation}}
+                  {{#ifEquals this.parent 'Play'}}
+                  <p class="text-sm">
+                    <a href="{{this.link}}">{{this.label}}</a>
+                  </p>
+                  {{/ifEquals}}
                 {{/each}}
               </div>
               <div class="mt-8">
+                <h5 class="text-xl mb-4 text-amber-500">About</h5>
+                {{#each templateData.navigation}}
+                  {{#ifEquals this.parent 'About'}}
+                  <p class="text-sm">
+                    <a href="{{this.link}}">{{this.label}}</a>
+                  </p>
+                  {{/ifEquals}}
+                {{/each}}
+                <h5 class="text-xl my-4 text-amber-500">Other languages</h5>
                 <p>
-                  <a href="#">FR</a>
-                </p>
-                <p>
-                  <a href="#">EN</a>
+                  <a href="/lang/fr">
+                    <img src="/fr.png" class="inline-block" />
+                  </a> <a href="/lang/en">
+                    <img src="/us.png" class="inline-block" />
+                  </a>
                 </p>
               </div>
             </div>
           </div>
         </div>
 
+        <!--
         <div class="container max-w-7xl mt-8">
           <a @click="toggleOn('debug')" v-if="!isToggled('debug')" class="text-xs cursor-pointer">debug</a>
           <div v-if="isToggled('debug')">
@@ -74,6 +97,7 @@
             </div>
           </div>
         </div>
+        -->
 
       </div>
     </div>
