@@ -14,10 +14,35 @@ export class StrapiService {
     return data;
   }
 
-  async getArticles(): Promise<any | null> {
+  async getArticles(): Promise<any[]> {
     // Get the page
     const data = await this.callApi(`articles?populate=*&sort=createdAt:desc`);
     return data;
+  }
+
+  async getArticle(slug: string): Promise<any | null> {
+    // Get the page
+    const data = await this.callApi(`articles?populate=*&filters[slug][$eq]=${slug}`);
+    const page = data[0];
+
+    // Get the blocks
+    const blocks = await this.callApi(
+      `blocks?` +
+      `populate[0]=content&` +
+      `populate[1]=content.button1&` +
+      `populate[2]=content.button2&` +
+      `populate[3]=content.button3&` +
+      `populate[4]=background&` +
+      `populate[5]=image&` +
+      `populate[6]=content.media&` +
+      `populate[7]=content.video&` +
+      `populate[8]=content.files&` +
+      `filters[page][documentId][$eq]=${page.documentId}`);
+    page.blocks = page.blocks.map((block: Document) => {
+      return blocks.find((b: Document) => b.documentId === block.documentId) || block;
+    });
+
+    return page;
   }
 
   async getPageData(path: string | null): Promise<PageData | null> {

@@ -1,4 +1,4 @@
-import { Controller, Get, Render, Req } from '@nestjs/common';
+import { Controller, Get, Param, Render, Req } from '@nestjs/common';
 import { StrapiService } from './strapi/strapi.service';
 
 @Controller()
@@ -30,6 +30,19 @@ export class AppController {
         articles,
         featuredArticle,
       },
+    };
+  }
+
+  @Get('/blog/:slug')
+  @Render('global')
+  async article(@Req() req: Request, @Param('slug') slug) {
+    const templateData = await this.strapiService.getGlobalData();
+    const article: any = await this.strapiService.getArticle(slug);
+    return {
+      page: 'pages/article',
+      seo: templateData?.defaultSeo,
+      templateData,
+      pageData: article,
     };
   }
 

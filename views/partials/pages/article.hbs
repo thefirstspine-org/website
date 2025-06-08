@@ -1,0 +1,48 @@
+<div
+  class="components-block" style="background-image: url('{{{env 'CMS_URL' }}}{{ data.cover.url }}');">
+  <h1 class="text-6xl mt-24 mb-16 text-center text-amber-500 tracking-widest uppercase text-shadow-lg">
+    {{ data.title }}
+  </h1>
+</div>
+
+<div
+  class="components-block"
+>
+  <div class="separator"></div>
+  <div class="container max-w-7xl">
+    {{#each data.blocks}}
+      <div class="my-8 text-center">
+        {{#ifEquals this.__component 'shared.rich-text'}}
+          {{> components/richtext this }}
+        {{/ifEquals}}
+        {{#ifEquals this.__component 'shared.button'}}
+          {{> components/button this }}
+        {{/ifEquals}}
+        {{#ifEquals this.__component 'shared.spacer'}}
+          {{> components/spacer this }}
+        {{/ifEquals}}
+        {{#ifEquals this.__component 'shared.video'}}
+          {{> components/video this }}
+        {{/ifEquals}}
+        {{#ifEquals this.__component 'shared.buttons-bar'}}
+          {{> components/buttonsbar this }}
+        {{/ifEquals}}
+        {{#ifEquals this.__component 'shared.media'}}
+          {{> components/media this }}
+        {{/ifEquals}}
+        {{#ifEquals this.__component 'shared.quote'}}
+          {{> components/quote this }}
+        {{/ifEquals}}
+        {{#ifEquals this.__component 'shared.video-gallery'}}
+          {{> components/videogallery this }}
+        {{/ifEquals}}
+        {{#ifEquals this.__component 'shared.slider'}}
+          {{> components/slider this }}
+        {{/ifEquals}}
+      </div>
+    {{/each}}
+    <p class="text-center">
+      <a class="button primary medium m-0" href="/blog">Back to the articles</a>
+    </p>
+  </div>
+</div>

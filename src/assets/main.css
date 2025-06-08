@@ -112,7 +112,7 @@
   }
 
   .components-block {
-    @apply pb-16 bg-top bg-no-repeat bg-fixed bg-cover;
+    @apply pb-16 bg-top bg-no-repeat bg-fixed bg-cover bg-center;
     .separator {
       width: 100%;
       height: 66px;
