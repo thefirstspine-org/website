@@ -101,6 +101,9 @@
     &.danger {
       @apply bg-linear-to-b from-red-500 to-red-700 hover:to-red-600 text-white;
     }
+    &.info {
+      @apply bg-linear-to-b from-neutral-500 to-neutral-700 hover:to-neutral-600 text-white;
+    }
     &.youtube {
       @apply bg-linear-to-b from-red-500 to-red-700 hover:to-red-600 text-white;
     }
@@ -112,6 +115,9 @@
     }
     &.twitter {
       @apply bg-linear-to-b from-sky-500 to-sky-700 hover:to-sky-600 text-white;
+    }
+    &.tiny {
+      @apply px-3 py-2 text-sm border-1;
     }
     &.small {
       @apply px-5 py-2;

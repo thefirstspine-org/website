@@ -14,10 +14,13 @@ export class StrapiService {
     return data;
   }
 
-  async getArticles(): Promise<any[]> {
+  async getArticles(categorySlug: string | undefined): Promise<any[]> {
     // Get the page
-    const data = await this.callApi(`articles?populate=*&sort=createdAt:desc`);
-    return data;
+    if (categorySlug) {
+      return this.callApi(`articles?populate=*&sort=createdAt:desc&filters[category][slug][$eq]=${categorySlug}`);
+    } else {
+      return this.callApi(`articles?populate=*&sort=createdAt:desc`);
+    }
   }
 
   async getArticle(slug: string): Promise<any | null> {
