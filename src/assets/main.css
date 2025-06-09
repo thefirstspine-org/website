@@ -177,25 +177,62 @@
       @apply w-full block bg-cover bg-center;
       height: 8rem;
     }
+
+    .card-component {
+      .card {
+        width: 400px;
+        height: 400px;
+        font-size: 16px;
+        img {
+          width: 16px;
+          height: 16px;
+        }
+        @media (width < 48rem) {
+          width: 200px;
+          height: 200px;
+          font-size: 8px;
+          img {
+            width: 8px;
+            height: 8px;
+          }
+        }
+      }
+    }
   }
 
   .card {
-    @apply m-auto block relative;
+    @apply m-auto block relative text-white;
     aspect-ratio: 1/1;
     &.card-400 {
       width: 400px;
       height: 400px;
-      font-size: 12px;
+      font-size: 16px;
+      img {
+        width: 16px;
+        height: 16px;
+      }
     }
     &.card-200 {
       width: 200px;
       height: 200px;
-      font-size: 6px;
+      font-size: 8px;
+      img {
+        width: 8px;
+        height: 8px;
+      }
     }
     &.card-100 {
       width: 100px;
       height: 100px;
-      font-size: 3px;
+      font-size: 4px;
+      img {
+        width: 4px;
+        height: 4px;
+      }
+    }
+    img {
+      @apply inline-block m-0;
+      background-color: rgba(255, 255, 255, .5);
     }
     .foreground {
       @apply absolute;
@@ -207,12 +244,15 @@
       background-position: center;
       &.creature {
         background-image: url(creature.png);
+        background-color: rgba(255, 0, 0, .5);
       }
       &.artifact {
         background: url(artifact.png);
+        background-color: rgba(0, 0, 255, .5);
       }
       &.spell {
         background: url(spell.png);
+        background-color: rgba(255, 255, 0, .5);
       }
     }
     .background {
@@ -223,6 +263,134 @@
       height: 100%;
       background-size: cover;
       background-position: center;
+    }
+    .stat {
+      width: 40px;
+    }
+    .top-str {
+      @apply absolute;
+      width: 40px;
+      text-align: center;
+      top: 7%;
+      left: 40%;
+      margin-left: -20px;
+    }
+    .top-def {
+      @apply absolute;
+      width: 40px;
+      text-align: center;
+      top: 7%;
+      left: 50%;
+      margin-left: -20px;
+    }
+    .top-capacity {
+      @apply absolute;
+      width: 40px;
+      text-align: center;
+      top: 7%;
+      left: 60%;
+      margin-left: -20px;
+    }
+    .bottom-str {
+      @apply absolute;
+      width: 40px;
+      text-align: center;
+      bottom: 7%;
+      left: 40%;
+      margin-left: -20px;
+    }
+    .bottom-def {
+      @apply absolute;
+      width: 40px;
+      text-align: center;
+      bottom: 7%;
+      left: 50%;
+      margin-left: -20px;
+    }
+    .bottom-capacity {
+      @apply absolute;
+      width: 40px;
+      text-align: center;
+      bottom: 7%;
+      left: 60%;
+      margin-left: -20px;
+    }
+    .left-str {
+      @apply absolute;
+      width: 40px;
+      text-align: center;
+      top: 40%;
+      left: 7%;
+      margin-left: -20px;
+    }
+    .left-def {
+      @apply absolute;
+      width: 40px;
+      text-align: center;
+      top: 50%;
+      left: 7%;
+      margin-left: -20px;
+    }
+    .left-capacity {
+      @apply absolute;
+      width: 40px;
+      text-align: center;
+      top: 60%;
+      left: 7%;
+      margin-left: -20px;
+    }
+    .right-str {
+      @apply absolute;
+      width: 40px;
+      text-align: center;
+      top: 40%;
+      right: 7%;
+      margin-right: -20px;
+    }
+    .right-def {
+      @apply absolute;
+      width: 40px;
+      text-align: center;
+      top: 50%;
+      right: 7%;
+      margin-right: -20px;
+    }
+    .right-capacity {
+      @apply absolute;
+      width: 40px;
+      text-align: center;
+      top: 60%;
+      right: 7%;
+      margin-right: -20px;
+    }
+    .life {
+      @apply absolute;
+      width: 40px;
+      text-align: center;
+      top: 30%;
+      left: 45%;
+      margin-left: -20px;
+    }
+    .capacity {
+      @apply absolute;
+      width: 40px;
+      text-align: center;
+      top: 30%;
+      left: 55%;
+      margin-left: -20px;
+    }
+    .name {
+      @apply absolute;
+      width: 70%;
+      top: 15%;
+      left: 15%;
+    }
+    .description {
+      @apply absolute;
+      width: 70%;
+      text-align: left;
+      top: 50%;
+      left: 15%;
     }
   }
 

@@ -31,6 +31,9 @@ async function bootstrap() {
   hbs.registerHelper('env', function(arg1, options) {
     return process.env[arg1];
   });
+  hbs.registerHelper('btoa', function(context) {
+    btoa(context);
+  });
 
   await app.listen(process.env.PORT ?? 3000);
 }

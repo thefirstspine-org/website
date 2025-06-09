@@ -937,26 +937,64 @@
       background-position: center;
       height: 8rem;
     }
+    .card-component {
+      .card {
+        width: 400px;
+        height: 400px;
+        font-size: 16px;
+        img {
+          width: 16px;
+          height: 16px;
+        }
+        @media (width < 48rem) {
+          width: 200px;
+          height: 200px;
+          font-size: 8px;
+          img {
+            width: 8px;
+            height: 8px;
+          }
+        }
+      }
+    }
   }
   .card {
     position: relative;
     margin: auto;
     display: block;
+    color: var(--color-white);
     aspect-ratio: 1/1;
     &.card-400 {
       width: 400px;
       height: 400px;
-      font-size: 12px;
+      font-size: 16px;
+      img {
+        width: 16px;
+        height: 16px;
+      }
     }
     &.card-200 {
       width: 200px;
       height: 200px;
-      font-size: 6px;
+      font-size: 8px;
+      img {
+        width: 8px;
+        height: 8px;
+      }
     }
     &.card-100 {
       width: 100px;
       height: 100px;
-      font-size: 3px;
+      font-size: 4px;
+      img {
+        width: 4px;
+        height: 4px;
+      }
+    }
+    img {
+      margin: calc(var(--spacing) * 0);
+      display: inline-block;
+      background-color: rgba(255, 255, 255, .5);
     }
     .foreground {
       position: absolute;
@@ -968,12 +1006,15 @@
       background-position: center;
       &.creature {
         background-image: url(creature.png);
+        background-color: rgba(255, 0, 0, .5);
       }
       &.artifact {
         background: url(artifact.png);
+        background-color: rgba(0, 0, 255, .5);
       }
       &.spell {
         background: url(spell.png);
+        background-color: rgba(255, 255, 0, .5);
       }
     }
     .background {
@@ -984,6 +1025,134 @@
       height: 100%;
       background-size: cover;
       background-position: center;
+    }
+    .stat {
+      width: 40px;
+    }
+    .top-str {
+      position: absolute;
+      width: 40px;
+      text-align: center;
+      top: 7%;
+      left: 40%;
+      margin-left: -20px;
+    }
+    .top-def {
+      position: absolute;
+      width: 40px;
+      text-align: center;
+      top: 7%;
+      left: 50%;
+      margin-left: -20px;
+    }
+    .top-capacity {
+      position: absolute;
+      width: 40px;
+      text-align: center;
+      top: 7%;
+      left: 60%;
+      margin-left: -20px;
+    }
+    .bottom-str {
+      position: absolute;
+      width: 40px;
+      text-align: center;
+      bottom: 7%;
+      left: 40%;
+      margin-left: -20px;
+    }
+    .bottom-def {
+      position: absolute;
+      width: 40px;
+      text-align: center;
+      bottom: 7%;
+      left: 50%;
+      margin-left: -20px;
+    }
+    .bottom-capacity {
+      position: absolute;
+      width: 40px;
+      text-align: center;
+      bottom: 7%;
+      left: 60%;
+      margin-left: -20px;
+    }
+    .left-str {
+      position: absolute;
+      width: 40px;
+      text-align: center;
+      top: 40%;
+      left: 7%;
+      margin-left: -20px;
+    }
+    .left-def {
+      position: absolute;
+      width: 40px;
+      text-align: center;
+      top: 50%;
+      left: 7%;
+      margin-left: -20px;
+    }
+    .left-capacity {
+      position: absolute;
+      width: 40px;
+      text-align: center;
+      top: 60%;
+      left: 7%;
+      margin-left: -20px;
+    }
+    .right-str {
+      position: absolute;
+      width: 40px;
+      text-align: center;
+      top: 40%;
+      right: 7%;
+      margin-right: -20px;
+    }
+    .right-def {
+      position: absolute;
+      width: 40px;
+      text-align: center;
+      top: 50%;
+      right: 7%;
+      margin-right: -20px;
+    }
+    .right-capacity {
+      position: absolute;
+      width: 40px;
+      text-align: center;
+      top: 60%;
+      right: 7%;
+      margin-right: -20px;
+    }
+    .life {
+      position: absolute;
+      width: 40px;
+      text-align: center;
+      top: 30%;
+      left: 45%;
+      margin-left: -20px;
+    }
+    .capacity {
+      position: absolute;
+      width: 40px;
+      text-align: center;
+      top: 30%;
+      left: 55%;
+      margin-left: -20px;
+    }
+    .name {
+      position: absolute;
+      width: 70%;
+      top: 15%;
+      left: 15%;
+    }
+    .description {
+      position: absolute;
+      width: 70%;
+      text-align: left;
+      top: 50%;
+      left: 15%;
     }
   }
   .container {

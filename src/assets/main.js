@@ -3,7 +3,7 @@ import * as PetiteVue from 'petite-vue';
 const card = PetiteVue.reactive({
   $template: '#card-template',
   card: null,
-  templaet: '400',
+  template: '',
   loadAndRenderCard(id) {
     console.log(`Load card ${id}`);
     fetch(`https://game-assets.thefirstspine.fr/cards/${id}`)
@@ -14,6 +14,9 @@ const card = PetiteVue.reactive({
         });
       });
   },
+  renderCardBase64(str) {
+    this.card = JSON.parse(atob(str));
+  }
 });
 
 PetiteVue.createApp({
