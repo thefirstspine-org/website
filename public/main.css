@@ -34,6 +34,7 @@
     --color-zinc-300: oklch(87.1% 0.006 286.286);
     --color-neutral-500: oklch(55.6% 0 0);
     --color-neutral-800: oklch(26.9% 0 0);
+    --color-neutral-900: oklch(20.5% 0 0);
     --color-neutral-950: oklch(14.5% 0 0);
     --color-black: #000;
     --color-white: #fff;
@@ -317,9 +318,6 @@
   .w-screen {
     width: 100vw;
   }
-  .max-w-7xl {
-    max-width: var(--container-7xl);
-  }
   .max-w-\[75\%\] {
     max-width: 75%;
   }
@@ -553,6 +551,10 @@
     font-optical-sizing: auto;
     font-style: normal;
   }
+  .container {
+    margin-inline: auto;
+    max-width: var(--container-7xl);
+  }
   .main-content {
     overflow: hidden;
     margin-top: -100px;
@@ -571,6 +573,9 @@
     background-image: url('menu.png');
     background-repeat: no-repeat;
     background-position: center;
+    .burger {
+      display: none;
+    }
     .menu {
       z-index: 2;
       display: flex;
@@ -631,18 +636,24 @@
     }
     @media (width < 48rem) {
       margin: calc(var(--spacing) * 0);
-      background-color: var(--color-black);
+      background-color: var(--color-neutral-900);
       padding: calc(var(--spacing) * 4);
       background-image: none;
+      .burger {
+        text-align: right;
+        display: block;
+      }
       .container {
         margin-block: calc(var(--spacing) * 0);
         padding-block: calc(var(--spacing) * 0);
-        margin: 0;
       }
       .menu {
-        height: auto;
-        display: block;
+        &.opened {
+          display: block;
+        }
+        display: none;
         margin: 0;
+        height: auto;
         li {
           width: 100%;
           text-align: center;
@@ -890,6 +901,7 @@
   .container {
     position: relative;
     margin-inline: calc(var(--spacing) * 2);
+    margin-inline: auto;
     width: 100%;
     padding: calc(var(--spacing) * 5);
     @media (width >= 48rem) {

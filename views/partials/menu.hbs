@@ -1,7 +1,13 @@
 <div class="menu-bar relative">
   <div class="container">
     <div class="-mx-1">
-      <ul class="menu">
+      <div class="burger">
+        <a class="button cursor-pointer medium primary" @click="isToggled('menu-opened') ? toggleOff('menu-opened') : toggleOn('menu-opened')">
+          <i class="fa-solid fa-bars"></i>
+        </a>
+      </div>
+
+      <ul :class="{ menu: true, opened: isToggled('menu-opened') }">
         <li class="block relative">
           <div class="menu-item">
             <a class="cursor-pointer" href="/">
