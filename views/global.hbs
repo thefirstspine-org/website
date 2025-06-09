@@ -10,6 +10,7 @@
     <meta property="og:image" content="{{{env 'CMS_URL' }}}{{ seo.shareImage.url }}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link href="/main.css" rel="stylesheet">
+    <script src="/bundle.js" defer></script>
   </head>
 <body>
 
@@ -18,7 +19,6 @@
       {{> menu data=templateData.navigation }}
       <div class="main-content">
         {{> (lookup . 'page') data=pageData }}
-
         <div
           class="components-block">
           <div class="separator"></div>
@@ -78,32 +78,27 @@
             </div>
           </div>
         </div>
-
-        <!--
-        <div class="container mt-8">
-          <a @click="toggleOn('debug')" v-if="!isToggled('debug')" class="text-xs cursor-pointer">debug</a>
-          <div v-if="isToggled('debug')">
-            <p>Debug information for the SEO component:</p>
-            <div class="mt-8 bg-neutral-950 p-4 rounded-lg">
-              <code class="text-grey-400 text-monospace text-xs mt-8" style="word-wrap: break-word">{{{ json seo }}}</code>
-            </div>
-            <p>Debug information for the template:</p>
-            <div class="mt-8 bg-neutral-950 p-4 rounded-lg">
-              <code class="text-grey-400 text-monospace text-xs mt-8" style="word-wrap: break-word">{{{ json templateData }}}</code>
-            </div>
-            <p>Debug information for the current page:</p>
-            <div class="mt-8 bg-neutral-950 p-4 rounded-lg">
-              <code class="text-grey-400 text-monospace text-xs mt-8" style="word-wrap: break-word">{{{ json pageData }}}</code>
-            </div>
-          </div>
-        </div>
-        -->
-
       </div>
     </div>
   </main>
 
-  <script src="/bundle.js" defer></script>
+  <template id="card-template">
+    <div class="card-template">
+      <div class="loading" v-if="!card">Loading card...</div>
+      <div :class="`card card-${template}`" v-if="card">
+        <div :class="{
+          foreground: true,
+          creature: card.type == 'creature',
+          artifact: card.type == 'artifact',
+          spell: card.type == 'spell',
+        }"></div>
+        <div
+          class="background"
+          :style="{backgroundUrl: `url(${card.imageUrl})`}"
+          ></div>
+      </div>
+    </div>
+  </template>
 
 </body>
 </html>

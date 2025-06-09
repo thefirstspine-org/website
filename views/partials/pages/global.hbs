@@ -57,6 +57,9 @@
           {{#ifEquals this.__component 'shared.slider'}}
             {{> components/slider this }}
           {{/ifEquals}}
+          {{#ifEquals this.__component 'shared.card'}}
+            {{> components/card this }}
+          {{/ifEquals}}
         </div>
       {{/each}}
     </div>
