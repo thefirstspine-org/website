@@ -10,7 +10,6 @@
     <meta property="og:image" content="{{{env 'CMS_URL' }}}{{ seo.shareImage.url }}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link href="/main.css" rel="stylesheet">
-    <script src="/bundle.js" defer></script>
   </head>
 <body>
 
@@ -123,7 +122,7 @@
         </span>
         <span class="life">\{{ card.stats.life }}</span>
         <span class="capacity">
-          <img :src="`capacity-${card.stats.capacities[0]}.png`" />
+          <img :src="`capacity-${(card.stats.capacities ? card.stats.capacities[0] : '')}.png`" />
         </span>
         <span class="name">\{{ card.name.en }}</span>
         <span class="description">\{{ card.text.en }}</span>
@@ -131,5 +130,6 @@
     </div>
   </template>
 
+  <script src="/bundle.js" defer></script>
 </body>
 </html>

@@ -1,29 +1,26 @@
 import * as PetiteVue from 'petite-vue';
 
-const card = PetiteVue.reactive({
-  $template: '#card-template',
-  card: null,
-  template: '',
-  loadAndRenderCard(id) {
-    console.log(`Load card ${id}`);
-    fetch(`https://game-assets.thefirstspine.fr/cards/${id}`)
-      .then((response) => {
-        response.json().then((json) => {
-          console.log(`Card loaded:`,  json);
-          this.card = json;
-        });
-      });
-  },
-  renderCardBase64(str) {
-    this.card = JSON.parse(atob(str));
-  }
-});
-
 PetiteVue.createApp({
-  card
-}).mount();
-
-const app = PetiteVue.createApp({
+    card: function() {
+      return {
+        $template: '#card-template',
+        card: null,
+        template: '',
+        loadAndRenderCard(id) {
+          console.log(`Load card ${id}`);
+          fetch(`https://game-assets.thefirstspine.fr/cards/${id}`)
+            .then((response) => {
+              response.json().then((json) => {
+                console.log(`Card loaded:`,  json);
+                this.card = json;
+              });
+            });
+        },
+        renderCardBase64(str) {
+          this.card = JSON.parse(atob(str));
+        }
+      }
+    },
     toggles: {},
     toggleOn(label) {
       this.toggles[label] = true;
@@ -34,9 +31,7 @@ const app = PetiteVue.createApp({
     isToggled(label) {
       return this.toggles[label] || false;
     },
-});
-
-app.directive('click-outside', function (ctx) {
+}).directive('click-outside', function (ctx) {
   document.body.addEventListener('click', function (event) {
     // here I check that click was outside the el and his children
     if (!(ctx.el == event.target || ctx.el.contains(event.target))) {
@@ -44,6 +39,5 @@ app.directive('click-outside', function (ctx) {
       ctx.get();
     }
   });
-});
+}).mount('#app');
 
-app.mount('#app');
