@@ -17,7 +17,7 @@
     </div>
     <div class="ms-4">
       {{#each data.errors}}
-        <p>{{{i18n this}}}</p>
+        <p>{{{__ this}}}</p>
       {{/each}}
     </div>
     <button @click="toggleOn('close-toast-error')" type="button" class="ms-auto -mx-1.5 -my-1.5 text-red-400 hover:text-red-900 rounded-lg focus:ring-2 focus:ring-red-300 p-1.5 hover:bg-red-100 inline-flex items-center justify-center h-8 w-8" aria-label="Close">
@@ -38,7 +38,7 @@
         <i class="fa-solid fa-check"></i>
     </div>
     <div class="ms-4">
-        <p>{{{i18n data.success}}}</p>
+        <p>{{{__ data.success}}}</p>
     </div>
     <button @click="toggleOn('close-toast-success')" type="button" class="ms-auto -mx-1.5 -my-1.5 text-green-400 hover:text-green-900 rounded-lg focus:ring-2 focus:ring-green-300 p-1.5 hover:bg-green-100 inline-flex items-center justify-center h-8 w-8" aria-label="Close">
         <span class="sr-only">Close</span>
