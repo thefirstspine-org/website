@@ -11,7 +11,7 @@
         <li class="block relative">
           <div class="menu-item">
             <a class="cursor-pointer" href="/">
-              <span>Home</span>
+              <span>{{{i18n 'home'}}}</span>
             </a>
           </div>
         </li>
@@ -19,7 +19,7 @@
         <li class="block relative">
           <div class="menu-item">
             <a class="cursor-pointer" @click="toggleOn('News')" v-click-outside="toggleOff('News')">
-              <span>News</span>
+              <span>{{{i18n 'news'}}}</span>
               <span class="ml-4 text-neutral-500">
                 <i class="fa-solid fa-chevron-down"></i>
               </span>
@@ -41,7 +41,7 @@
         <li class="block relative">
           <div class="menu-item">
             <a class="cursor-pointer" @click="toggleOn('Play')" v-click-outside="toggleOff('Play')">
-              <span>Play</span>
+              <span>{{{i18n 'play'}}}</span>
               <span class="ml-4 text-neutral-500">
                 <i class="fa-solid fa-chevron-down"></i>
               </span>
@@ -63,7 +63,7 @@
         <li class="block relative">
           <div class="menu-item">
             <a class="cursor-pointer" @click="toggleOn('About')" v-click-outside="toggleOff('About')">
-              <span>About</span>
+              <span>{{{i18n 'about'}}}</span>
               <span class="ml-4 text-neutral-500">
                 <i class="fa-solid fa-chevron-down"></i>
               </span>

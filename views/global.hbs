@@ -39,7 +39,7 @@
                 </a>
               </div>
               <div class="mt-8">
-                <h5 class="text-xl mb-4 text-amber-500">News</h5>
+                <h5 class="text-xl mb-4 text-amber-500">{{{i18n 'news'}}}</h5>
                 {{#each templateData.navigation}}
                   {{#ifEquals this.parent 'News'}}
                   <p class="text-sm">
@@ -47,7 +47,7 @@
                   </p>
                   {{/ifEquals}}
                 {{/each}}
-                <h5 class="text-xl my-4 text-amber-500">Play</h5>
+                <h5 class="text-xl my-4 text-amber-500">{{{i18n 'play'}}}</h5>
                 {{#each templateData.navigation}}
                   {{#ifEquals this.parent 'Play'}}
                   <p class="text-sm">
@@ -57,7 +57,7 @@
                 {{/each}}
               </div>
               <div class="mt-8">
-                <h5 class="text-xl mb-4 text-amber-500">About</h5>
+                <h5 class="text-xl mb-4 text-amber-500">{{{i18n 'about'}}}</h5>
                 {{#each templateData.navigation}}
                   {{#ifEquals this.parent 'About'}}
                   <p class="text-sm">
@@ -65,7 +65,7 @@
                   </p>
                   {{/ifEquals}}
                 {{/each}}
-                <h5 class="text-xl my-4 text-amber-500">Other languages</h5>
+                <h5 class="text-xl my-4 text-amber-500">{{{i18n 'other languages'}}}</h5>
                 <p>
                   <a href="/lang/fr">
                     <img src="/fr.png" class="inline-block" />
@@ -83,7 +83,7 @@
 
   <template id="card-template">
     <div class="card-template">
-      <div class="loading" v-if="!card">Loading card...</div>
+      <div class="loading" v-if="!card">{{{i18n 'loading card'}}}</div>
       <div :class="`card card-${template}`" v-if="card">
         <div :class="{
           foreground: true,

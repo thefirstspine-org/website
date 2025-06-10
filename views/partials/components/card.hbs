@@ -2,7 +2,4 @@
   {{#if cardId}}
     <div v-scope="card" @vue:mounted="loadAndRenderCard('{{ cardId }}');"></div>
   {{/if}}
-  {{#if cardJson}}
-    <div v-scope="card" @vue:mounted="renderCardBase64('{{ cardJson }}');"></div>
-  {{/if}}
 </div>
