@@ -2,16 +2,29 @@ import { NestFactory } from '@nestjs/core';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import { join } from 'path';
 import { AppModule } from './app.module';
-import * as hbs from 'hbs';
-import * as showdown from 'showdown';
+import hbs from 'hbs';
+import showdown from 'showdown';
 import { ValidationPipe } from '@nestjs/common';
 import { ErrorFilter, LogsService, RequestsLoggerMiddleware } from '@thefirstspine/logs-nest';
+import session from 'express-session';
+import flash from 'connect-flash';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
   app.useGlobalPipes(new ValidationPipe());
   app.useGlobalFilters(new ErrorFilter(new LogsService()));
   app.use(RequestsLoggerMiddleware.use);
+  app.use(
+    session({
+      secret: '123',
+      resave: false,
+      saveUninitialized: false,
+      cookie: {
+        httpOnly: true,
+      },
+    }),
+  );
+  app.use(flash());
 
   app.useStaticAssets(join(__dirname, '..', 'public'));
   app.setBaseViewsDir(join(__dirname, '..', 'views'));

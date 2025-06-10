@@ -8,7 +8,7 @@ export class StrapiService {
   private readonly cache: Map<string, CachedRequest> = new Map();
   private readonly cacheDuration = 1000 * 60; // Cache duration in milliseconds (1 minute)
 
-  async getGlobalData(): Promise<GlobalData | null> {
+  async getGlobalData(): Promise<GlobalData | undefined> {
     // Get the page
     const data = await this.callApi(`global?populate[0]=defaultSeo&populate[1]=defaultSeo.shareImage&populate[2]=navigation`);
     return data;
