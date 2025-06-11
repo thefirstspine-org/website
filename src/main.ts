@@ -14,7 +14,7 @@ async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
   app.useGlobalPipes(new ValidationPipe());
   app.useGlobalFilters(new ErrorFilter(new LogsService()));
-  app.use(RequestsLoggerMiddleware.use);
+  // app.use(RequestsLoggerMiddleware.use);
   app.use(
     session({
       secret: '123',

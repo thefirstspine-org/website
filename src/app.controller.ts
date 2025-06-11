@@ -58,8 +58,17 @@ export class AppController {
     }
 
     // Validate email
+    const existingEmail = await this.strapiService.getEmail(dto.email, dto.campaign);
+    if (existingEmail.length > 0) {
+      req.flash(
+        'errors',
+        JSON.stringify(['the email already exists for this campaign'])
+      );
+      return res.redirect(req.headers['referer'] ? req.headers['referer'] : '/');
+    }
 
     // Send to STRAPI
+    this.strapiService.createEmail(dto.email, dto.campaign);
     req.flash(
       'success',
       'email was added'

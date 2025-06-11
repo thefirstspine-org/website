@@ -10,26 +10,26 @@ export class StrapiService {
 
   async getGlobalData(): Promise<GlobalData | undefined> {
     // Get the page
-    const data = await this.callApi(`global?populate[0]=defaultSeo&populate[1]=defaultSeo.shareImage&populate[2]=navigation`);
+    const data = await this.callApiGet(`global?populate[0]=defaultSeo&populate[1]=defaultSeo.shareImage&populate[2]=navigation`);
     return data;
   }
 
   async getArticles(categorySlug: string | undefined): Promise<any[]> {
     // Get the page
     if (categorySlug) {
-      return this.callApi(`articles?populate=*&sort=createdAt:desc&filters[category][slug][$eq]=${categorySlug}`);
+      return this.callApiGet(`articles?populate=*&sort=createdAt:desc&filters[category][slug][$eq]=${categorySlug}`);
     } else {
-      return this.callApi(`articles?populate=*&sort=createdAt:desc`);
+      return this.callApiGet(`articles?populate=*&sort=createdAt:desc`);
     }
   }
 
   async getArticle(slug: string): Promise<any | null> {
     // Get the page
-    const data = await this.callApi(`articles?populate=*&filters[slug][$eq]=${slug}`);
+    const data = await this.callApiGet(`articles?populate=*&filters[slug][$eq]=${slug}`);
     const page = data[0];
 
     // Get the blocks
-    const blocks = await this.callApi(
+    const blocks = await this.callApiGet(
       `blocks?` +
       `populate[0]=content&` +
       `populate[1]=content.button1&` +
@@ -50,14 +50,14 @@ export class StrapiService {
 
   async getPageData(path: string | null): Promise<PageData | null> {
     // Get the page
-    const pages = await this.callApi(`pages?populate[0]=seo&populate[1]=seo.shareImage&populate[2]=blocks&filters${( path ? `[canonicalUrl][$eq]=${path}` : '[canonicalUrl][$notNull]' )}`);
+    const pages = await this.callApiGet(`pages?populate[0]=seo&populate[1]=seo.shareImage&populate[2]=blocks&filters${( path ? `[canonicalUrl][$eq]=${path}` : '[canonicalUrl][$notNull]' )}`);
     if (pages.length === 0) {
       return null;
     }
     const page = pages[0];
 
     // Get the blocks
-    const blocks = await this.callApi(
+    const blocks = await this.callApiGet(
       `blocks?` +
       `populate[0]=content&` +
       `populate[1]=content.button1&` +
@@ -76,7 +76,22 @@ export class StrapiService {
     return page;
   }
 
-  async callApi(path: string): Promise<any[] | any> {
+  async getEmail(email: string, campaign: string): Promise<any[]> {
+    // Get the page
+    return this.callApiGet(`emails?filters[email][$eq]=${email}&filters[campaign][$eq]=${campaign}`);
+  }
+
+  async createEmail(email: string, campaign: string): Promise<any> {
+    this.callApiPost(
+      'emails',
+      {
+        email,
+        campaign
+      }
+    );
+  }
+
+  async callApiGet(path: string): Promise<any[] | any> {
     // Check cache
     if (this.activateCache && this.cache.has(path)) {
       const cached = this.cache.get(path);
@@ -102,6 +117,26 @@ export class StrapiService {
           data: response.data.data
         });
       }
+      return response.data.data;
+    } catch (error) {
+      console.error(`Error fetching data from Strapi API: ${JSON.stringify(error?.response?.data) || error.message}`);
+      return null;
+    }
+  }
+
+  async callApiPost(entity: string, data: any): Promise<any[] | any> {
+    // Fetch data from API
+    try {
+        const response = await axios.default.post(
+        `${process.env.CMS_URL}/api/${entity}`,
+        { data },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${process.env.CMS_TOKEN}`,
+          },
+        }
+      );
       return response.data.data;
     } catch (error) {
       console.error(`Error fetching data from Strapi API: ${JSON.stringify(error?.response?.data) || error.message}`);

@@ -6,5 +6,9 @@
   "other languages": "Other languages",
   "we are social": "We are social",
   "your email address": "Your email address...",
-  "submit": "Submit"
+  "submit": "Submit",
+  "email was added": "The email was added to the mailing list! Thank you!",
+  "email should not be empty": "The email field is mandatory",
+  "email must be an email": "The email is not a valid email address",
+  "the email already exists for this campaign": "Vous already entered your email address. Thank you!"
 }
