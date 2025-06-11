@@ -1199,6 +1199,9 @@
         list-style-position: inside;
         list-style-type: disc;
       }
+      img {
+        display: inline-block;
+      }
     }
     .article-cover {
       display: block;

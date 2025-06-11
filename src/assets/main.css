@@ -207,6 +207,9 @@
       ul {
         @apply list-disc list-inside my-4;
       }
+      img {
+        @apply inline-block;
+      }
     }
     
     .article-cover {
