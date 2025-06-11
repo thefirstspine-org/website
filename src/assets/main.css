@@ -54,6 +54,39 @@
           }
         }
       }
+      .login {
+        position: absolute;
+        right: 0;
+        width: 200px;
+        text-align: right;
+        .login-content {
+          display: flex;
+          align-items: anchor-center;
+          text-align: left;
+        }
+      }
+    }
+    @media (width < 64rem) {
+      .menu {
+        .login {
+          position: relative;
+          width: auto;
+          text-align: left;
+          .login-content {
+            display: block;
+            text-align: center;
+            img {
+              display: none;
+            }
+          }
+          .menu-item, .login-content {
+            @apply flex items-center h-10 leading-10 px-4 rounded no-underline hover:no-underline transition-colors duration-100 mx-1 text-white;
+          }
+          .login-content {
+            display: block;
+          }
+        }
+      }
     }
     @media (width < 48rem) {
       @apply bg-neutral-900 p-4 m-0;
@@ -76,7 +109,7 @@
           @apply w-full text-center;
           display: block;
         }
-        .menu-item {
+        .menu-item, .login-content {
           @apply w-full text-center;
           display: block;
           .submenu {
@@ -84,6 +117,9 @@
             text-align: center;
             display: block;
           }
+        }
+        .login-content {
+          display: block;
         }
       }
     }
