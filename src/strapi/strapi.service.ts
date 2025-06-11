@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import * as axios from 'axios';
-import locales from 'src/locale/locales';
+import locales from '../locale/locales';
 
 @Injectable()
 export class StrapiService {
