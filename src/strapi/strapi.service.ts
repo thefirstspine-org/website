@@ -1,25 +1,26 @@
 import { Injectable } from '@nestjs/common';
 import * as axios from 'axios';
+import locales from 'src/locale/locales';
 
 @Injectable()
 export class StrapiService {
 
-  private readonly activateCache = true; // Enable or disable caching
+  private readonly activateCache = false; // Enable or disable caching
   private readonly cache: Map<string, CachedRequest> = new Map();
   private readonly cacheDuration = 1000 * 60; // Cache duration in milliseconds (1 minute)
 
   async getGlobalData(): Promise<GlobalData | undefined> {
     // Get the page
-    const data = await this.callApiGet(`global?populate[0]=defaultSeo&populate[1]=defaultSeo.shareImage&populate[2]=navigation`);
+    const data = await this.callApiGet(`global?populate[0]=defaultSeo&populate[1]=defaultSeo.shareImage&populate[2]=navigation`, locales.getLocale());
     return data;
   }
 
   async getArticles(categorySlug: string | undefined): Promise<any[]> {
     // Get the page
     if (categorySlug) {
-      return this.callApiGet(`articles?populate=*&sort=createdAt:desc&filters[category][slug][$eq]=${categorySlug}`);
+      return this.callApiGet(`articles?populate=*&sort=createdAt:desc&filters[category][slug][$eq]=${categorySlug}`, locales.getLocale());
     } else {
-      return this.callApiGet(`articles?populate=*&sort=createdAt:desc`);
+      return this.callApiGet(`articles?populate=*&sort=createdAt:desc`, locales.getLocale());
     }
   }
 
@@ -40,7 +41,9 @@ export class StrapiService {
       `populate[6]=content.media&` +
       `populate[7]=content.video&` +
       `populate[8]=content.files&` +
-      `filters[page][documentId][$eq]=${page.documentId}`);
+      `filters[page][documentId][$eq]=${page.documentId}`,
+      locales.getLocale()
+    );
     page.blocks = page.blocks.map((block: Document) => {
       return blocks.find((b: Document) => b.documentId === block.documentId) || block;
     });
@@ -68,7 +71,9 @@ export class StrapiService {
       `populate[6]=content.media&` +
       `populate[7]=content.video&` +
       `populate[8]=content.files&` +
-      `filters[page][documentId][$eq]=${page.documentId}`);
+      `filters[page][documentId][$eq]=${page.documentId}`,
+      locales.getLocale()
+    );
     page.blocks = page.blocks.map((block: Document) => {
       return blocks.find((b: Document) => b.documentId === block.documentId) || block;
     });
@@ -91,10 +96,11 @@ export class StrapiService {
     );
   }
 
-  async callApiGet(path: string): Promise<any[] | any> {
+  async callApiGet(path: string, locale: string = 'en'): Promise<any[] | any> {
     // Check cache
-    if (this.activateCache && this.cache.has(path)) {
-      const cached = this.cache.get(path);
+    const cacheKey = `path:${path},locale:${locale}`;
+    if (this.activateCache && this.cache.has(cacheKey)) {
+      const cached = this.cache.get(cacheKey);
       if (cached && cached.expires > Date.now()) {
         return cached.data;
       }
@@ -102,7 +108,7 @@ export class StrapiService {
     // Fetch data from API
     try {
         const response = await axios.default.get(
-        `${process.env.CMS_URL}/api/${path}`,
+        `${process.env.CMS_URL}/api/${path}&locale=${locale}`,
         {
           headers: {
             'Content-Type': 'application/json',
@@ -112,7 +118,7 @@ export class StrapiService {
       );
       // Cache the response
       if (this.activateCache) {
-        this.cache.set(path, {
+        this.cache.set(cacheKey, {
           expires: Date.now() + this.cacheDuration,
           data: response.data.data
         });

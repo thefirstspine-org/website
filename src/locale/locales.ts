@@ -17,6 +17,10 @@ export class Locales {
     this.locale = locale;
   }
 
+  public getLocale(): string {
+    return this.locale;
+  }
+
   public __(key: string): string {
     const translation = this.translations?.[this.locale]?.[key];
     return translation ? translation : key;

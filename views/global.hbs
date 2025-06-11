@@ -124,8 +124,8 @@
         <span class="capacity">
           <img :src="`capacity-${(card.stats.capacities ? card.stats.capacities[0] : '')}.png`" />
         </span>
-        <span class="name">\{{ card.name.en }}</span>
-        <span class="description">\{{ card.text.en }}</span>
+        <span class="name">\{{ card.name['{{{getLocale}}}'] }}</span>
+        <span class="description">\{{ card.text['{{{getLocale}}}'] }}</span>
       </div>
     </div>
   </template>

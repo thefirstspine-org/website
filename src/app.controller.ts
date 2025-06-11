@@ -1,13 +1,21 @@
-import { Body, Controller, Get, Param, Post, Query, Render, Req, Res } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Query, Render, Req, Res, Session } from '@nestjs/common';
 import { GlobalData, PageData, SEO, StrapiService } from './strapi/strapi.service';
 import { Response, Request } from 'express';
 import { EmailDto } from './dtos/email.dto';
 import { validate, ValidationError } from 'class-validator';
+import locales from './locale/locales';
 
 @Controller()
 export class AppController {
-  constructor(private readonly strapiService: StrapiService) {
-    // Set language
+  constructor(
+    private readonly strapiService: StrapiService
+  ) {
+  }
+
+  @Get('/lang/:lang')
+  async lang(@Req() req: any, @Res() res: Response, @Param('lang') lang: string) {
+    req.session.language = lang;
+    return res.redirect(req.headers['referer'] ? req.headers['referer'] : '/');
   }
 
   @Get('/blog')

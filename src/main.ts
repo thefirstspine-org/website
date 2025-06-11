@@ -8,7 +8,7 @@ import { ValidationPipe } from '@nestjs/common';
 import { ErrorFilter, LogsService, RequestsLoggerMiddleware } from '@thefirstspine/logs-nest';
 import session from 'express-session';
 import flash from 'connect-flash';
-import locales from './locales';
+import locales from './locale/locales';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
@@ -51,6 +51,9 @@ async function bootstrap() {
   });
   hbs.registerHelper('__', function(arg1, context) {
     return locales.__(arg1);
+  });
+  hbs.registerHelper('getLocale', function(context) {
+    return locales.getLocale();
   });
 
   await app.listen(process.env.PORT ?? 3000);
