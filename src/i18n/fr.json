@@ -1,3 +1,15 @@
 {
-  "news": "Actualités"
+  "home": "Accueil",
+  "news": "Actualités",
+  "play": "Jouer",
+  "about": "A propos",
+  "login": "Connexion",
+  "other languages": "Autres langues",
+  "we are social": "Nos réseaux",
+  "your email address": "Votre adresse e-mail...",
+  "submit": "Envoyer",
+  "email was added": "L'adresse e-mail a été ajoutée à la liste de diffusion ! Merci !",
+  "email should not be empty": "L'adresse e-mail est obligatoire",
+  "email must be an email": "L'adresse e-mail est invalide",
+  "the email already exists for this campaign": "Vous êtes déjà inscrits ! Merci !"
 }
