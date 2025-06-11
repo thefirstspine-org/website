@@ -6,7 +6,9 @@ import { validate, ValidationError } from 'class-validator';
 
 @Controller()
 export class AppController {
-  constructor(private readonly strapiService: StrapiService) {}
+  constructor(private readonly strapiService: StrapiService) {
+    // Set language
+  }
 
   @Get('/blog')
   @Render('global')

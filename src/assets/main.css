@@ -228,19 +228,25 @@
     &.card-400 {
       width: 400px;
       height: 400px;
-      font-size: 16px;
+      font-size: 18px;
       img {
-        width: 16px;
-        height: 16px;
+        width: 18px;
+        height: 18px;
+      }
+      .name, .description {
+        font-size: 20px;
       }
     }
     &.card-200 {
       width: 200px;
       height: 200px;
-      font-size: 8px;
+      font-size: 9px;
       img {
-        width: 8px;
-        height: 8px;
+        width: 9px;
+        height: 9px;
+      }
+      .name, .description {
+        font-size: 10px;
       }
     }
     &.card-100 {
@@ -251,10 +257,12 @@
         width: 4px;
         height: 4px;
       }
+      .name, .description {
+        font-size: 5px;
+      }
     }
     img {
       @apply inline-block m-0;
-      background-color: rgba(255, 255, 255, .5);
     }
     .foreground {
       @apply absolute;
@@ -266,23 +274,20 @@
       background-position: center;
       &.creature {
         background-image: url(creature.png);
-        background-color: rgba(255, 0, 0, .5);
       }
       &.artifact {
-        background: url(artifact.png);
-        background-color: rgba(0, 0, 255, .5);
+        background-image: url(artifact.png);
       }
       &.spell {
-        background: url(spell.png);
-        background-color: rgba(255, 255, 0, .5);
+        background-image: url(spell.png);
       }
       &.player {
-        background: url(spell.png);
-        background-color: rgba(100, 100, 100, .5);
+        background-image: url(player.png);
       }
     }
     .background {
       @apply absolute;
+      background-color: grey;
       top: 0;
       left: 0;
       width: 100%;
@@ -290,133 +295,213 @@
       background-size: cover;
       background-position: center;
     }
-    .stat {
-      width: 40px;
-    }
     .top-str {
       @apply absolute;
       width: 40px;
-      text-align: center;
-      top: 7%;
-      left: 40%;
       margin-left: -20px;
+      height: 40px;
+      margin-top: -20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      top: 6%;
+      left: 34.5%;
     }
     .top-def {
       @apply absolute;
       width: 40px;
-      text-align: center;
-      top: 7%;
-      left: 50%;
       margin-left: -20px;
+      height: 40px;
+      margin-top: -20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      top: 6%;
+      left: 50%;
     }
     .top-capacity {
       @apply absolute;
       width: 40px;
-      text-align: center;
-      top: 7%;
-      left: 60%;
+      width: 40px;
       margin-left: -20px;
+      height: 40px;
+      margin-top: -20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      top: 6%;
+      left: 65%;
     }
     .bottom-str {
       @apply absolute;
       width: 40px;
-      text-align: center;
-      bottom: 7%;
-      left: 40%;
       margin-left: -20px;
+      height: 40px;
+      margin-top: -20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      bottom: 1.5%;
+      left: 34.5%;
     }
     .bottom-def {
       @apply absolute;
       width: 40px;
-      text-align: center;
-      bottom: 7%;
-      left: 50%;
       margin-left: -20px;
+      height: 40px;
+      margin-top: -20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      bottom: 1.5%;
+      left: 50%;
     }
     .bottom-capacity {
       @apply absolute;
       width: 40px;
-      text-align: center;
-      bottom: 7%;
-      left: 60%;
       margin-left: -20px;
+      height: 40px;
+      margin-top: -20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      bottom: 1.5%;
+      left: 65%;
     }
     .left-str {
       @apply absolute;
       width: 40px;
-      text-align: center;
-      top: 40%;
-      left: 7%;
       margin-left: -20px;
+      height: 40px;
+      margin-top: -20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      text-align: center;
+      top: 34%;
+      left: 6%;
     }
     .left-def {
       @apply absolute;
       width: 40px;
+      margin-left: -20px;
+      height: 40px;
+      margin-top: -20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-align: center;
       top: 50%;
-      left: 7%;
-      margin-left: -20px;
+      left: 6%;
     }
     .left-capacity {
       @apply absolute;
       width: 40px;
-      text-align: center;
-      top: 60%;
-      left: 7%;
       margin-left: -20px;
+      height: 40px;
+      margin-top: -20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      top: 65%;
+      left: 6%;
     }
     .right-str {
       @apply absolute;
       width: 40px;
+      margin-left: -20px;
+      height: 40px;
+      margin-top: -20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      top: 40%;
-      right: 7%;
-      margin-right: -20px;
+      top: 34%;
+      left: 93.5%;
     }
     .right-def {
       @apply absolute;
       width: 40px;
+      margin-left: -20px;
+      height: 40px;
+      margin-top: -20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-align: center;
       top: 50%;
-      right: 7%;
-      margin-right: -20px;
+      left: 93.5%;
     }
     .right-capacity {
       @apply absolute;
       width: 40px;
+      margin-left: -20px;
+      height: 40px;
+      margin-top: -20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      top: 60%;
-      right: 7%;
-      margin-right: -20px;
+      top: 65%;
+      left: 93.5%;
     }
     .life {
       @apply absolute;
       width: 40px;
-      text-align: center;
-      top: 30%;
-      left: 45%;
       margin-left: -20px;
+      height: 40px;
+      margin-top: -20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      top: 37%;
+      left: 42.5%;
     }
     .capacity {
       @apply absolute;
       width: 40px;
-      text-align: center;
-      top: 30%;
-      left: 55%;
       margin-left: -20px;
+      height: 40px;
+      margin-top: -20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      top: 37%;
+      left: 57.5%;
     }
     .name {
       @apply absolute;
       width: 70%;
-      top: 15%;
+      top: 23%;
       left: 15%;
+      height: 80px;
+      margin-top: -40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
     }
     .description {
       @apply absolute;
       width: 70%;
-      text-align: left;
-      top: 50%;
+      top: 64%;
       left: 15%;
+      height: 100px;
+      margin-top: -50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
     }
   }
 

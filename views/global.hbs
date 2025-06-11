@@ -85,6 +85,10 @@
     <div class="card-template">
       <div class="loading" v-if="!card">{{{__ 'loading card'}}}</div>
       <div :class="`card card-${template}`" v-if="card">
+        <div
+          class="background"
+          :style="{'backgroundImage': `url(${card.imageUrl.replace('static.thefirstspine.fr', 'game-assets.thefirstspine.fr')})`}"
+          ></div>
         <div :class="{
           foreground: true,
           creature: card.type == 'creature',
@@ -92,10 +96,6 @@
           spell: card.type == 'spell',
           player: card.type == 'player',
         }"></div>
-        <div
-          class="background"
-          :style="{backgroundUrl: `url(${card.imageUrl})`}"
-          ></div>
         <span class="top-str">\{{ card.stats.top.strength }}</span>
         <span class="top-def">\{{ card.stats.top.defense }}</span>
         <span class="top-capacity">
