@@ -26,7 +26,7 @@ export class StrapiService {
 
   async getArticle(slug: string): Promise<any | null> {
     // Get the page
-    const data = await this.callApiGet(`articles?populate=*&filters[slug][$eq]=${slug}`);
+    const data = await this.callApiGet(`articles?populate=*&filters[slug][$eq]=${slug}`, locales.getLocale());
     const page = data[0];
 
     // Get the blocks
@@ -53,7 +53,10 @@ export class StrapiService {
 
   async getPageData(path: string | null): Promise<PageData | null> {
     // Get the page
-    const pages = await this.callApiGet(`pages?populate[0]=seo&populate[1]=seo.shareImage&populate[2]=blocks&filters${( path ? `[canonicalUrl][$eq]=${path}` : '[canonicalUrl][$notNull]' )}`);
+    const pages = await this.callApiGet(
+      `pages?populate[0]=seo&populate[1]=seo.shareImage&populate[2]=blocks&filters${( path ? `[canonicalUrl][$eq]=${path}` : '[canonicalUrl][$notNull]' )}`,
+      locales.getLocale()
+    );
     if (pages.length === 0) {
       return null;
     }
