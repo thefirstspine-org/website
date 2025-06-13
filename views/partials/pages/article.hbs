@@ -1,8 +1,10 @@
 <div
   class="components-block" style="background-image: url('{{{env 'CMS_URL' }}}{{ data.cover.url }}');">
-  <h1 class="text-6xl mt-24 mb-16 text-center text-amber-500 tracking-widest uppercase text-shadow-lg">
-    {{ data.title }}
-  </h1>
+  <div class="container">
+    <h1 class="text-6xl mt-24 mb-16 text-center text-amber-500 tracking-widest uppercase text-shadow-lg">
+      {{ data.title }}
+    </h1>
+  </div>
 </div>
 
 <div
@@ -45,7 +47,7 @@
       <a class="button primary medium m-0" href="/blog">Back to the articles</a>
     </p>
     <p class="text-center pt-4 text-sm border-t-1 border-solid border-neutral-950">
-      Posted in:<br />
+      {{{__ 'posted in'}}}<br />
       <a class="button info tiny m-0" href="/blog?category={{ data.category.slug }}">#{{ data.category.name }}</a>
     </p>
   </div>

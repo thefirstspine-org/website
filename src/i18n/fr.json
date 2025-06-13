@@ -11,5 +11,8 @@
   "email was added": "L'adresse e-mail a été ajoutée à la liste de diffusion ! Merci !",
   "email should not be empty": "L'adresse e-mail est obligatoire",
   "email must be an email": "L'adresse e-mail est invalide",
-  "the email already exists for this campaign": "Vous êtes déjà inscrits ! Merci !"
+  "the email already exists for this campaign": "Vous êtes déjà inscrits ! Merci !",
+  "featured post": "Article en vedette",
+  "read more": "Continuer à lire",
+  "posted in": "Catégorie :"
 }
