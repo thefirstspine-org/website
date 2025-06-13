@@ -5,7 +5,6 @@ import locales from '../locale/locales';
 @Injectable()
 export class StrapiService {
 
-  private readonly activateCache = true; // Enable or disable caching
   private readonly cache: Map<string, CachedRequest> = new Map();
   private readonly cacheDuration = 1000 * 60; // Cache duration in milliseconds (1 minute)
 
@@ -86,7 +85,7 @@ export class StrapiService {
 
   async getEmail(email: string, campaign: string): Promise<any[]> {
     // Get the page
-    return this.callApiGet(`emails?filters[email][$eq]=${email}&filters[campaign][$eq]=${campaign}`);
+    return this.callApiGet(`emails?filters[email][$eq]=${email}&filters[campaign][$eq]=${campaign}`, undefined, true);
   }
 
   async createEmail(email: string, campaign: string): Promise<any> {
@@ -99,10 +98,10 @@ export class StrapiService {
     );
   }
 
-  async callApiGet(path: string, locale: string = 'en'): Promise<any[] | any> {
+  async callApiGet(path: string, locale: string = 'en', deactivateCache = false): Promise<any[] | any> {
     // Check cache
     const cacheKey = `path:${path},locale:${locale}`;
-    if (this.activateCache && this.cache.has(cacheKey)) {
+    if (!deactivateCache && this.cache.has(cacheKey)) {
       const cached = this.cache.get(cacheKey);
       if (cached && cached.expires > Date.now()) {
         return cached.data;
@@ -120,7 +119,7 @@ export class StrapiService {
         }
       );
       // Cache the response
-      if (this.activateCache) {
+      if (!deactivateCache) {
         this.cache.set(cacheKey, {
           expires: Date.now() + this.cacheDuration,
           data: response.data.data
