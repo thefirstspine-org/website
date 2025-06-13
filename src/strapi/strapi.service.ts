@@ -5,7 +5,7 @@ import locales from '../locale/locales';
 @Injectable()
 export class StrapiService {
 
-  private readonly activateCache = false; // Enable or disable caching
+  private readonly activateCache = true; // Enable or disable caching
   private readonly cache: Map<string, CachedRequest> = new Map();
   private readonly cacheDuration = 1000 * 60; // Cache duration in milliseconds (1 minute)
 
