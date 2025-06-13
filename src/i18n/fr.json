@@ -14,5 +14,8 @@
   "the email already exists for this campaign": "Vous êtes déjà inscrits ! Merci !",
   "featured post": "Article en vedette",
   "read more": "Continuer à lire",
-  "posted in": "Catégorie :"
+  "posted in": "Catégorie :",
+  "not found": "Page introuvable",
+  "the page does not exist": "La page que vous recherchez n'existe pas",
+  "back home": "Retour à l'accueil"
 }
