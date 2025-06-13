@@ -17,5 +17,11 @@
   "posted in": "Catégorie :",
   "not found": "Page introuvable",
   "the page does not exist": "La page que vous recherchez n'existe pas",
-  "back home": "Retour à l'accueil"
+  "back home": "Retour à l'accueil",
+  "email address": "Adresse e-mail",
+  "password": "Mot de passe",
+  "create an account": "Créer un compte",
+  "lost password": "Mot de passe perdu",
+  "password must be longer than or equal to 8 characters": "Le mot de passe doit contenir plus de 8 caractères",
+  "Unauthorized": "Adresse e-mail ou mot de passe non valides"
 }

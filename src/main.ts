@@ -17,7 +17,7 @@ async function bootstrap() {
   // app.use(RequestsLoggerMiddleware.use);
   app.use(
     session({
-      secret: '123',
+      secret: process.env.SESSION_SECRET ?? '',
       resave: false,
       saveUninitialized: false,
       cookie: {

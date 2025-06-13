@@ -17,5 +17,11 @@
   "posted in": "Posted in:",
   "not found": "Not found",
   "the page does not exist": "The page you are looking for does not exist",
-  "back home": "Back to homepage"
+  "back home": "Back to homepage",
+  "email address": "Email address",
+  "password": "Password",
+  "create an account": "Create an account",
+  "lost password": "Password lost",
+  "password must be longer than or equal to 8 characters": "Your password must be longer than 8 characters",
+  "Unauthorized": "Invalid email address or password"
 }

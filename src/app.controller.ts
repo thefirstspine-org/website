@@ -3,12 +3,13 @@ import { GlobalData, PageData, SEO, StrapiService } from './strapi/strapi.servic
 import { Response, Request } from 'express';
 import { EmailDto } from './dtos/email.dto';
 import { validate, ValidationError } from 'class-validator';
-import locales from './locale/locales';
+import { AccountService } from './account/account.service';
 
 @Controller()
 export class AppController {
   constructor(
-    private readonly strapiService: StrapiService
+    private readonly strapiService: StrapiService,
+    private readonly accountService: AccountService,
   ) {
   }
 
@@ -82,6 +83,43 @@ export class AppController {
       'email was added'
     );
     return res.redirect(req.headers['referer'] ? req.headers['referer'] : '/');
+  }
+
+  @Post('/login')
+  @Render('global')
+  async loginAttempt(@Req() req: Request, @Body() body: any) {
+    const result = await this.accountService.login(body.email, body.password);
+    const templateData = await this.strapiService.getGlobalData();
+    if (result.errors) {
+      return {
+        page: 'pages/login',
+        seo: templateData?.defaultSeo,
+        pageData: {
+          errors: result.errors,
+          success: undefined,
+        },
+        templateData,
+      };
+    } else {
+      
+    }
+  }
+
+  @Get('/login')
+  @Render('global')
+  async login(@Req() req: Request) {
+    const templateData = await this.strapiService.getGlobalData();
+    const errorsFlashed = req.flash('errors');
+    const successFlashed = req.flash('success');
+    return {
+      page: 'pages/login',
+      seo: templateData?.defaultSeo,
+      pageData: {
+        errors: errorsFlashed.length ? JSON.parse(errorsFlashed[0]) : undefined,
+        success: successFlashed.length ? successFlashed[0] : undefined,
+      },
+      templateData,
+    };
   }
 
   /**

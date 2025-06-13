@@ -5,15 +5,18 @@ import { StrapiModule } from './strapi/strapi.module';
 import { ConfigModule } from '@nestjs/config';
 import { LocaleModule } from './locale/locale.module';
 import { LocaleMiddleware } from './locale/locale.middleware';
+import { AccountModule } from './account/account.module';
+import { AccountService } from './account/account.service';
 
 @Module({
   imports: [
     StrapiModule,
     ConfigModule.forRoot(),
     LocaleModule,
+    AccountModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, AccountService],
 })
 export class AppModule {
   configure(consumer: MiddlewareConsumer) {
