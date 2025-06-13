@@ -15,7 +15,7 @@ export class AppController {
   @Get('/lang/:lang')
   async lang(@Req() req: any, @Res() res: Response, @Param('lang') lang: string) {
     req.session.language = lang;
-    return res.redirect(req.headers['referer'] ? req.headers['referer'] : '/');
+    return res.redirect('/');
   }
 
   @Get('/blog')
