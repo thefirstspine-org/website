@@ -1,30 +1,7 @@
 <div class="code-form">
   <form action="/email" method="post">
     <div class="w-full max-w-sm min-w-[200px] mx-auto">
-      <input
-        type="email"
-        name="email"
-        class="
-          w-full
-          bg-transparent
-          placeholder:text-slate-400
-          text-white
-          text-xl
-          border
-          border-amber-200
-          rounded-md
-          px-3
-          py-3
-          mb-4
-          transition
-          duration-300
-          ease
-          focus:outline-none
-          focus:border-amber-400
-          hover:border-amber-300
-          shadow-sm
-          focus:shadow
-        " placeholder="{{{__ 'your email address'}}}" />
+      <input type="email" name="email" class="input mb-4" placeholder="{{{__ 'your email address'}}}" />
     </div>
     <input class="button primary medium cursor-pointer" type="submit" value="{{{__ 'submit'}}}" />
     <input type="hidden" name="campaign" value="{{ campaign }}" />

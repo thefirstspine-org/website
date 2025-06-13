@@ -42,7 +42,7 @@
     .menu {
       @apply flex w-full flex-wrap items-center h-10 z-2;
       .menu-item {
-        @apply flex items-center h-10 leading-10 px-8 rounded no-underline hover:no-underline transition-colors duration-100 mx-1 text-white;
+        @apply flex items-center h-10 leading-10 px-8 rounded no-underline hover:no-underline transition-colors duration-500 mx-1 text-white;
         .submenu {
           @apply absolute bg-neutral-800/90 text-white rounded shadow-lg p-4 z-1;
           position: absolute;
@@ -80,7 +80,7 @@
             }
           }
           .menu-item, .login-content {
-            @apply flex items-center h-10 leading-10 px-4 rounded no-underline hover:no-underline transition-colors duration-100 mx-1 text-white;
+            @apply flex items-center h-10 leading-10 px-4 rounded no-underline hover:no-underline transition-colors duration-500 mx-1 text-white;
           }
           .login-content {
             display: block;
@@ -125,8 +125,12 @@
     }
   }
 
+  .input {
+    @apply w-full bg-transparent placeholder:text-slate-400 text-white text-xl border border-amber-200 rounded-md px-3 py-3 transition duration-500 focus:outline-none focus:border-amber-400 hover:border-amber-300 shadow-sm focus:shadow
+  }
+
   .button {
-    @apply text-white me-2 rounded-full inline-block transition-colors duration-200 border-2 border-zinc-300/50 shadow-lg;
+    @apply text-white me-2 rounded-full inline-block transition-colors duration-500 border-2 border-zinc-300/50 shadow-lg;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
     &.primary {
       @apply bg-linear-to-b from-amber-300 to-amber-500 hover:to-amber-400 text-amber-950;
@@ -209,6 +213,9 @@
       }
       img {
         @apply inline-block;
+      }
+      a {
+        @apply text-amber-300 hover:text-amber-500 transition-colors duration-500 font-bold;
       }
     }
     
