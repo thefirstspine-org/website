@@ -14,7 +14,6 @@ export class AccountService {
           },
         }
       );
-      console.log(response.data);
       return response.data;
     } catch (error) {
       return {
@@ -28,4 +27,6 @@ export class AccountService {
 
 export interface LoginResult {
   errors?: string[];
+  access_token?: string;
+  refresh_token?: string;
 }

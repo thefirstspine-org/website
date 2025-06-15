@@ -86,22 +86,19 @@ export class AppController {
   }
 
   @Post('/login')
-  @Render('global')
-  async loginAttempt(@Req() req: Request, @Body() body: any) {
+  async loginAttempt(@Req() req: Request, @Body() body: any, @Res() res: Response, @Session() session: Record<string, any>) {
     const result = await this.accountService.login(body.email, body.password);
     const templateData = await this.strapiService.getGlobalData();
     if (result.errors) {
-      return {
-        page: 'pages/login',
-        seo: templateData?.defaultSeo,
-        pageData: {
-          errors: result.errors,
-          success: undefined,
-        },
-        templateData,
-      };
+      req.flash(
+        'errors',
+        JSON.stringify(result.errors)
+      );
+      return res.redirect('/login');
     } else {
-      
+      session.access_token = result.access_token;
+      session.refresh_token = result.refresh_token;
+      return res.redirect('/account');
     }
   }
 

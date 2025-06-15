@@ -7,6 +7,7 @@ import { LocaleModule } from './locale/locale.module';
 import { LocaleMiddleware } from './locale/locale.middleware';
 import { AccountModule } from './account/account.module';
 import { AccountService } from './account/account.service';
+import { AccountMiddleware } from './account/account.middleware';
 
 @Module({
   imports: [
@@ -22,6 +23,9 @@ export class AppModule {
   configure(consumer: MiddlewareConsumer) {
     consumer
       .apply(LocaleMiddleware)
+      .forRoutes(AppController);
+    consumer
+      .apply(AccountMiddleware)
       .forRoutes(AppController);
   }
 }
