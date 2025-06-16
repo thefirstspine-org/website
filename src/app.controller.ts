@@ -24,7 +24,7 @@ export class AppController {
   async blog(@Req() req: Request, @Query('category') category: string | undefined) {
     const templateData = await this.strapiService.getGlobalData();
     const articles: any[] = await this.strapiService.getArticles(category);
-    const featuredArticle = category ? null : articles.splice(0, 1)[0];
+    const featuredArticle = category ? null : articles[0];
     return {
       page: 'pages/blog',
       seo: templateData?.defaultSeo,
