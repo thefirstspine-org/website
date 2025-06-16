@@ -5,7 +5,7 @@ import locales from '../locale/locales';
 @Injectable()
 export class StrapiService {
 
-  private readonly cache: Map<string, CachedRequest> = new Map();
+  private readonly cache: {[key: string]: CachedRequest} = {}
   private readonly cacheDuration = 1000 * 60; // Cache duration in milliseconds (1 minute)
 
   async getGlobalData(): Promise<GlobalData | undefined> {
@@ -101,10 +101,10 @@ export class StrapiService {
   async callApiGet(path: string, locale: string = 'en', deactivateCache = false): Promise<any[] | any> {
     // Check cache
     const cacheKey = `path:${path},locale:${locale}`;
-    if (!deactivateCache && this.cache.has(cacheKey)) {
-      const cached = this.cache.get(cacheKey);
+    if (!deactivateCache && this.cache[cacheKey] != undefined) {
+      const cached = this.cache[cacheKey];
       if (cached && cached.expires > Date.now()) {
-        return cached.data;
+        return JSON.parse(JSON.stringify(cached.data)); // deep clone response
       }
     }
     // Fetch data from API
@@ -120,10 +120,10 @@ export class StrapiService {
       );
       // Cache the response
       if (!deactivateCache) {
-        this.cache.set(cacheKey, {
+        this.cache[cacheKey] = {
           expires: Date.now() + this.cacheDuration,
           data: response.data.data
-        });
+        };
       }
       return response.data.data;
     } catch (error) {
