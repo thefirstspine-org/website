@@ -57,6 +57,7 @@
     --container-sm: 24rem;
     --container-md: 28rem;
     --container-lg: 32rem;
+    --container-5xl: 64rem;
     --container-7xl: 80rem;
     --text-sm: 0.875rem;
     --text-sm--line-height: calc(1.25 / 0.875);
@@ -373,6 +374,9 @@
   .h-16 {
     height: calc(var(--spacing) * 16);
   }
+  .h-auto {
+    height: auto;
+  }
   .h-screen {
     height: 100vh;
   }
@@ -393,6 +397,9 @@
   }
   .w-screen {
     width: 100vw;
+  }
+  .max-w-5xl {
+    max-width: var(--container-5xl);
   }
   .max-w-\[75\%\] {
     max-width: 75%;
@@ -693,6 +700,11 @@
       --tw-ring-color: var(--color-red-300);
     }
   }
+  .md\:h-33 {
+    @media (width >= 48rem) {
+      height: calc(var(--spacing) * 33);
+    }
+  }
   .md\:grid-cols-3 {
     @media (width >= 48rem) {
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -701,6 +713,11 @@
   .md\:grid-cols-4 {
     @media (width >= 48rem) {
       grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+  .md\:overflow-hidden {
+    @media (width >= 48rem) {
+      overflow: hidden;
     }
   }
   .lg\:grid-cols-3 {

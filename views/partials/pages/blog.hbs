@@ -33,11 +33,11 @@
     <div class="m-auto grid grid-cols-1 gap-8 md:grid-cols-3 lg:grid-cols-3 mt-16">
       {{#each data.articles}}
       <div class="border-2 border-solid border-neutral-950 p-8">
-        <h3 class="text-xl mb-4 text-center text-amber-500 tracking-widest uppercase text-shadow-lg">
+        <h3 class="text-xl mb-4 text-center text-amber-500 tracking-widest uppercase text-shadow-lg h-16">
           {{ this.title }}
         </h3>
         <div class="article-cover mb-4" style="background-image: url('{{{env 'CMS_URL' }}}{{ this.cover.url }}');"></div>
-        <p class="mb-4">
+        <p class="mb-4 h-auto md:h-33 md:overflow-hidden">
           {{ this.description }}
         </p>
         <p class="text-center mb-4">
