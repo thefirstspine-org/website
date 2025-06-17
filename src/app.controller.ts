@@ -85,23 +85,6 @@ export class AppController {
     return res.redirect(req.headers['referer'] ? req.headers['referer'] : '/');
   }
 
-  @Post('/login')
-  async loginAttempt(@Req() req: Request, @Body() body: any, @Res() res: Response, @Session() session: Record<string, any>) {
-    const result = await this.accountService.login(body.email, body.password);
-    const templateData = await this.strapiService.getGlobalData();
-    if (result.errors) {
-      req.flash(
-        'errors',
-        JSON.stringify(result.errors)
-      );
-      return res.redirect('/login');
-    } else {
-      session.access_token = result.access_token;
-      session.refresh_token = result.refresh_token;
-      return res.redirect('/account');
-    }
-  }
-
   @Get('/login')
   @Render('global')
   async login(@Req() req: Request) {
@@ -117,6 +100,22 @@ export class AppController {
       },
       templateData,
     };
+  }
+
+  @Post('/login')
+  async loginAttempt(@Req() req: Request, @Body() body: any, @Res() res: Response, @Session() session: Record<string, any>) {
+    const result = await this.accountService.login(body.email, body.password);
+    if (result.errors) {
+      req.flash(
+        'errors',
+        JSON.stringify(result.errors)
+      );
+      return res.redirect('/login');
+    } else {
+      session.access_token = result.access_token;
+      session.refresh_token = result.refresh_token;
+      return res.redirect('/account');
+    }
   }
 
   /**
