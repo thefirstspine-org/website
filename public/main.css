@@ -493,6 +493,9 @@
     --tw-border-style: solid;
     border-style: solid;
   }
+  .border-neutral-900 {
+    border-color: var(--color-neutral-900);
+  }
   .border-neutral-950 {
     border-color: var(--color-neutral-950);
   }
@@ -648,6 +651,20 @@
   }
   .text-shadow-lg {
     text-shadow: 0px 1px 2px var(--tw-text-shadow-color, rgb(0 0 0 / 0.1)), 0px 3px 2px var(--tw-text-shadow-color, rgb(0 0 0 / 0.1)), 0px 4px 8px var(--tw-text-shadow-color, rgb(0 0 0 / 0.1));
+  }
+  .hover\:border-amber-400 {
+    &:hover {
+      @media (hover: hover) {
+        border-color: var(--color-amber-400);
+      }
+    }
+  }
+  .hover\:bg-amber-950 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-amber-950);
+      }
+    }
   }
   .hover\:bg-green-100 {
     &:hover {

@@ -32,7 +32,7 @@
   <div class="container">
     <div class="m-auto grid grid-cols-1 gap-8 md:grid-cols-3 lg:grid-cols-3 mt-16">
       {{#each data.articles}}
-      <div class="border-2 border-solid border-neutral-950 p-8">
+      <a class="border-2 border-solid border-neutral-900 p-8 hover:bg-amber-950 hover:border-amber-400 transition-colors duration-500" href="/blog/{{ this.slug }}">
         <h3 class="text-xl mb-4 text-center text-amber-500 tracking-widest uppercase text-shadow-lg h-16">
           {{ this.title }}
         </h3>
@@ -40,14 +40,7 @@
         <p class="mb-4 h-auto md:h-33 md:overflow-hidden">
           {{ this.description }}
         </p>
-        <p class="text-center mb-4">
-          <a class="button primary medium m-0" href="/blog/{{ this.slug }}">{{{__ 'read more'}}}</a>
-        </p>
-        <p class="text-center pt-4 text-sm border-t-1 border-solid border-neutral-950">
-          {{{__ 'posted in'}}}<br />
-          <a class="button info tiny m-0" href="/blog?category={{ this.category.slug }}">#{{ this.category.name }}</a>
-        </p>
-      </div>
+      </a>
       {{/each}}
     </div>
   </div>
