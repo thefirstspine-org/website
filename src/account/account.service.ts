@@ -7,6 +7,10 @@ export class AccountService {
     return this.callApi('login', {email, password});
   }
 
+  public async signup(email: string, password: string): Promise<SignupResult> {
+    return this.callApi('signup', {email, password, meta: {}});
+  }
+
   public async callApi(path: string, data: any): Promise<any> {
     try {
       const response = await axios.default.post(
@@ -33,4 +37,10 @@ export interface LoginResult {
   errors?: string[];
   access_token?: string;
   refresh_token?: string;
+}
+
+export interface SignupResult {
+  errors?: string[];
+  user_id?: number;
+  meta?: {[key: string]: string | number | boolean};
 }

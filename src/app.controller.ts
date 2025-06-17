@@ -118,6 +118,45 @@ export class AppController {
     }
   }
 
+  @Get('/register')
+  @Render('global')
+  async register(@Req() req: Request) {
+    const templateData = await this.strapiService.getGlobalData();
+    const errorsFlashed = req.flash('errors');
+    const successFlashed = req.flash('success');
+    return {
+      page: 'pages/register',
+      seo: templateData?.defaultSeo,
+      pageData: {
+        errors: errorsFlashed.length ? JSON.parse(errorsFlashed[0]) : undefined,
+        success: successFlashed.length ? successFlashed[0] : undefined,
+      },
+      templateData,
+    };
+  }
+
+  @Post('/register')
+  async registerAttempt(@Req() req: Request, @Body() body: any, @Res() res: Response, @Session() session: Record<string, any>) {
+    if (body.password != body.password_confirm) {
+      req.flash(
+        'errors',
+        JSON.stringify(['the passwords are not matching'])
+      );
+      return res.redirect('/register');
+    }
+    const result = await this.accountService.signup(body.email, body.password);
+    if (result.errors) {
+      req.flash(
+        'errors',
+        JSON.stringify(result.errors)
+      );
+      return res.redirect('/login');
+    } else {
+      // Forward request to login
+      return this.loginAttempt(req, body, res, session);
+    }
+  }
+
   /**
    * Homepage route
    * @param req Request object

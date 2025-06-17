@@ -23,5 +23,6 @@
   "create an account": "Créer un compte",
   "lost password": "Mot de passe perdu",
   "password must be longer than or equal to 8 characters": "Le mot de passe doit contenir plus de 8 caractères",
-  "Unauthorized": "Adresse e-mail ou mot de passe non valides"
+  "Unauthorized": "Adresse e-mail ou mot de passe non valides",
+  "confirm password": "Confirmez votre mot de passe"
 }
