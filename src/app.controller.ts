@@ -41,6 +41,14 @@ export class AppController {
   async article(@Req() req: Request, @Param('slug') slug) {
     const templateData = await this.strapiService.getGlobalData();
     const article: any = await this.strapiService.getArticle(slug);
+    if (!article) {
+      return {
+        page: 'pages/404',
+        templateData,
+        pageData: undefined,
+        seo: undefined,
+      };
+    }
     return {
       page: 'pages/article',
       seo: templateData?.defaultSeo,

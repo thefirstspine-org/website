@@ -26,6 +26,9 @@ export class StrapiService {
   async getArticle(slug: string): Promise<any | null> {
     // Get the page
     const data = await this.callApiGet(`articles?populate=*&filters[slug][$eq]=${slug}`, locales.getLocale());
+    if (data.length === 0) {
+      return null;
+    }
     const page = data[0];
 
     // Get the blocks
