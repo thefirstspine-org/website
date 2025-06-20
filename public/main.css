@@ -1412,6 +1412,7 @@
       display: inline-block;
     }
     .stat-inline {
+      display: inline-block;
       height: calc(var(--spacing) * 8);
       width: calc(var(--spacing) * 8);
       border-radius: calc(infinity * 1px);
@@ -1653,12 +1654,12 @@
     }
     .description {
       position: absolute;
+      display: block;
       width: 70%;
       top: 64%;
       left: 15%;
       height: 100px;
       margin-top: -50px;
-      display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;

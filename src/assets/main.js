@@ -20,7 +20,6 @@ PetiteVue.createApp({
       },
       renderTags(str) {
         return str
-          .replace(/ /g, '&nbsp;')
           .replace(/\{artifact\}/g, '<span class="text-blue-500">')
           .replace(/\{\/artifact\}/g, '</span>')
           .replace(/\{creature\}/g, '<span class="text-red-500">')

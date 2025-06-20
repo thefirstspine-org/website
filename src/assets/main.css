@@ -320,7 +320,7 @@
       @apply inline-block m-0;
     }
     .stat-inline {
-      @apply rounded-full text-white px-1 w-8 h-8 text-center border-2 border-solid border-white;
+      @apply rounded-full text-white px-1 w-8 h-8 text-center border-2 border-solid border-white inline-block;
     }
     .foreground {
       @apply absolute;
@@ -550,13 +550,12 @@
       text-align: center;
     }
     .description {
-      @apply absolute;
+      @apply absolute block;
       width: 70%;
       top: 64%;
       left: 15%;
       height: 100px;
       margin-top: -50px;
-      display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
