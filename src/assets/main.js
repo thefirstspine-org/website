@@ -18,6 +18,24 @@ PetiteVue.createApp({
       renderCardBase64(str) {
         this.card = JSON.parse(atob(str));
       },
+      renderTags(str) {
+        return str
+          .replace(/ /g, '&nbsp;')
+          .replace(/\{artifact\}/g, '<span class="text-blue-500">')
+          .replace(/\{\/artifact\}/g, '</span>')
+          .replace(/\{creature\}/g, '<span class="text-red-500">')
+          .replace(/\{\/creature\}/g, '</span>')
+          .replace(/\{player\}/g, '<span class="text-gray-500">')
+          .replace(/\{\/player\}/g, '</span>')
+          .replace(/\{spell\}/g, '<span class="text-yellow-500">')
+          .replace(/\{\/spell\}/g, '</span>')
+          .replace(/\{def\}/g, '<span class="stat-inline bg-blue-500">')
+          .replace(/\{\/def\}/g, '</span>')
+          .replace(/\{str\}/g, '<span class="stat-inline bg-red-500">')
+          .replace(/\{\/str\}/g, '</span>')
+          .replace(/\{life\}/g, '<span class="stat-inline bg-gray-800">')
+          .replace(/\{\/life\}/g, '</span>');
+      }
     }),
     app: PetiteVue.reactive({
       toggles: {},
