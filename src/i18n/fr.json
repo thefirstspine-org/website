@@ -28,5 +28,6 @@
   "password-lost": "Mot de passe perdu",
   "we've got this. insert your email addresse below and we will send you a new password. do not forget to change it afterwards!": "Ne vous inquiétez pas. Indiquez votre adresse e-mail ci-dessous et nous vous enverrons un nouveau mot de passe. N'oubliez pas de le changer par la suite !",
   "an email with a new password was sent to your email address": "Un e-mail avec un nouveau mot de passe a été envoyé à votre adresse e-mail. Veuillez vérifier votre boîte de réception.",
-  "account": "Compte"
+  "account": "Compte",
+  "your wizard account": "Votre compte sorcier"
 }

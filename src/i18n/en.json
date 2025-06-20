@@ -28,5 +28,6 @@
   "password-lost": "Password lost",
   "we've got this. insert your email addresse below and we will send you a new password. do not forget to change it afterwards!": "We've got this. Insert your email address below and we will send you a new password. Do not forget to change it afterwards!",
   "an email with a new password was sent to your email address": "An email with a new password was sent to your email address. Please check your inbox.",
-  "account": "Account"
+  "account": "Account",
+  "your wizard account": "Your wizard account"
 }

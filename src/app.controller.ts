@@ -208,6 +208,28 @@ export class AppController {
     }
   }
 
+  @Get('/account')
+  @Render('global')
+  async account(@Req() req: any) {
+    const templateData = await this.strapiService.getGlobalData();
+    const errorsFlashed = req.flash('errors');
+    const successFlashed = req.flash('success');
+
+    if (!req.userId) {
+      return { page: 'pages/404', templateData, pageData: undefined, seo: undefined };
+    }
+
+    return {
+      page: 'pages/account',
+      seo: templateData?.defaultSeo,
+      pageData: {
+        errors: errorsFlashed.length ? JSON.parse(errorsFlashed[0]) : undefined,
+        success: successFlashed.length ? successFlashed[0] : undefined,
+      },
+      templateData,
+    };
+  }
+
   /**
    * Homepage route
    * @param req Request object
