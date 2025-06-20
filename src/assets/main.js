@@ -38,6 +38,11 @@ PetiteVue.createApp({
     }),
     app: PetiteVue.reactive({
       toggles: {},
+      mounted: false,
+      userInfo: {
+        isLoggedIn: false,
+        userId: null,
+      },
       toggleOn(label) {
         this.toggles[label] = true;
       },
@@ -47,6 +52,13 @@ PetiteVue.createApp({
       isToggled(label) {
         return this.toggles[label] || false;
       },
+      async mount() {
+        this.mounted = true;
+        console.log('App mounted');
+        const request = await fetch('/user-info');
+        const data = await request.json();
+        this.userInfo = data;
+      }
     })
 }).directive('click-outside', function (ctx) {
   document.body.addEventListener('click', function (event) {

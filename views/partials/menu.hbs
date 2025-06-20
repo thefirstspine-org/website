@@ -83,10 +83,16 @@
         </li>
 
         <li class="block login">
-          <a class="cursor-pointer" href="/login">
+          <a class="cursor-pointer" v-if="!userInfo.isLoggedIn" href="/login">
             <div class="login-content">
               <img class="mr-4" src="/menu-login.png" />
               <span>{{{__ 'login'}}}</span>
+            </div>
+          </a>
+          <a class="cursor-pointer" v-if="userInfo.isLoggedIn" href="/account">
+            <div class="login-content">
+              <img class="mr-4" src="/menu-login.png" />
+              <span>{{{__ 'account'}}}</span>
             </div>
           </a>
         </li>

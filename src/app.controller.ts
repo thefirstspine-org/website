@@ -19,6 +19,14 @@ export class AppController {
     return res.redirect('/');
   }
 
+  @Get('/user-info')
+  async userInfo(@Req() req: any) {
+    return {
+      isLoggedIn: !!req.userId,
+      userId: req.userId || null,
+    };
+  }
+
   @Get('/blog')
   @Render('global')
   async blog(@Req() req: Request, @Query('category') category: string | undefined) {

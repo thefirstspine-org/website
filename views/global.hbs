@@ -13,9 +13,11 @@
   </head>
 <body>
 
-  <main id="app" v-scope="app">
+  <main id="app" v-scope="app" @vue:mounted="mount">
     <div>
-      {{> menu data=templateData.navigation }}
+      <div v-if="mounted">
+        {{> menu data=templateData.navigation }}
+      </div>
       <div class="main-content">
         {{> (lookup . 'page') data=pageData }}
         <div
