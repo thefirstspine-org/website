@@ -11,6 +11,10 @@ export class AccountService {
     return this.callApi('signup', {email, password, meta: {}});
   }
 
+  public async resetPassword(email: string): Promise<SignupResult> {
+    return this.callApi('reset-password', {email});
+  }
+
   public async callApi(path: string, data: any): Promise<any> {
     try {
       const response = await axios.default.post(

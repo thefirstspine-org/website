@@ -24,5 +24,8 @@
   "lost password": "Password lost",
   "password must be longer than or equal to 8 characters": "Your password must be longer than 8 characters",
   "Unauthorized": "Invalid email address or password",
-  "confirm password": "Confirm your password"
+  "confirm password": "Confirm your password",
+  "password-lost": "Password lost",
+  "we've got this. insert your email addresse below and we will send you a new password. do not forget to change it afterwards!": "We've got this. Insert your email address below and we will send you a new password. Do not forget to change it afterwards!",
+  "an email with a new password was sent to your email address": "An email with a new password was sent to your email address. Please check your inbox."
 }

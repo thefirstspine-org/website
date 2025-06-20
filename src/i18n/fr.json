@@ -24,5 +24,8 @@
   "lost password": "Mot de passe perdu",
   "password must be longer than or equal to 8 characters": "Le mot de passe doit contenir plus de 8 caractères",
   "Unauthorized": "Adresse e-mail ou mot de passe non valides",
-  "confirm password": "Confirmez votre mot de passe"
+  "confirm password": "Confirmez votre mot de passe",
+  "password-lost": "Mot de passe perdu",
+  "we've got this. insert your email addresse below and we will send you a new password. do not forget to change it afterwards!": "Ne vous inquiétez pas. Indiquez votre adresse e-mail ci-dessous et nous vous enverrons un nouveau mot de passe. N'oubliez pas de le changer par la suite !",
+  "an email with a new password was sent to your email address": "Un e-mail avec un nouveau mot de passe a été envoyé à votre adresse e-mail. Veuillez vérifier votre boîte de réception."
 }

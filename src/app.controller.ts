@@ -157,6 +157,41 @@ export class AppController {
     }
   }
 
+  @Get('/lost-password')
+  @Render('global')
+  async lostPassword(@Req() req: Request) {
+    const templateData = await this.strapiService.getGlobalData();
+    const errorsFlashed = req.flash('errors');
+    const successFlashed = req.flash('success');
+    return {
+      page: 'pages/lostpassword',
+      seo: templateData?.defaultSeo,
+      pageData: {
+        errors: errorsFlashed.length ? JSON.parse(errorsFlashed[0]) : undefined,
+        success: successFlashed.length ? successFlashed[0] : undefined,
+      },
+      templateData,
+    };
+  }
+
+  @Post('/lost-password')
+  async lostPasswordAttempt(@Req() req: Request, @Body() body: any, @Res() res: Response, @Session() session: Record<string, any>) {
+    const result = await this.accountService.resetPassword(body.email);
+    if (result.errors) {
+      req.flash(
+        'errors',
+        JSON.stringify(result.errors)
+      );
+      return res.redirect('/lost-password');
+    } else {
+      req.flash(
+        'success',
+        'an email with a new password was sent to your email address'
+      );
+      return res.redirect('/lost-password');
+    }
+  }
+
   /**
    * Homepage route
    * @param req Request object
