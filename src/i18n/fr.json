@@ -29,5 +29,11 @@
   "we've got this. insert your email addresse below and we will send you a new password. do not forget to change it afterwards!": "Ne vous inquiétez pas. Indiquez votre adresse e-mail ci-dessous et nous vous enverrons un nouveau mot de passe. N'oubliez pas de le changer par la suite !",
   "an email with a new password was sent to your email address": "Un e-mail avec un nouveau mot de passe a été envoyé à votre adresse e-mail. Veuillez vérifier votre boîte de réception.",
   "account": "Compte",
-  "your wizard account": "Votre compte sorcier"
+  "your wizard account": "Votre compte sorcier",
+  "your account information": "Les informations de votre compte",
+  "here you can manage your account and update your information": "Ici vous pouvez gérer votre compte et mettre à jour vos informations",
+  "your account on arena": "Votre compte sur Arena",
+  "your player name is": "Votre nom de joueur est",
+  "you do not have any account on arena": "Vous n'avez pas de compte sur Arena",
+  "the codes you have entered": "Les codes que vous avez saisis"
 }

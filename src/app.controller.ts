@@ -4,12 +4,14 @@ import { Response, Request } from 'express';
 import { EmailDto } from './dtos/email.dto';
 import { validate, ValidationError } from 'class-validator';
 import { AccountService } from './account/account.service';
+import { ArenaService } from './arena/arena.service';
 
 @Controller()
 export class AppController {
   constructor(
     private readonly strapiService: StrapiService,
     private readonly accountService: AccountService,
+    private readonly arenaService: ArenaService,
   ) {
   }
 
@@ -219,12 +221,16 @@ export class AppController {
       return { page: 'pages/404', templateData, pageData: undefined, seo: undefined };
     }
 
+    const arenaPlayer = await this.arenaService.getCurrentPlayer((req.session as any).access_token);
+    console.log({arenaPlayer});
+
     return {
       page: 'pages/account',
       seo: templateData?.defaultSeo,
       pageData: {
         errors: errorsFlashed.length ? JSON.parse(errorsFlashed[0]) : undefined,
         success: successFlashed.length ? successFlashed[0] : undefined,
+        arenaPlayer,
       },
       templateData,
     };

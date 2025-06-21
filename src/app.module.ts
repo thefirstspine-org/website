@@ -8,6 +8,8 @@ import { LocaleMiddleware } from './locale/locale.middleware';
 import { AccountModule } from './account/account.module';
 import { AccountService } from './account/account.service';
 import { AccountMiddleware } from './account/account.middleware';
+import { ArenaModule } from './arena/arena.module';
+import { ArenaService } from './arena/arena.service';
 
 @Module({
   imports: [
@@ -15,9 +17,10 @@ import { AccountMiddleware } from './account/account.middleware';
     ConfigModule.forRoot(),
     LocaleModule,
     AccountModule,
+    ArenaModule,
   ],
   controllers: [AppController],
-  providers: [AppService, AccountService],
+  providers: [AppService, AccountService, ArenaService],
 })
 export class AppModule {
   configure(consumer: MiddlewareConsumer) {

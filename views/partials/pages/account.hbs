@@ -11,7 +11,48 @@
   <div class="separator"></div>
   <div class="container">
     <div class="my-8 text-center">
-      text text text
+      <h1 class="text-4xl mt-8 text-center text-amber-500 tracking-widest uppercase text-shadow-lg">
+        {{{__ 'your account information'}}}
+      </h1>
+      <p class="mt-8">
+        {{{__ 'here you can manage your account and update your information'}}}
+      </p>
+    </div>
+  </div>
+</div>
+
+<div
+  class="components-block"
+  >
+  <div class="separator"></div>
+  <div class="container">
+    <div class="my-8 text-center">
+      <h1 class="text-4xl mt-8 text-center text-amber-500 tracking-widest uppercase text-shadow-lg">
+        {{{__ 'your account on arena'}}}
+      </h1>
+      <div class="mt-8">
+        {{#if data.arenaPlayer}}
+          <p>{{{__ 'your player name is'}}} <strong>{{data.arenaPlayer.name}}</strong></p>
+        {{else}}
+          <p>{{{__ 'you do not have any account on arena'}}}</p>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="components-block"
+  >
+  <div class="separator"></div>
+  <div class="container">
+    <div class="my-8 text-center">
+      <h1 class="text-4xl mt-8 text-center text-amber-500 tracking-widest uppercase text-shadow-lg">
+        {{{__ 'your information about the festivals'}}}
+      </h1>
+      <p class="mt-8">
+        TODO
+      </p>
     </div>
   </div>
 </div>
