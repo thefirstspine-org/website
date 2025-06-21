@@ -16,26 +16,26 @@
       <span class="top-str">\{{ card.stats?.top?.strength }}</span>
       <span class="top-def">\{{ card.stats?.top?.defense }}</span>
       <span class="top-capacity">
-        <img :src="`capacity-${card.stats?.top?.capacity}.png`" />
+        <img :src="`/capacity-${card.stats?.top?.capacity}.png`" />
       </span>
       <span class="bottom-str">\{{ card.stats?.bottom?.strength }}</span>
       <span class="bottom-def">\{{ card.stats?.bottom?.defense }}</span>
       <span class="bottom-capacity">
-        <img :src="`capacity-${card.stats?.bottom?.capacity}.png`" />
+        <img :src="`/capacity-${card.stats?.bottom?.capacity}.png`" />
       </span>
       <span class="left-str">\{{ card.stats?.left?.strength }}</span>
       <span class="left-def">\{{ card.stats?.left?.defense }}</span>
       <span class="left-capacity">
-        <img :src="`capacity-${card.stats?.left.capacity}.png`" />
+        <img :src="`/capacity-${card.stats?.left.capacity}.png`" />
       </span>
       <span class="right-str">\{{ card.stats?.right?.strength }}</span>
       <span class="right-def">\{{ card.stats?.right?.defense }}</span>
       <span class="right-capacity">
-        <img :src="`capacity-${card.stats?.right?.capacity}.png`" />
+        <img :src="`/capacity-${card.stats?.right?.capacity}.png`" />
       </span>
       <span class="life">\{{ card.stats?.life }}</span>
       <span class="capacity">
-        <img :src="`capacity-${(card.stats?.capacities ? card.stats?.capacities?.[0] : '')}.png`" />
+        <img :src="`/capacity-${(card.stats?.capacities ? card.stats?.capacities?.[0] : '')}.png`" />
       </span>
       <span class="name">\{{ card.name['{{{getLocale}}}'] }}</span>
       <span class="description" v-html="renderTags(card.text['{{{getLocale}}}'])"></span>
