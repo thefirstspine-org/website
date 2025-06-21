@@ -30,13 +30,37 @@
       <h1 class="text-4xl mt-8 text-center text-amber-500 tracking-widest uppercase text-shadow-lg">
         {{{__ 'your account on arena'}}}
       </h1>
-      <div class="mt-8">
-        {{#if data.arenaPlayer}}
-          <p>{{{__ 'your player name is'}}} <strong>{{data.arenaPlayer.name}}</strong></p>
-        {{else}}
-          <p>{{{__ 'you do not have any account on arena'}}}</p>
-        {{/if}}
-      </div>
+      {{#if data.arenaPlayer}}
+        <p class="mt-8">{{{__ 'your player name is'}}} <strong>{{data.arenaPlayer.name}}</strong></p>
+        <table class="table-auto text-left w-sm mx-auto mt-8">
+          <tbody>
+            <tr>
+              <td class="font-bold">{{{__ 'power'}}}</td>
+              <td>{{data.arenaPlayer.power}}</td>
+            </tr>
+            <tr>
+              <td class="font-bold">{{{__ 'ancientShards'}}}</td>
+              <td>{{data.arenaPlayer.currencies.ancientShards}}</td>
+            </tr>
+            <tr>
+              <td class="font-bold">{{{__ 'destinyMarks'}}}</td>
+              <td>{{data.arenaPlayer.currencies.destinyMarks}}</td>
+            </tr>
+            <tr>
+              <td class="font-bold">{{{__ 'strangeCoins'}}}</td>
+              <td>{{data.arenaPlayer.currencies.strangeCoins}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="mt-8">
+          <a href="/arena" class="button medium primary">{{{__ 'manage your account on arena'}}}</a>
+        </p>
+      {{else}}
+        <p class="mt-8">{{{__ 'you do not have any account on arena'}}}</p>
+        <p class="mt-8">
+          <a href="/arena" class="button medium primary">{{{__ 'play on arena now'}}}</a>
+        </p>
+      {{/if}}
     </div>
   </div>
 </div>

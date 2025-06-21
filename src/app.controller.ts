@@ -222,7 +222,6 @@ export class AppController {
     }
 
     const arenaPlayer = await this.arenaService.getCurrentPlayer((req.session as any).access_token);
-    console.log({arenaPlayer});
 
     return {
       page: 'pages/account',
