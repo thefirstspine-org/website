@@ -1,4 +1,4 @@
-import { Injectable, NestMiddleware } from '@nestjs/common';
+import { Injectable, NestMiddleware, Response } from '@nestjs/common';
 import { AuthService } from '@thefirstspine/auth';
 
 @Injectable()
@@ -6,13 +6,14 @@ export class AccountMiddleware implements NestMiddleware {
 
   private readonly authService = new AuthService();
 
-  async use(req: any, res: any, next: () => void) {
-    if (req.session.access_token) {
-      const userId = await this.authService.me((req.session as any).access_token);
-      if (userId) {
-        req.userId = userId;
+  async use(req: any, @Response({passthrough: true}) res: any, next: () => void) {
+    if (req.cookies.access_token) {
+      const user = await this.authService.meFull(req.cookies.access_token);
+      if (user) {
+        req.userId = user.user_id; // @deprecated
+        req.user = user;
       } else {
-        req.session.access_token = null;
+        res.cookie('access_token', null);
       }
     }
     next();

@@ -5,9 +5,9 @@ import locales from './locales';
 @Injectable()
 export class LocaleMiddleware implements NestMiddleware {
   use(req: any, res: any, next: () => void) {
-    // Set language stored in session
-    if (req.session.language != undefined) {
-      locales.setLocale(req.session.language);
+    // Set language stored in cookies
+    if (req.cookies.language != undefined) {
+      locales.setLocale(req.cookies.language);
       next();
       return;
     }

@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post, Query, Render, Req, Res, Session } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Query, Render, Req, Res } from '@nestjs/common';
 import { GlobalData, PageData, SEO, StrapiService } from './strapi/strapi.service';
 import { Response, Request } from 'express';
 import { EmailDto } from './dtos/email.dto';
@@ -16,16 +16,16 @@ export class AppController {
   }
 
   @Get('/lang/:lang')
-  async lang(@Req() req: any, @Res() res: Response, @Param('lang') lang: string) {
-    req.session.language = lang;
+  async lang(@Req() req: any, @Res({passthrough: true}) res: Response, @Param('lang') lang: string) {
+    res.cookie('language', lang);
     return res.redirect('/');
   }
 
   @Get('/user-info')
   async userInfo(@Req() req: any) {
     return {
-      isLoggedIn: !!req.userId,
-      userId: req.userId || null,
+      isLoggedIn: !!req.user,
+      user: req.user || null,
     };
   }
 
@@ -121,7 +121,7 @@ export class AppController {
   }
 
   @Post('/login')
-  async loginAttempt(@Req() req: Request, @Body() body: any, @Res() res: Response, @Session() session: Record<string, any>) {
+  async loginAttempt(@Req() req: Request, @Body() body: any, @Res({passthrough: true}) res: Response) {
     const result = await this.accountService.login(body.email, body.password);
     if (result.errors) {
       req.flash(
@@ -130,8 +130,8 @@ export class AppController {
       );
       return res.redirect('/login');
     } else {
-      session.access_token = result.access_token;
-      session.refresh_token = result.refresh_token;
+      res.cookie('access_token', result.access_token);
+      res.cookie('refresh_token', result.refresh_token);
       return res.redirect('/account');
     }
   }
@@ -154,7 +154,7 @@ export class AppController {
   }
 
   @Post('/register')
-  async registerAttempt(@Req() req: Request, @Body() body: any, @Res() res: Response, @Session() session: Record<string, any>) {
+  async registerAttempt(@Req() req: Request, @Body() body: any, @Res({passthrough: true}) res: Response) {
     if (body.password != body.password_confirm) {
       req.flash(
         'errors',
@@ -171,7 +171,7 @@ export class AppController {
       return res.redirect('/login');
     } else {
       // Forward request to login
-      return this.loginAttempt(req, body, res, session);
+      return this.loginAttempt(req, body, res);
     }
   }
 
@@ -193,7 +193,7 @@ export class AppController {
   }
 
   @Post('/lost-password')
-  async lostPasswordAttempt(@Req() req: Request, @Body() body: any, @Res() res: Response, @Session() session: Record<string, any>) {
+  async lostPasswordAttempt(@Req() req: Request, @Body() body: any, @Res({passthrough: true}) res: Response) {
     const result = await this.accountService.resetPassword(body.email);
     if (result.errors) {
       req.flash(
@@ -217,12 +217,12 @@ export class AppController {
     const errorsFlashed = req.flash('errors');
     const successFlashed = req.flash('success');
 
-    if (!req.userId) {
+    if (!req.user) {
       return { page: 'pages/404', templateData, pageData: undefined, seo: undefined };
     }
 
-    const arenaPlayer = await this.arenaService.getCurrentPlayer((req.session as any).access_token);
-    const codes = await this.strapiService.getCodes(req.userId);
+    const arenaPlayer = await this.arenaService.getCurrentPlayer(req.cookies.access_token);
+    const codes = await this.strapiService.getCodes(req.user.user_id);
 
     return {
       page: 'pages/account',

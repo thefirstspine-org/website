@@ -9,12 +9,13 @@ import { ErrorFilter, LogsService, RequestsLoggerMiddleware } from '@thefirstspi
 import session from 'express-session';
 import flash from 'connect-flash';
 import locales from './locale/locales';
+import cookieParser from 'cookie-parser';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
   app.useGlobalPipes(new ValidationPipe());
   app.useGlobalFilters(new ErrorFilter(new LogsService()));
-  app.use(RequestsLoggerMiddleware.use);
+  // app.use(RequestsLoggerMiddleware.use);
   app.use(
     session({
       secret: process.env.SESSION_SECRET ?? '',
@@ -26,6 +27,7 @@ async function bootstrap() {
     }),
   );
   app.use(flash());
+  app.use(cookieParser());
 
   locales.load('fr', join(__dirname, 'i18n', 'fr.json'));
   locales.load('en', join(__dirname, 'i18n', 'en.json'));
