@@ -43,5 +43,11 @@
   "manage your account on arena": "Editez votre compte sur Arena",
   "your codes": "Vos codes",
   "code": "Code",
-  "event": "Événement"
+  "event": "Événement",
+  "if you are changing your email address or your password, you will be logged out from all the devices you are currently logged in": "Si vous changez votre adresse e-mail ou votre mot de passe, vous serez déconnecté de tous les appareils sur lesquels vous êtes actuellement connecté",
+  "change email address": "Change email address",
+  "change password": "Changer le mot de passe",
+  "old password": "Ancien mot de passe",
+  "new password": "Nouveau mot de passe",
+  "new email address": "Nouvelle adresse e-mail"
 }

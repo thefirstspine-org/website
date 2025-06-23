@@ -43,5 +43,11 @@
   "manage your account on arena": "Manage your account on Arena",
   "your codes": "Your codes",
   "code": "Code",
-  "event": "Event"
+  "event": "Event",
+  "if you are changing your email address or your password, you will be logged out from all the devices you are currently logged in": "If you are changing your email address or your password, you will be logged out from all the devices you are currently logged in",
+  "change email address": "Change email address",
+  "change password": "Change password",
+  "old password": "Old password",
+  "new password": "New password",
+  "new email address": "New email address"
 }

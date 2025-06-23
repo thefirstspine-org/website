@@ -12,27 +12,11 @@
   <div class="container">
     <div class="my-8 text-center">
       <h1 class="text-4xl mt-8 text-center text-amber-500 tracking-widest uppercase text-shadow-lg">
-        {{{__ 'your account information'}}}
-      </h1>
-      <p class="mt-8">
-        {{{__ 'here you can manage your account and update your information'}}}
-      </p>
-    </div>
-  </div>
-</div>
-
-<div
-  class="components-block"
-  >
-  <div class="separator"></div>
-  <div class="container">
-    <div class="my-8 text-center">
-      <h1 class="text-4xl mt-8 text-center text-amber-500 tracking-widest uppercase text-shadow-lg">
         {{{__ 'your account on arena'}}}
       </h1>
       {{#if data.arenaPlayer}}
         <p class="mt-8">{{{__ 'your player name is'}}} <strong>{{data.arenaPlayer.name}}</strong></p>
-        <table class="table-auto text-left w-md mx-auto mt-8">
+        <table class="table-auto text-left max-w-lg mx-auto mt-8">
           <tbody>
             <tr>
               <td class="font-bold">{{{__ 'power'}}}</td>
@@ -75,7 +59,7 @@
         {{{__ 'your codes'}}}
       </h1>
       <p class="mt-8">
-        <table class="table-auto text-left w-lg mx-auto mt-8">
+        <table class="table-auto text-left max-w-lg mx-auto mt-8">
           <thead>
             <tr>
               <td>{{{__ 'code'}}}</td>
@@ -94,6 +78,47 @@
           </tbody>
         </table>
       </p>
+    </div>
+  </div>
+</div>
+
+<div
+  class="components-block"
+  >
+  <div class="separator"></div>
+  <div class="container">
+    <div class="my-8 text-center">
+      <h1 class="text-4xl mt-8 text-center text-amber-500 tracking-widest uppercase text-shadow-lg">
+        {{{__ 'your account information'}}}
+      </h1>
+      <p class="mt-8">
+        {{{__ 'here you can manage your account and update your information'}}}<br />
+        {{{__ 'if you are changing your email address or your password, you will be logged out from all the devices you are currently logged in'}}}
+      </p>
+      <div class="max-w-2xl mx-auto m-auto grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-2">
+        <form class="mt-8 text-left" method="post" action="/account/change-email">
+          <h5 class="text-xl text-center mb-4 text-amber-500">{{{__ 'change email address'}}}</h5>
+          <p class="mt-8">{{{__ 'password'}}}</p>
+          <input type="password" name="password_verify" class="input mt-2" placeholder="{{{__ '*****'}}}" />
+          <p class="mt-8">{{{__ 'new email address'}}}</p>
+          <input type="email" name="email" class="input mt-2" placeholder="{{{__ 'me@email.com'}}}" />
+          <p class="mt-8 text-center">
+            <input type="submit" class="button medium primary cursor-pointer" value="{{__ 'change email address'}}" />
+          </p>
+        </form>
+        <form class="mt-8 text-left" method="post" action="/account/change-password">
+          <h5 class="text-xl text-center mb-4 text-amber-500">{{{__ 'change password'}}}</h5>
+          <p class="mt-8">{{{__ 'old password'}}}</p>
+          <input type="password" name="password_verify" class="input mt-2" placeholder="{{{__ '*****'}}}" />
+          <p class="mt-8">{{{__ 'new password'}}}</p>
+          <input type="password" name="password" class="input mt-2" placeholder="{{{__ '*****'}}}" />
+          <p class="mt-8">{{{__ 'confirm password'}}}</p>
+          <input type="password" name="password_confirm" class="input mt-2" placeholder="{{{__ '*****'}}}" />
+          <p class="mt-8 text-center">
+            <input type="submit" class="button medium primary cursor-pointer" value="{{__ 'change password'}}" />
+          </p>
+        </form>
+      </div>
     </div>
   </div>
 </div>
