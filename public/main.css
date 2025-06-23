@@ -41,11 +41,13 @@
     --color-violet-700: oklch(49.1% 0.27 292.581);
     --color-slate-400: oklch(70.4% 0.04 256.788);
     --color-gray-200: oklch(92.8% 0.006 264.531);
+    --color-gray-300: oklch(87.2% 0.01 258.338);
     --color-gray-500: oklch(55.1% 0.027 264.364);
     --color-gray-700: oklch(37.3% 0.034 259.733);
     --color-gray-800: oklch(27.8% 0.033 256.848);
     --color-gray-900: oklch(21% 0.034 264.665);
     --color-zinc-300: oklch(87.1% 0.006 286.286);
+    --color-neutral-300: oklch(87% 0 0);
     --color-neutral-500: oklch(55.6% 0 0);
     --color-neutral-600: oklch(43.9% 0 0);
     --color-neutral-700: oklch(37.1% 0 0);
@@ -397,11 +399,14 @@
   .w-full {
     width: 100%;
   }
+  .w-lg {
+    width: var(--container-lg);
+  }
+  .w-md {
+    width: var(--container-md);
+  }
   .w-screen {
     width: 100vw;
-  }
-  .w-sm {
-    width: var(--container-sm);
   }
   .max-w-5xl {
     max-width: var(--container-5xl);
@@ -1335,24 +1340,21 @@
       }
     }
   }
-  :where([autocomplete=one-time-code]) {
-    --otp-digits: 6;
-    --otc-ls: 2ch;
-    --otc-gap: 1.25;
-    --_otp-bgsz: calc(var(--otc-ls) + 1ch);
-    all: unset;
-    background: linear-gradient(90deg, 
-      var(--otc-bg, #EEE) calc(var(--otc-gap) * var(--otc-ls)),
-      transparent 0
-    ) 0 0 / var(--_otp-bgsz) 100%;
-    caret-color: var(--otc-cc, #333);
-    clip-path: inset(0% calc(var(--otc-ls) / 2) 0% 0%);
-    font-family: ui-monospace, monospace;
-    font-size: var(--otc-fz, 2.5em);
-    inline-size: calc(var(--otc-digits) * var(--_otp-bgsz));
-    letter-spacing: var(--otc-ls);
-    padding-block: var(--otc-pb, 1ch);
-    padding-inline-start: calc(((var(--otc-ls) - 1ch) / 2) * var(--otc-gap));
+  table {
+    td {
+      padding: calc(var(--spacing) * 4);
+    }
+    tr {
+      border-bottom-style: var(--tw-border-style);
+      border-bottom-width: 1px;
+      border-color: var(--color-neutral-700);
+    }
+    thead {
+      background-color: var(--color-neutral-800);
+      --tw-font-weight: var(--font-weight-bold);
+      font-weight: var(--font-weight-bold);
+      color: var(--color-neutral-300);
+    }
   }
   .card {
     position: relative;

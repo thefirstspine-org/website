@@ -23,6 +23,12 @@ export class StrapiService {
     }
   }
 
+  async getCodes(userId: string): Promise<any | null> {
+    // Get the page
+    const data = await this.callApiGet(`codes?populate=*&filters[userId][$eq]=${userId}`);
+    return data;
+  }
+
   async getArticle(slug: string): Promise<any | null> {
     // Get the page
     const data = await this.callApiGet(`articles?populate=*&filters[slug][$eq]=${slug}`, locales.getLocale());

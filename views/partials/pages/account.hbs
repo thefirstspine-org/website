@@ -32,7 +32,7 @@
       </h1>
       {{#if data.arenaPlayer}}
         <p class="mt-8">{{{__ 'your player name is'}}} <strong>{{data.arenaPlayer.name}}</strong></p>
-        <table class="table-auto text-left w-sm mx-auto mt-8">
+        <table class="table-auto text-left w-md mx-auto mt-8">
           <tbody>
             <tr>
               <td class="font-bold">{{{__ 'power'}}}</td>
@@ -72,10 +72,27 @@
   <div class="container">
     <div class="my-8 text-center">
       <h1 class="text-4xl mt-8 text-center text-amber-500 tracking-widest uppercase text-shadow-lg">
-        {{{__ 'your information about the festivals'}}}
+        {{{__ 'your codes'}}}
       </h1>
       <p class="mt-8">
-        TODO
+        <table class="table-auto text-left w-lg mx-auto mt-8">
+          <thead>
+            <tr>
+              <td>{{{__ 'code'}}}</td>
+              <td>{{{__ 'event'}}}</td>
+              <td>{{{__ 'strangeCoins'}}}</td>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each data.codes}}
+              <tr>
+                <td>{{this.code}}</td>
+                <td>{{this.event.title}}</td>
+                <td>{{this.kickstarter_strangeCoins}}</td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
       </p>
     </div>
   </div>

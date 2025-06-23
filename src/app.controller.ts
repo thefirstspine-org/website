@@ -222,6 +222,7 @@ export class AppController {
     }
 
     const arenaPlayer = await this.arenaService.getCurrentPlayer((req.session as any).access_token);
+    const codes = await this.strapiService.getCodes(req.userId);
 
     return {
       page: 'pages/account',
@@ -230,6 +231,7 @@ export class AppController {
         errors: errorsFlashed.length ? JSON.parse(errorsFlashed[0]) : undefined,
         success: successFlashed.length ? successFlashed[0] : undefined,
         arenaPlayer,
+        codes,
       },
       templateData,
     };
