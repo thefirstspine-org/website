@@ -232,9 +232,74 @@ export class AppController {
         success: successFlashed.length ? successFlashed[0] : undefined,
         arenaPlayer,
         codes,
+        user: req.user,
       },
       templateData,
     };
+  }
+
+  @Post('/account/change-email')
+  async updateEmailAttempt(@Req() req: any, @Body() body: any, @Res({passthrough: true}) res: Response) {
+    // Try to log in
+    const resultLogin = await this.accountService.login(req.user.email, body.password_verify);
+    if (resultLogin.errors) {
+      req.flash(
+        'errors',
+        JSON.stringify(['password verification failed'])
+      );
+      return res.redirect('/account');
+    }
+
+    const result = await this.accountService.updateEmail(body.email, req.cookies.access_token);
+    if (result.errors) {
+      req.flash(
+        'errors',
+        JSON.stringify(result.errors)
+      );
+      return res.redirect('/account');
+    } else {
+      req.flash(
+        'success',
+        'the email address was updated successfully. all your devices were disconnected'
+      );
+      return res.redirect('/account');
+    }
+  }
+
+  @Post('/account/change-password')
+  async updatePasswordAttempt(@Req() req: any, @Body() body: any, @Res({passthrough: true}) res: Response) {
+    // Try to log in
+    const resultLogin = await this.accountService.login(req.user.email, body.password_verify);
+    if (resultLogin.errors) {
+      req.flash(
+        'errors',
+        JSON.stringify(['password verification failed'])
+      );
+      return res.redirect('/account');
+    }
+    
+    if (body.password != body.password_confirm) {
+      req.flash(
+        'errors',
+        JSON.stringify(['the passwords are not matching'])
+      );
+      return res.redirect('/register');
+    }
+
+    const result = await this.accountService.updatePassword(body.password, req.cookies.access_token);
+    if (result.errors) {
+      req.flash(
+        'errors',
+        JSON.stringify(result.errors)
+      );
+      return res.redirect('/account');
+    } else {
+      req.flash(
+        'success',
+        'the password was updated successfully. all your devices were disconnected'
+      );
+      return res.redirect('/account');
+    }
   }
 
   /**

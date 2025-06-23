@@ -49,5 +49,8 @@
   "change password": "Changer le mot de passe",
   "old password": "Ancien mot de passe",
   "new password": "Nouveau mot de passe",
-  "new email address": "Nouvelle adresse e-mail"
+  "new email address": "Nouvelle adresse e-mail",
+  "password verification failed": "Échec de la vérification du mot de passe",
+  "the email address was updated successfully. all your devices were disconnected": "L'adresse e-mail a été mise à jour avec succès. Tous vos appareils ont été déconnectés.",
+  "the password was updated successfully. all your devices were disconnected": "Le mot de passe a été mis à jour avec succès. Tous vos appareils ont été déconnectés."
 }

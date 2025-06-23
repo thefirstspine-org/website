@@ -49,5 +49,8 @@
   "change password": "Change password",
   "old password": "Old password",
   "new password": "New password",
-  "new email address": "New email address"
+  "new email address": "New email address",
+  "password verification failed": "Password verification failed",
+  "the email address was updated successfully. all your devices were disconnected": "The email address was updated successfully. All your devices were disconnected.",
+  "the password was updated successfully. all your devices were disconnected": "The password was updated successfully. All your devices were disconnected."
 }
