@@ -23,6 +23,7 @@
     --color-amber-300: oklch(87.9% 0.169 91.605);
     --color-amber-400: oklch(82.8% 0.189 84.429);
     --color-amber-500: oklch(76.9% 0.188 70.08);
+    --color-amber-600: oklch(66.6% 0.179 58.318);
     --color-amber-950: oklch(27.9% 0.077 45.635);
     --color-yellow-500: oklch(79.5% 0.184 86.047);
     --color-green-100: oklch(96.2% 0.044 156.743);
@@ -1694,6 +1695,35 @@
     }
     @media (width >= 64rem) {
       margin-inline: auto;
+    }
+  }
+  .otp-field {
+    margin-inline: auto;
+    display: inline-flex;
+    input {
+      color: white;
+      width: 40px;
+      font-size: 24px;
+      padding: 10px;
+      text-align: center;
+      border-radius: 5px;
+      margin: 2px;
+      border: 2px solid var(--color-amber-600);
+      background: black;
+      font-weight: bold;
+      color: #fff;
+      outline: none;
+      transition: all 0.1s;
+    }
+    input:focus {
+      border: 2px solid var(--color-amber-300);
+      box-shadow: 0 0 2px 2px var(--color-amber-300);
+    }
+    .disabled {
+      opacity: 0.5;
+    }
+    .space {
+      margin-right: 1rem;
     }
   }
 }
