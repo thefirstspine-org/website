@@ -5,11 +5,12 @@ import { AppModule } from './app.module';
 import hbs from 'hbs';
 import showdown from 'showdown';
 import { ValidationPipe } from '@nestjs/common';
-import { ErrorFilter, LogsService, RequestsLoggerMiddleware } from '@thefirstspine/logs-nest';
+import { LogsService } from '@thefirstspine/logs-nest';
 import session from 'express-session';
 import flash from 'connect-flash';
 import locales from './locale/locales';
 import cookieParser from 'cookie-parser';
+import { ErrorFilter } from './errors.filter';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
