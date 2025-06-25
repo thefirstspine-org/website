@@ -24,9 +24,18 @@ export class StrapiService {
   }
 
   async getCodes(userId: string): Promise<any | null> {
-    // Get the page
     const data = await this.callApiGet(`codes?populate=*&filters[userId][$eq]=${userId}`);
     return data;
+  }
+
+  async getUnusedCode(code: string): Promise<any | null> {
+    const data = await this.callApiGet(`codes?populate=*&filters[code][$eq]=${code}&filters[userId][$eq]=0`, '', true);
+    return data && data[0] ? data[0] : null;
+  }
+
+  async redeemCode(documentId: string, userId: number): Promise<any | null> {
+    const data = await this.callApiPut('codes', documentId, { userId });
+    return data && data[0] ? data[0] : null;
   }
 
   async getArticle(slug: string): Promise<any | null> {
@@ -146,6 +155,26 @@ export class StrapiService {
     try {
         const response = await axios.default.post(
         `${process.env.CMS_URL}/api/${entity}`,
+        { data },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${process.env.CMS_TOKEN}`,
+          },
+        }
+      );
+      return response.data.data;
+    } catch (error) {
+      console.error(`Error fetching data from Strapi API: ${JSON.stringify(error?.response?.data) || error.message}`);
+      return null;
+    }
+  }
+
+  async callApiPut(entity: string, entityId: string, data: any): Promise<any[] | any> {
+    // Fetch data from API
+    try {
+        const response = await axios.default.put(
+        `${process.env.CMS_URL}/api/${entity}/${entityId}`,
         { data },
         {
           headers: {

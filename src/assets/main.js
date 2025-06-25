@@ -115,5 +115,5 @@ function submit() {
         input.disabled = true;
         input.classList.add("disabled");
     });
-    window.location.href = `/code?code=${otp}`;
+    window.location.href = `/code?code=${otp.toUpperCase()}`;
 }

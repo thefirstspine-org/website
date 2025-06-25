@@ -52,5 +52,19 @@
   "new email address": "Nouvelle adresse e-mail",
   "password verification failed": "Échec de la vérification du mot de passe",
   "the email address was updated successfully. all your devices were disconnected": "L'adresse e-mail a été mise à jour avec succès. Tous vos appareils ont été déconnectés.",
-  "the password was updated successfully. all your devices were disconnected": "Le mot de passe a été mis à jour avec succès. Tous vos appareils ont été déconnectés."
+  "the password was updated successfully. all your devices were disconnected": "Le mot de passe a été mis à jour avec succès. Tous vos appareils ont été déconnectés.",
+  "play on arena now": "Jouez sur Arena maintenant",
+  "this code was obtained from the event": "Ce code a été obtenu lors de l'événement : ",
+  "it contains the following rewards": "Il contient les récompenses suivantes :",
+  "arena_ancientShards": "Éclats anciens",
+  "arena_destinyMarks": "Éclats de destin",
+  "kickstarter_strangeCoins": "Pièces étranges",
+  "arena_ancientShards_description": "Utilisez ces éclats pour forger de nouvelles cartes dans le refuge d'Arena",
+  "arena_destinyMarks_description": "Cela augmentera votre niveau de puissance dans Arena",
+  "kickstarter_strangeCoins_description": "Ces pièces peuvent être utilisées pour ajouter plus de contenu à votre engagement Kickstarter",
+  "this code has been redeemed": "Ce code a été utilisé",
+  "the reward was added to your account": "La récompense a été ajoutée à votre compte",
+  "the code is not valid or already used": "Le code n'est pas valide ou a déjà été utilisé",
+  "enter your code": "Entrez votre code",
+  "enter your code in the form below to claim your reward": "Entrez votre code dans le formulaire ci-dessous pour réclamer votre récompense"
 }

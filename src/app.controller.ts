@@ -245,10 +245,38 @@ export class AppController {
   }
 
   @Get('/code')
-  async code(@Req() req: any, @Query('code') code: string, @Res({passthrough: true}) res: Response) {
+  async code(@Req() req: any, @Query('code') code: string, @Res() res: Response) {
     if (!req.user) {
       return res.redirect(`/login?redirect=${encodeURIComponent(`code?code=${code}`)}`);
     }
+    
+    const templateData = await this.strapiService.getGlobalData();
+    const errorsFlashed = req.flash('errors');
+    const successFlashed = req.flash('success');
+    
+    let codeEntity: any = null; 
+    if (code) {
+      codeEntity = await this.strapiService.getUnusedCode(code);
+      if (!codeEntity) {
+        errorsFlashed.push(JSON.stringify(['the code is not valid or already used']));
+      } else {
+        this.strapiService.redeemCode(codeEntity.documentId, req.user.user_id);
+      }
+    }
+
+    return res.render(
+      'global',
+      {
+        page: 'pages/code',
+        seo: templateData?.defaultSeo,
+        pageData: {
+          errors: errorsFlashed.length ? JSON.parse(errorsFlashed[0]) : undefined,
+          success: successFlashed.length ? successFlashed[0] : undefined,
+          code: codeEntity,
+        },
+        templateData,
+      },
+    );
   }
 
   @Post('/account/change-email')

@@ -52,5 +52,19 @@
   "new email address": "New email address",
   "password verification failed": "Password verification failed",
   "the email address was updated successfully. all your devices were disconnected": "The email address was updated successfully. All your devices were disconnected.",
-  "the password was updated successfully. all your devices were disconnected": "The password was updated successfully. All your devices were disconnected."
+  "the password was updated successfully. all your devices were disconnected": "The password was updated successfully. All your devices were disconnected.",
+  "play on arena now": "Play on Arena now",
+  "this code was obtained from the event": "This code was obtained from the event: ",
+  "it contains the following rewards": "It contains the following rewards:",
+  "arena_ancientShards": "Ancient shards",
+  "arena_destinyMarks": "Destiny marks",
+  "kickstarter_strangeCoins": "Strange coins",
+  "arena_ancientShards_description": "Use those shards to forge new cards in the refuge in Arena",
+  "arena_destinyMarks_description": "This will increase your power level in Arena",
+  "kickstarter_strangeCoins_description": "Those coins can be used to add more content in your Kickstarter pledge",
+  "this code has been redeemed": "This code has been redeemed",
+  "the reward was added to your account": "The reward was added to your account",
+  "the code is not valid or already used": "The code is not valid or already used",
+  "enter your code": "Enter your code",
+  "enter your code in the form below to claim your reward": "Enter your code in the form below to claim your reward"
 }
