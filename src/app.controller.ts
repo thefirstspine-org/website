@@ -105,7 +105,7 @@ export class AppController {
 
   @Get('/login')
   @Render('global')
-  async login(@Req() req: Request) {
+  async login(@Req() req: Request, @Query('redirect') redirect: string | undefined) {
     const templateData = await this.strapiService.getGlobalData();
     const errorsFlashed = req.flash('errors');
     const successFlashed = req.flash('success');
@@ -115,30 +115,34 @@ export class AppController {
       pageData: {
         errors: errorsFlashed.length ? JSON.parse(errorsFlashed[0]) : undefined,
         success: successFlashed.length ? successFlashed[0] : undefined,
+        redirect,
       },
       templateData,
     };
   }
 
   @Post('/login')
-  async loginAttempt(@Req() req: Request, @Body() body: any, @Res({passthrough: true}) res: Response) {
+  async loginAttempt(@Req() req: Request, @Body() body: any, @Res({passthrough: true}) res: Response, @Query('redirect') redirect: string | undefined) {
     const result = await this.accountService.login(body.email, body.password);
     if (result.errors) {
       req.flash(
         'errors',
         JSON.stringify(result.errors)
       );
-      return res.redirect('/login');
+      return res.redirect('/login?redirect=' + redirect);
     } else {
       res.cookie('access_token', result.access_token);
       res.cookie('refresh_token', result.refresh_token);
+      if (redirect) {
+        return res.redirect('/' + redirect);
+      }
       return res.redirect('/account');
     }
   }
 
   @Get('/register')
   @Render('global')
-  async register(@Req() req: Request) {
+  async register(@Req() req: Request, @Query('redirect') redirect: string | undefined) {
     const templateData = await this.strapiService.getGlobalData();
     const errorsFlashed = req.flash('errors');
     const successFlashed = req.flash('success');
@@ -148,19 +152,20 @@ export class AppController {
       pageData: {
         errors: errorsFlashed.length ? JSON.parse(errorsFlashed[0]) : undefined,
         success: successFlashed.length ? successFlashed[0] : undefined,
+        redirect,
       },
       templateData,
     };
   }
 
   @Post('/register')
-  async registerAttempt(@Req() req: Request, @Body() body: any, @Res({passthrough: true}) res: Response) {
+  async registerAttempt(@Req() req: Request, @Body() body: any, @Res({passthrough: true}) res: Response, @Query('redirect') redirect: string | undefined) {
     if (body.password != body.password_confirm) {
       req.flash(
         'errors',
         JSON.stringify(['the passwords are not matching'])
       );
-      return res.redirect('/register');
+      return res.redirect('/register?redirect=' + redirect);
     }
     const result = await this.accountService.signup(body.email, body.password);
     if (result.errors) {
@@ -168,16 +173,16 @@ export class AppController {
         'errors',
         JSON.stringify(result.errors)
       );
-      return res.redirect('/login');
+      return res.redirect('/login?redirect=' + redirect);
     } else {
       // Forward request to login
-      return this.loginAttempt(req, body, res);
+      return this.loginAttempt(req, body, res, redirect);
     }
   }
 
   @Get('/lost-password')
   @Render('global')
-  async lostPassword(@Req() req: Request) {
+  async lostPassword(@Req() req: Request, @Query('redirect') redirect: string | undefined) {
     const templateData = await this.strapiService.getGlobalData();
     const errorsFlashed = req.flash('errors');
     const successFlashed = req.flash('success');
@@ -187,26 +192,27 @@ export class AppController {
       pageData: {
         errors: errorsFlashed.length ? JSON.parse(errorsFlashed[0]) : undefined,
         success: successFlashed.length ? successFlashed[0] : undefined,
+        redirect,
       },
       templateData,
     };
   }
 
   @Post('/lost-password')
-  async lostPasswordAttempt(@Req() req: Request, @Body() body: any, @Res({passthrough: true}) res: Response) {
+  async lostPasswordAttempt(@Req() req: Request, @Body() body: any, @Res({passthrough: true}) res: Response, @Query('redirect') redirect: string | undefined) {
     const result = await this.accountService.resetPassword(body.email);
     if (result.errors) {
       req.flash(
         'errors',
         JSON.stringify(result.errors)
       );
-      return res.redirect('/lost-password');
+      return res.redirect('/lost-password?redirect=' + redirect);
     } else {
       req.flash(
         'success',
         'an email with a new password was sent to your email address'
       );
-      return res.redirect('/lost-password');
+      return res.redirect('/lost-password?redirect=' + redirect);
     }
   }
 
@@ -236,6 +242,13 @@ export class AppController {
       },
       templateData,
     };
+  }
+
+  @Get('/code')
+  async code(@Req() req: any, @Query('code') code: string, @Res({passthrough: true}) res: Response) {
+    if (!req.user) {
+      return res.redirect(`/login?redirect=${encodeURIComponent(`code?code=${code}`)}`);
+    }
   }
 
   @Post('/account/change-email')

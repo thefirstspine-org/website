@@ -26,7 +26,7 @@
     <h1 class="text-6xl text-center mt-4 text-amber-500 tracking-widest uppercase">
       {{{__ 'create an account'}}}
     </h1>
-    <form class="max-w-md mx-auto" method="post">
+    <form class="max-w-md mx-auto" method="post" action="/register?redirect={{data.redirect}}">
       <p class="mt-8">{{{__ 'email address'}}}</p>
       <input type="email" name="email" class="input mt-2" placeholder="{{{__ 'me@email.com'}}}" />
       <p class="mt-8">{{{__ 'password'}}}</p>
@@ -37,12 +37,12 @@
         <input type="submit" class="button medium primary cursor-pointer" value="{{__ 'submit'}}" />
       </p>
       <p class="mt-16 text-center">
-        <a href="/login" class="text-amber-300 hover:text-amber-500 transition-colors duration-500 font-bold">
+        <a href="/login?redirect={{data.redirect}}" class="text-amber-300 hover:text-amber-500 transition-colors duration-500 font-bold">
           {{{__ 'login'}}}
         </a>
       </p>
       <p class="mt-2 text-center">
-        <a href="/lost-password" class="text-amber-300 hover:text-amber-500 transition-colors duration-500 font-bold">
+        <a href="/lost-password?redirect={{data.redirect}}" class="text-amber-300 hover:text-amber-500 transition-colors duration-500 font-bold">
           {{{__ 'lost password'}}}
         </a>
       </p>
