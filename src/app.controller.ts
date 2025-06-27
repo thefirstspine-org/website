@@ -61,6 +61,27 @@ export class AppController {
     };
   }
 
+  @Get('/events/:slug')
+  @Render('global')
+  async event(@Req() req: Request, @Param('slug') slug) {
+    const templateData = await this.strapiService.getGlobalData();
+    const event: any = await this.strapiService.getEvent(slug);
+    if (!event) {
+      return {
+        page: 'pages/404',
+        templateData,
+        pageData: undefined,
+        seo: undefined,
+      };
+    }
+    return {
+      page: 'pages/event',
+      seo: templateData?.defaultSeo,
+      templateData,
+      pageData: event,
+    };
+  }
+
   @Get('/blog/:slug')
   @Render('global')
   async article(@Req() req: Request, @Param('slug') slug) {

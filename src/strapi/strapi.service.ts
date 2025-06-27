@@ -73,6 +73,16 @@ export class StrapiService {
     return page;
   }
 
+  async getEvent(slug: string): Promise<any | null> {
+    // Get the page
+    const data = await this.callApiGet(`events?populate=*&filters[slug][$eq]=${slug}`, locales.getLocale());
+    if (data.length === 0) {
+      return null;
+    }
+    const page = data[0];
+    return page;
+  }
+
   async getPageData(path: string | null): Promise<PageData | null> {
     // Get the page
     const pages = await this.callApiGet(

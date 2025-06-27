@@ -504,11 +504,17 @@
     --tw-border-style: solid;
     border-style: solid;
   }
+  .border-amber-400 {
+    border-color: var(--color-amber-400);
+  }
   .border-neutral-900 {
     border-color: var(--color-neutral-900);
   }
   .border-neutral-950 {
     border-color: var(--color-neutral-950);
+  }
+  .bg-amber-950 {
+    background-color: var(--color-amber-950);
   }
   .bg-black {
     background-color: var(--color-black);
