@@ -71,5 +71,7 @@
   "there is no event scheduled at the moment": "Nous n'avons pas d'événement prévu pour le moment",
   "from": "Du",
   "to": "au",
-  "upcoming events": "Événements à venir"
+  "upcoming events": "Événements à venir",
+  "logout": "Se déconnecter",
+  "you were discconnected successfully": "Vous avez été déconnecté avec succès"
 }

@@ -343,6 +343,17 @@ export class AppController {
     }
   }
 
+  @Get('/account/logout')
+  async logout(@Req() req: any, @Res({passthrough: true}) res: Response) {
+      req.flash(
+        'success',
+        'you were discconnected successfully'
+      );
+      res.clearCookie('access_token');
+      res.clearCookie('refresh_token');
+      return res.redirect('/');
+  }
+
   @Post('/account/change-password')
   async updatePasswordAttempt(@Req() req: any, @Body() body: any, @Res({passthrough: true}) res: Response) {
     // Try to log in

@@ -71,5 +71,7 @@
   "there is no event scheduled at the moment": "We do not have any event scheduled at the moment",
   "from": "From",
   "to": "to",
-  "upcoming events": "Upcoming events"
+  "upcoming events": "Upcoming events",
+  "logout": "Logout",
+  "you were discconnected successfully": "You were discconnected successfully"
 }
