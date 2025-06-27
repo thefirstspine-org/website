@@ -46,6 +46,21 @@ export class AppController {
     };
   }
 
+  @Get('/events')
+  @Render('global')
+  async events(@Req() req: Request, @Query('category') category: string | undefined) {
+    const templateData = await this.strapiService.getGlobalData();
+    const events: any[] = await this.strapiService.getEvents(category);
+    return {
+      page: 'pages/events',
+      seo: templateData?.defaultSeo,
+      templateData,
+      pageData: {
+        events,
+      },
+    };
+  }
+
   @Get('/blog/:slug')
   @Render('global')
   async article(@Req() req: Request, @Param('slug') slug) {

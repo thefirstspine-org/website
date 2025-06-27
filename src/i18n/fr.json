@@ -66,5 +66,10 @@
   "the reward was added to your account": "La récompense a été ajoutée à votre compte",
   "the code is not valid or already used": "Le code n'est pas valide ou a déjà été utilisé",
   "enter your code": "Entrez votre code",
-  "enter your code in the form below to claim your reward": "Entrez votre code dans le formulaire ci-dessous pour réclamer votre récompense"
+  "enter your code in the form below to claim your reward": "Entrez votre code dans le formulaire ci-dessous pour réclamer votre récompense",
+  "not event found": "C'est calme par-ici",
+  "there is no event scheduled at the moment": "Nous n'avons pas d'événement prévu pour le moment",
+  "from": "Du",
+  "to": "au",
+  "upcoming events": "Événements à venir"
 }

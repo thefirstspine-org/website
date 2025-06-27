@@ -58,6 +58,21 @@ async function bootstrap() {
   hbs.registerHelper('getLocale', function(context) {
     return locales.getLocale();
   });
+  hbs.registerHelper('localeDate', function(arg1, context) {
+    const date = new Date(arg1);
+    if (locales.getLocale() === 'fr') {
+      return date.toLocaleDateString('fr-FR', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      });
+    }
+    return date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    });
+  });
 
   await app.listen(process.env.PORT ?? 3000);
 }

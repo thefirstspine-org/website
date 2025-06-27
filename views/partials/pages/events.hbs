@@ -1,0 +1,43 @@
+<div
+  class="components-block">
+  <h1 class="text-6xl mt-8 text-center text-amber-500 tracking-widest uppercase text-shadow-lg">
+    {{{__ 'upcoming events'}}}
+  </h1>
+</div>
+
+<div class="components-block">
+  <div class="separator"></div>
+  <div class="container">
+    {{#if data.events.length}}
+    <div class="m-auto grid grid-cols-1 gap-8 md:grid-cols-3 lg:grid-cols-3 mt-16">
+      {{#each data.events}}
+      <a class="border-2 border-solid border-neutral-900 p-8 hover:bg-amber-950 hover:border-amber-400 transition-colors duration-500" href="/events/{{ this.slug }}">
+        <h3 class="text-xl mb-4 text-center text-amber-500 tracking-widest uppercase text-shadow-lg h-16">
+          {{ this.title }}
+        </h3>
+        <div class="article-cover mb-4" style="background-image: url('{{{env 'CMS_URL' }}}{{ this.cover.url }}');"></div>
+        <p class="h-auto text-sm text-amber-500">
+          <i class="fa-solid fa-calendar"></i> {{{__ 'from'}}} {{{localeDate this.start}}} {{{__ 'to'}}} {{{localeDate this.end}}}
+        </p>
+        <p class="mb-4 h-auto text-sm text-amber-500">
+          <i class="fa-solid fa-location-dot"></i> {{this.address}}
+        </p>
+        <p class="mb-4 h-auto md:h-33 md:overflow-hidden">
+          {{ this.description }}
+        </p>
+      </a>
+      {{/each}}
+    </div>
+    {{else}}
+      <h1 class="text-2xl mt-8 text-amber-500 text-center">
+        {{{__ 'not event found'}}}
+      </h1>
+      <div class="card-component card-200 mt-8">
+        <div v-scope="card" @vue:mounted="loadAndRenderCard('jellyfish');"></div>
+      </div>
+      <h1 class="text-2xl mt-8 text-center">
+        {{{__ 'there is no event scheduled at the moment'}}}
+      </h1>
+    {{/if}}
+  </div>
+</div>

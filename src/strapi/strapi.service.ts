@@ -23,6 +23,11 @@ export class StrapiService {
     }
   }
 
+  async getEvents(categorySlug: string | undefined): Promise<any[]> {
+    const date = new Date().toISOString();
+    return this.callApiGet(`events?populate=*&filters[end][$gte]=${date}&sort=start:desc`, locales.getLocale());
+  }
+
   async getCodes(userId: string): Promise<any | null> {
     const data = await this.callApiGet(`codes?populate=*&filters[userId][$eq]=${userId}`);
     return data;
