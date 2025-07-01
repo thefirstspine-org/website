@@ -133,7 +133,7 @@
     @apply text-white me-2 rounded-full inline-block transition-colors duration-500 border-2 border-zinc-300/50 shadow-lg;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
     &.primary {
-      @apply bg-linear-to-b from-amber-300 to-amber-500 hover:to-amber-400 text-amber-950;
+      @apply bg-linear-to-b from-amber-300 to-amber-600 hover:from-amber-200 hover:to-amber-400 text-amber-950;
     }
     &.warning {
       @apply bg-linear-to-b from-orange-400 to-orange-600 hover:to-orange-500 text-white;
@@ -353,7 +353,7 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      top: 6%;
+      top: 6.5%;
       left: 34.5%;
     }
     .top-def {
@@ -366,7 +366,7 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      top: 6%;
+      top: 6.5%;
       left: 50%;
     }
     .top-capacity {
@@ -380,7 +380,7 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      top: 6%;
+      top: 6.5%;
       left: 65%;
     }
     .bottom-str {
@@ -433,7 +433,7 @@
       align-items: center;
       text-align: center;
       text-align: center;
-      top: 34%;
+      top: 34.5%;
       left: 6%;
     }
     .left-def {
@@ -472,7 +472,7 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      top: 34%;
+      top: 34.5%;
       left: 93.5%;
     }
     .right-def {
@@ -511,7 +511,7 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      top: 37%;
+      top: 37.5%;
       left: 42.5%;
     }
     .capacity {
@@ -524,7 +524,7 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      top: 37%;
+      top: 37.5%;
       left: 57.5%;
     }
     .name {
