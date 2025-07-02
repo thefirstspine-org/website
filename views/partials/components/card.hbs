@@ -1,0 +1,5 @@
+<div class="card-component">
+  {{#if cardId}}
+    <div v-scope="card" @vue:mounted="loadAndRenderCard('{{ cardId }}');"></div>
+  {{/if}}
+</div>

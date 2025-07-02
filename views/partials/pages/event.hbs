@@ -1,0 +1,32 @@
+<div
+  class="components-block">
+  <div class="container">
+    <h1 class="text-6xl mt-24 mb-16 text-center text-amber-500 tracking-widest uppercase text-shadow-lg">
+      {{ data.title }}
+    </h1>
+  </div>
+</div>
+
+<div
+  class="components-block"
+>
+  <div class="separator"></div>
+  <div class="container max-w-5xl">
+    <div class="my-8 text-center">
+      <div class="border-2 border-solid p-8 bg-amber-950 border-amber-400 p-4 mb-8">
+        <p class="h-auto">
+          <i class="fa-solid fa-calendar"></i> {{{__ 'from'}}} {{{localeDate data.start}}} {{{__ 'to'}}} {{{localeDate data.end}}}
+        </p>
+        <p class="mt-4">
+          <i class="fa-solid fa-location-dot"></i> {{data.address}}
+        </p>
+      </div>
+      <div class="markdown text-shadow-lg text-left">
+        {{{ md data.content }}}
+      </div>
+    </div>
+    <p class="text-center">
+      <a class="button primary medium m-0" href="/events">Back to the events</a>
+    </p>
+  </div>
+</div>

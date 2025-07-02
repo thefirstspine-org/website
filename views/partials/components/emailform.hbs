@@ -1,0 +1,9 @@
+<div class="code-form">
+  <form action="/email" method="post">
+    <div class="w-full max-w-sm min-w-[200px] mx-auto">
+      <input type="email" name="email" class="input mb-4" placeholder="{{{__ 'your email address'}}}" />
+    </div>
+    <input class="button primary medium cursor-pointer" type="submit" value="{{{__ 'submit'}}}" />
+    <input type="hidden" name="campaign" value="{{ campaign }}" />
+  </form>
+</div>

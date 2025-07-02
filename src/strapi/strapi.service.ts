@@ -1,30 +1,71 @@
 import { Injectable } from '@nestjs/common';
 import * as axios from 'axios';
+import locales from '../locale/locales';
 
 @Injectable()
 export class StrapiService {
 
-  private readonly apiUrl = 'https://dev.cms.thefirstspine.fr/api'; // TODO: Move to config
-  private readonly activateCache = false; // Enable or disable caching
-  private readonly cache: Map<string, CachedRequest> = new Map();
+  private readonly cache: {[key: string]: CachedRequest} = {}
   private readonly cacheDuration = 1000 * 60; // Cache duration in milliseconds (1 minute)
 
-  async getGlobalData(): Promise<GlobalData | null> {
+  async getGlobalData(): Promise<GlobalData | undefined> {
     // Get the page
-    const data = await this.callApi(`global?populate=*`);
+    const data = await this.callApiGet(`global?populate[0]=defaultSeo&populate[1]=defaultSeo.shareImage&populate[2]=navigation`, locales.getLocale());
     return data;
   }
 
-  async getPageData(path: string | null): Promise<PageData | null> {
+  async getArticles(categorySlug: string | undefined): Promise<any[]> {
     // Get the page
-    const pages = await this.callApi(`pages?populate=*&filters${( path ? `[canonicalUrl][$eq]=${path}` : '[canonicalUrl][$notNull]' )}`);
-    if (pages.length === 0) {
+    if (categorySlug) {
+      return this.callApiGet(`articles?populate=*&sort=createdAt:desc&filters[category][slug][$eq]=${categorySlug}`, locales.getLocale());
+    } else {
+      return this.callApiGet(`articles?populate=*&sort=createdAt:desc`, locales.getLocale());
+    }
+  }
+
+  async getEvents(categorySlug: string | undefined): Promise<any[]> {
+    const date = new Date().toISOString();
+    return this.callApiGet(`events?populate=*&filters[end][$gte]=${date}&sort=start:desc`, locales.getLocale());
+  }
+
+  async getCodes(userId: string): Promise<any | null> {
+    const data = await this.callApiGet(`codes?populate=*&filters[userId][$eq]=${userId}`);
+    return data;
+  }
+
+  async getUnusedCode(code: string): Promise<any | null> {
+    const data = await this.callApiGet(`codes?populate=*&filters[code][$eq]=${code}&filters[userId][$eq]=0`, '', true);
+    return data && data[0] ? data[0] : null;
+  }
+
+  async redeemCode(documentId: string, userId: number): Promise<any | null> {
+    const data = await this.callApiPut('codes', documentId, { userId });
+    return data && data[0] ? data[0] : null;
+  }
+
+  async getArticle(slug: string): Promise<any | null> {
+    // Get the page
+    const data = await this.callApiGet(`articles?populate=*&filters[slug][$eq]=${slug}`, locales.getLocale());
+    if (data.length === 0) {
       return null;
     }
-    const page = pages[0];
+    const page = data[0];
 
     // Get the blocks
-    const blocks = await this.callApi(`blocks?populate=*&filters[page][documentId][$eq]=${page.documentId}`);
+    const blocks = await this.callApiGet(
+      `blocks?` +
+      `populate[0]=content&` +
+      `populate[1]=content.button1&` +
+      `populate[2]=content.button2&` +
+      `populate[3]=content.button3&` +
+      `populate[4]=background&` +
+      `populate[5]=image&` +
+      `populate[6]=content.media&` +
+      `populate[7]=content.video&` +
+      `populate[8]=content.files&` +
+      `filters[page][documentId][$eq]=${page.documentId}`,
+      locales.getLocale()
+    );
     page.blocks = page.blocks.map((block: Document) => {
       return blocks.find((b: Document) => b.documentId === block.documentId) || block;
     });
@@ -32,33 +73,136 @@ export class StrapiService {
     return page;
   }
 
-  async callApi(path: string): Promise<any[] | any> {
+  async getEvent(slug: string): Promise<any | null> {
+    // Get the page
+    const data = await this.callApiGet(`events?populate=*&filters[slug][$eq]=${slug}`, locales.getLocale());
+    if (data.length === 0) {
+      return null;
+    }
+    const page = data[0];
+    return page;
+  }
+
+  async getPageData(path: string | null): Promise<PageData | null> {
+    // Get the page
+    const pages = await this.callApiGet(
+      `pages?populate[0]=seo&populate[1]=seo.shareImage&populate[2]=blocks&filters${( path ? `[canonicalUrl][$eq]=${path}` : '[canonicalUrl][$notNull]' )}`,
+      locales.getLocale()
+    );
+    if (pages.length === 0) {
+      return null;
+    }
+    const page = pages[0];
+
+    // Get the blocks
+    const blocks = await this.callApiGet(
+      `blocks?` +
+      `populate[0]=content&` +
+      `populate[1]=content.button1&` +
+      `populate[2]=content.button2&` +
+      `populate[3]=content.button3&` +
+      `populate[4]=background&` +
+      `populate[5]=image&` +
+      `populate[6]=content.media&` +
+      `populate[7]=content.video&` +
+      `populate[8]=content.files&` +
+      `filters[page][documentId][$eq]=${page.documentId}`,
+      locales.getLocale()
+    );
+    page.blocks = page.blocks.map((block: Document) => {
+      return blocks.find((b: Document) => b.documentId === block.documentId) || block;
+    });
+
+    return page;
+  }
+
+  async getEmail(email: string, campaign: string): Promise<any[]> {
+    // Get the page
+    return this.callApiGet(`emails?filters[email][$eq]=${email}&filters[campaign][$eq]=${campaign}`, undefined, true);
+  }
+
+  async createEmail(email: string, campaign: string): Promise<any> {
+    this.callApiPost(
+      'emails',
+      {
+        email,
+        campaign
+      }
+    );
+  }
+
+  async callApiGet(path: string, locale: string = 'en', deactivateCache = false): Promise<any[] | any> {
     // Check cache
-    if (this.activateCache && this.cache.has(path)) {
-      const cached = this.cache.get(path);
+    const cacheKey = `path:${path},locale:${locale}`;
+    if (!deactivateCache && this.cache[cacheKey] != undefined) {
+      const cached = this.cache[cacheKey];
       if (cached && cached.expires > Date.now()) {
-        return cached.data;
+        return JSON.parse(JSON.stringify(cached.data)); // deep clone response
       }
     }
     // Fetch data from API
-    const response = await axios.default.get(
-      `${this.apiUrl}/${path}`,
-      {
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer 24b1f7fdcfda1db33ee2e10b16f1d4280425ada71a28ece51c85e1888852a3d654102c8837972ebfca72588addecd2f482072980aff5eeff1f648b4874b0b6e4e7c6ed65cdf3db603d37e9b78f49fa44de3327be30a9f63e12f49cec37567c78357b7978591125a8f7d376933960c23d6dd2f10efcae4d79b51034c645387c2e`, // TODO: Move to config
-        },
+    try {
+        const response = await axios.default.get(
+        `${process.env.CMS_URL}/api/${path}&locale=${locale}`,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${process.env.CMS_TOKEN}`,
+          },
+        }
+      );
+      // Cache the response
+      if (!deactivateCache) {
+        this.cache[cacheKey] = {
+          expires: Date.now() + this.cacheDuration,
+          data: response.data.data
+        };
       }
-    );
-    console.log({path, response: response.data});
-    // Cache the response
-    if (this.activateCache) {
-      this.cache.set(path, {
-        expires: Date.now() + this.cacheDuration,
-        data: response.data.data
-      });
+      return response.data.data;
+    } catch (error) {
+      console.error(`Error fetching data from Strapi API: ${JSON.stringify(error?.response?.data) || error.message}`);
+      return null;
     }
-    return response.data.data;
+  }
+
+  async callApiPost(entity: string, data: any): Promise<any[] | any> {
+    // Fetch data from API
+    try {
+        const response = await axios.default.post(
+        `${process.env.CMS_URL}/api/${entity}`,
+        { data },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${process.env.CMS_TOKEN}`,
+          },
+        }
+      );
+      return response.data.data;
+    } catch (error) {
+      console.error(`Error fetching data from Strapi API: ${JSON.stringify(error?.response?.data) || error.message}`);
+      return null;
+    }
+  }
+
+  async callApiPut(entity: string, entityId: string, data: any): Promise<any[] | any> {
+    // Fetch data from API
+    try {
+        const response = await axios.default.put(
+        `${process.env.CMS_URL}/api/${entity}/${entityId}`,
+        { data },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${process.env.CMS_TOKEN}`,
+          },
+        }
+      );
+      return response.data.data;
+    } catch (error) {
+      console.error(`Error fetching data from Strapi API: ${JSON.stringify(error?.response?.data) || error.message}`);
+      return null;
+    }
   }
 
 }
@@ -81,12 +225,13 @@ export interface SEO {
   id: number;
   metaTitle: string | null;
   metaDescription: string | null;
+  shareImage: Media | null;
 }
 
 export interface PageData extends Document {
   canonicalUrl: string | null;
   blocks: Block[];
-  seo: SEO | null;
+  seo: Array<SEO>;
 }
 
 export interface Block extends Document {

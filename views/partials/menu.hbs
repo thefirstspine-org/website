@@ -1,11 +1,17 @@
-<div class="menu-bar">
+<div class="menu-bar relative">
   <div class="container">
     <div class="-mx-1">
-      <ul class="menu">
+      <div class="burger">
+        <a class="button cursor-pointer medium primary" @click="isToggled('menu-opened') ? toggleOff('menu-opened') : toggleOn('menu-opened')">
+          <i class="fa-solid fa-bars"></i>
+        </a>
+      </div>
+
+      <ul :class="{ menu: true, opened: isToggled('menu-opened') }">
         <li class="block relative">
           <div class="menu-item">
             <a class="cursor-pointer" href="/">
-              <span>Home</span>
+              <span>{{{__ 'home'}}}</span>
             </a>
           </div>
         </li>
@@ -13,7 +19,7 @@
         <li class="block relative">
           <div class="menu-item">
             <a class="cursor-pointer" @click="toggleOn('News')" v-click-outside="toggleOff('News')">
-              <span>News</span>
+              <span>{{{__ 'news'}}}</span>
               <span class="ml-4 text-neutral-500">
                 <i class="fa-solid fa-chevron-down"></i>
               </span>
@@ -35,7 +41,7 @@
         <li class="block relative">
           <div class="menu-item">
             <a class="cursor-pointer" @click="toggleOn('Play')" v-click-outside="toggleOff('Play')">
-              <span>Play</span>
+              <span>{{{__ 'play'}}}</span>
               <span class="ml-4 text-neutral-500">
                 <i class="fa-solid fa-chevron-down"></i>
               </span>
@@ -57,7 +63,7 @@
         <li class="block relative">
           <div class="menu-item">
             <a class="cursor-pointer" @click="toggleOn('About')" v-click-outside="toggleOff('About')">
-              <span>About</span>
+              <span>{{{__ 'about'}}}</span>
               <span class="ml-4 text-neutral-500">
                 <i class="fa-solid fa-chevron-down"></i>
               </span>
@@ -74,6 +80,21 @@
               </ul>
             </div>
           </div>
+        </li>
+
+        <li class="block login">
+          <a class="cursor-pointer" v-if="!userInfo.isLoggedIn" href="/login">
+            <div class="login-content">
+              <img class="mr-4" src="/menu-login.png" />
+              <span>{{{__ 'login'}}}</span>
+            </div>
+          </a>
+          <a class="cursor-pointer" v-if="userInfo.isLoggedIn" href="/account">
+            <div class="login-content">
+              <img class="mr-4" src="/menu-login.png" />
+              <span>{{{__ 'account'}}}</span>
+            </div>
+          </a>
         </li>
 
       </ul>

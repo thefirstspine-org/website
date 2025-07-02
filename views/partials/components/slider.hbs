@@ -1,0 +1,26 @@
+<div class="m-auto grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-4">
+  {{#each files }}
+  <div class="cursor-pointer overflow-hidden rounded-sm" @click="toggleOn('{{ this.documentId }}')">
+    <img src="{{{env 'CMS_URL' }}}{{ this.url }}" />
+  </div>
+  <div
+      data-dialog-backdrop="image-dialog"
+      data-dialog-backdrop-close="true"
+      v-if="isToggled('{{ this.documentId }}')" @click="toggleOff('{{ this.documentId }}')" 
+      class="fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black/80 backdrop-blur-sm"
+    >
+    <div
+      class="relative m-4 w-3/4 min-w-[75%] max-w-[75%] rounded-md bg-white font-sans text-base font-light leading-relaxed text-blue-gray-500 antialiased shadow-2xl"
+      role="dialog"
+      data-dialog="image-dialog"
+    >
+      <div class="flex shrink-0 items-center justify-between p-4 font-sans text-2xl font-semibold leading-snug text-blue-gray-900 antialiased">
+        <div class="flex items-center gap-3">
+          <img src="{{{env 'CMS_URL' }}}{{ this.url }}" />
+        </div>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+  </div>
+</div>
