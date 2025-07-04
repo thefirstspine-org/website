@@ -1,0 +1,104 @@
+{{#if button1}}
+  <a class="
+    button
+    {{#ifEquals button1.style 'Primary'}}
+      primary
+    {{/ifEquals}}
+    {{#ifEquals button1.style 'Warning'}}
+      warning
+    {{/ifEquals}}
+    {{#ifEquals button1.style 'Danger'}}
+      danger
+    {{/ifEquals}}
+    {{#ifEquals button1.size 'Small'}}
+      small
+    {{/ifEquals}}
+    {{#ifEquals button1.size 'Medium'}}
+      medium
+    {{/ifEquals}}
+    {{#ifEquals button1.size 'Big'}}
+      big
+    {{/ifEquals}}
+    "
+    {{#if button1.openInNewTab}}
+      target="_blank"
+    {{/if}}
+    href="{{ button1.link }}"
+  >
+    {{#if button1.icon}}
+      <i class="fa-solid {{ button1.icon }}"></i>
+    {{/if}}
+    {{ button1.label }}
+  </a>
+{{/if}}
+
+{{#if button2}}
+  <a class="
+    button
+    mt-4
+    {{#ifEquals button2.style 'Primary'}}
+      primary
+    {{/ifEquals}}
+    {{#ifEquals button2.style 'Warning'}}
+      warning
+    {{/ifEquals}}
+    {{#ifEquals button2.style 'Danger'}}
+      danger
+    {{/ifEquals}}
+    {{#ifEquals button2.size 'Small'}}
+      small
+    {{/ifEquals}}
+    {{#ifEquals button2.size 'Medium'}}
+      medium
+    {{/ifEquals}}
+    {{#ifEquals button2.size 'Big'}}
+      big
+    {{/ifEquals}}
+    "
+    {{#if button2.openInNewTab}}
+      target="_blank"
+    {{/if}}
+    href="{{ button2.link }}"
+  >
+    {{#if button2.icon}}
+      <i class="fa-solid {{ button2.icon }}"></i>
+    {{/if}}
+    {{ button2.label }}
+  </a>
+{{/if}}
+
+{{#if button3}}
+  <a class="
+    button
+    mt-4
+    {{#ifEquals button3.style 'Primary'}}
+      primary
+    {{/ifEquals}}
+    {{#ifEquals button3.style 'Warning'}}
+      warning
+    {{/ifEquals}}
+    {{#ifEquals button3.style 'Danger'}}
+      danger
+    {{/ifEquals}}
+    {{#ifEquals button3.size 'Small'}}
+      small
+    {{/ifEquals}}
+    {{#ifEquals button3.size 'Medium'}}
+      medium
+    {{/ifEquals}}
+    {{#ifEquals button3.size 'Big'}}
+      big
+    {{/ifEquals}}
+    "
+    {{#if button3.openInNewTab}}
+      target="_blank"
+    {{/if}}
+    href="{{ button3.link }}"
+  >
+    {{#if button3.icon}}
+      <i class="fa-solid {{ button3.icon }}"></i>
+    {{/if}}
+    {{ button3.label }}
+  </a>
+{{/if}}
+

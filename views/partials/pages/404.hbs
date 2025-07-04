@@ -1,6 +1,15 @@
 <div
-  class="components-block">
-  <h1 class="text-6xl mt-8 text-center text-amber-500 tracking-widest uppercase">
-    Not found
-  </h1>
+  class="components-block text-center">
+  <div class="container">
+    <h1 class="text-6xl mt-8 text-amber-500 tracking-widest uppercase">
+      {{{__ 'not found'}}}
+    </h1>
+    <h1 class="text-4xl mt-8 text-center">
+      {{{__ 'the page does not exist'}}}
+    </h1>
+    <div class="card-component my-8">
+      <div v-scope="card" @vue:mounted="loadAndRenderCard('the-void');"></div>
+    </div>
+    <a href="/" class="button big primary">{{{__ 'back home'}}}</a>
+  </div>
 </div>

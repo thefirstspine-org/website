@@ -1,0 +1,172 @@
+{{#if data.errors}}
+  <div
+    v-if="!isToggled('close-toast-error')" 
+    class="flex items-center w-full max-w-lg p-4 bg-red-950 text-red-300 rounded-lg shadow-sm mt-30 mb-4 mx-auto "
+    role="alert">
+    <div class="inline-flex items-center justify-center shrink-0 w-16 h-16 text-red-400 bg-red-900 rounded-lg text-2xl">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+    </div>
+    <div class="ms-4">
+      {{#each data.errors}}
+        <p>{{{__ this}}}</p>
+      {{/each}}
+    </div>
+    <button @click="toggleOn('close-toast-error')" type="button" class="ms-auto -mx-1.5 -my-1.5 text-red-400 hover:text-red-900 rounded-lg focus:ring-2 focus:ring-red-300 p-1.5 hover:bg-red-100 inline-flex items-center justify-center h-8 w-8" aria-label="Close">
+        <span class="sr-only">Close</span>
+        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+        </svg>
+    </button>
+  </div>
+{{/if}}
+
+{{#if data.success}}
+  <div
+    v-if="!isToggled('close-toast-success')" 
+    class="flex items-center w-full max-w-lg p-4 bg-green-950 text-green-300 rounded-lg shadow-sm mt-30 mb-4 mx-auto "
+    role="alert">
+    <div class="inline-flex items-center justify-center shrink-0 w-16 h-16 text-green-400 bg-green-900 rounded-lg text-2xl">
+        <i class="fa-solid fa-check"></i>
+    </div>
+    <div class="ms-4">
+        <p>{{{__ data.success}}}</p>
+    </div>
+    <button @click="toggleOn('close-toast-success')" type="button" class="ms-auto -mx-1.5 -my-1.5 text-green-400 hover:text-green-900 rounded-lg focus:ring-2 focus:ring-green-300 p-1.5 hover:bg-green-100 inline-flex items-center justify-center h-8 w-8" aria-label="Close">
+        <span class="sr-only">Close</span>
+        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+        </svg>
+    </button>
+  </div>
+{{/if}}
+
+<div
+  class="components-block">
+  <h1 class="text-6xl mt-8 text-center text-amber-500 tracking-widest uppercase text-shadow-lg">
+    {{{__ 'your wizard account'}}}
+  </h1>
+  <h1 class="mt-4 text-center text-amber-500 tracking-widest text-shadow-lg">
+    {{{ data.user.email }}} #{{{ data.user.user_id }}}
+  </h1>
+  <p class="mt-4 text-center">
+    <a class="button small danger" href="/account/logout">{{{__ 'logout'}}}</a>
+  </p>
+</div>
+
+<div
+  class="components-block"
+  >
+  <div class="separator"></div>
+  <div class="container">
+    <div class="my-8 text-center">
+      <h1 class="text-4xl mt-8 text-center text-amber-500 tracking-widest uppercase text-shadow-lg">
+        {{{__ 'your account on arena'}}}
+      </h1>
+      {{#if data.arenaPlayer}}
+        <p class="mt-8">{{{__ 'your player name is'}}} <strong>{{data.arenaPlayer.name}}</strong></p>
+        <table class="table-auto text-left max-w-lg mx-auto mt-8">
+          <tbody>
+            <tr>
+              <td class="font-bold">{{{__ 'power'}}}</td>
+              <td>{{data.arenaPlayer.power}}</td>
+            </tr>
+            <tr>
+              <td class="font-bold">{{{__ 'ancientShards'}}}</td>
+              <td>{{data.arenaPlayer.currencies.ancientShards}}</td>
+            </tr>
+            <tr>
+              <td class="font-bold">{{{__ 'destinyMarks'}}}</td>
+              <td>{{data.arenaPlayer.currencies.destinyMarks}}</td>
+            </tr>
+            <tr>
+              <td class="font-bold">{{{__ 'strangeCoins'}}}</td>
+              <td>{{data.arenaPlayer.currencies.strangeCoins}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="mt-8">
+          <a href="/arena" class="button medium primary">{{{__ 'manage your account on arena'}}}</a>
+        </p>
+      {{else}}
+        <p class="mt-8">{{{__ 'you do not have any account on arena'}}}</p>
+        <p class="mt-8">
+          <a href="/arena" class="button medium primary">{{{__ 'play on arena now'}}}</a>
+        </p>
+      {{/if}}
+    </div>
+  </div>
+</div>
+
+<div
+  class="components-block"
+  >
+  <div class="separator"></div>
+  <div class="container">
+    <div class="my-8 text-center">
+      <h1 class="text-4xl mt-8 text-center text-amber-500 tracking-widest uppercase text-shadow-lg">
+        {{{__ 'your codes'}}}
+      </h1>
+      <p class="mt-8">
+        <table class="table-auto text-left max-w-lg mx-auto mt-8">
+          <thead>
+            <tr>
+              <td>{{{__ 'code'}}}</td>
+              <td>{{{__ 'event'}}}</td>
+              <td>{{{__ 'strangeCoins'}}}</td>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each data.codes}}
+              <tr>
+                <td>{{this.code}}</td>
+                <td>{{this.event.title}}</td>
+                <td>{{this.kickstarter_strangeCoins}}</td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div
+  class="components-block"
+  >
+  <div class="separator"></div>
+  <div class="container">
+    <div class="my-8 text-center">
+      <h1 class="text-4xl mt-8 text-center text-amber-500 tracking-widest uppercase text-shadow-lg">
+        {{{__ 'your account information'}}}
+      </h1>
+      <p class="mt-8">
+        {{{__ 'here you can manage your account and update your information'}}}<br />
+        {{{__ 'if you are changing your email address or your password, you will be logged out from all the devices you are currently logged in'}}}
+      </p>
+      <div class="max-w-2xl mx-auto m-auto grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-2">
+        <form class="mt-8 text-left" method="post" action="/account/change-email">
+          <h5 class="text-xl text-center mb-4 text-amber-500">{{{__ 'change email address'}}}</h5>
+          <p class="mt-8">{{{__ 'password'}}}</p>
+          <input type="password" name="password_verify" class="input mt-2" placeholder="{{{__ '*****'}}}" />
+          <p class="mt-8">{{{__ 'new email address'}}}</p>
+          <input type="email" name="email" class="input mt-2" placeholder="{{{__ 'me@email.com'}}}" />
+          <p class="mt-8 text-center">
+            <input type="submit" class="button medium primary cursor-pointer" value="{{__ 'change email address'}}" />
+          </p>
+        </form>
+        <form class="mt-8 text-left" method="post" action="/account/change-password">
+          <h5 class="text-xl text-center mb-4 text-amber-500">{{{__ 'change password'}}}</h5>
+          <p class="mt-8">{{{__ 'old password'}}}</p>
+          <input type="password" name="password_verify" class="input mt-2" placeholder="{{{__ '*****'}}}" />
+          <p class="mt-8">{{{__ 'new password'}}}</p>
+          <input type="password" name="password" class="input mt-2" placeholder="{{{__ '*****'}}}" />
+          <p class="mt-8">{{{__ 'confirm password'}}}</p>
+          <input type="password" name="password_confirm" class="input mt-2" placeholder="{{{__ '*****'}}}" />
+          <p class="mt-8 text-center">
+            <input type="submit" class="button medium primary cursor-pointer" value="{{__ 'change password'}}" />
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -5,7 +5,8 @@
   "compilerOptions": {
     "deleteOutDir": true,
     "assets": [
-      { "include": "**/*.hbs", "watchAssets": true }
+      { "include": "**/*.hbs", "watchAssets": true },
+      { "include": "**/*.json", "watchAssets": true }
     ]
   }
 }
