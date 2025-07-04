@@ -33,3 +33,4 @@ jobs:
           metricSourceId: 'ari:cloud:compass:6ea2c72c-9b15-49d9-bd9d-72a5b6d1b3e1:metric-source/f792fe52-6af8-47ca-9398-ce0c44305c1b/1518529f-bb1b-4fcf-9b70-e2ab8bd5a0c6'
           scanNpmVulnerabilities: true
           scanDockerVulnerabilities: true
+          path: 'tmp'
