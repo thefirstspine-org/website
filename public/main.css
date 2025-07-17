@@ -1302,20 +1302,20 @@
         text-transform: uppercase;
       }
       h2 {
-        margin-block: calc(var(--spacing) * 4);
+        margin-block: calc(var(--spacing) * 6);
         font-size: var(--text-3xl);
         line-height: var(--tw-leading, var(--text-3xl--line-height));
       }
       h3 {
-        margin-block: calc(var(--spacing) * 4);
+        margin-block: calc(var(--spacing) * 6);
         font-size: var(--text-2xl);
         line-height: var(--tw-leading, var(--text-2xl--line-height));
       }
       p {
-        margin-block: calc(var(--spacing) * 4);
+        margin-block: calc(var(--spacing) * 6);
       }
       ul {
-        margin-block: calc(var(--spacing) * 4);
+        margin-block: calc(var(--spacing) * 6);
         list-style-position: inside;
         list-style-type: disc;
       }

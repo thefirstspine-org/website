@@ -200,16 +200,16 @@
         @apply text-4xl my-8 tracking-widest uppercase;
       }
       h2 {
-        @apply text-3xl my-4;
+        @apply text-3xl my-6;
       }
       h3 {
-        @apply text-2xl my-4;
+        @apply text-2xl my-6;
       }
       p {
-        @apply my-4;
+        @apply my-6;
       }
       ul {
-        @apply list-disc list-inside my-4;
+        @apply list-disc list-inside my-6;
       }
       img {
         @apply inline-block;
