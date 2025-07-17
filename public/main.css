@@ -332,9 +332,6 @@
   .mt-16 {
     margin-top: calc(var(--spacing) * 16);
   }
-  .mt-24 {
-    margin-top: calc(var(--spacing) * 24);
-  }
   .mt-30 {
     margin-top: calc(var(--spacing) * 30);
   }
@@ -1393,6 +1390,29 @@
       --tw-font-weight: var(--font-weight-bold);
       font-weight: var(--font-weight-bold);
       color: var(--color-neutral-300);
+    }
+  }
+  .card-stat-inline {
+    display: inline-block;
+    height: calc(var(--spacing) * 8);
+    width: calc(var(--spacing) * 8);
+    border-radius: calc(infinity * 1px);
+    border-style: var(--tw-border-style);
+    border-width: 2px;
+    --tw-border-style: solid;
+    border-style: solid;
+    border-color: var(--color-white);
+    padding-inline: calc(var(--spacing) * 1);
+    text-align: center;
+    color: var(--color-white);
+    &.str {
+      background-color: var(--color-red-700);
+    }
+    &.def {
+      background-color: var(--color-sky-700);
+    }
+    &.life, &.capacity {
+      background-color: var(--color-gray-700);
     }
   }
   .card {

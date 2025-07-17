@@ -261,6 +261,19 @@
     }
   }
 
+  .card-stat-inline {
+    @apply rounded-full text-white px-1 w-8 h-8 text-center border-2 border-solid border-white inline-block;
+    &.str {
+      @apply bg-red-700;
+    }
+    &.def {
+      @apply bg-sky-700;
+    }
+    &.life, &.capacity {
+      @apply bg-gray-700;
+    }
+  }
+
   .card {
     @apply m-auto block relative text-white;
     aspect-ratio: 1/1;
