@@ -1354,6 +1354,13 @@
           width: 16px;
           height: 16px;
         }
+        .description {
+          font-size: 20px;
+        }
+        .name {
+          font-size: 24px;
+          text-transform: uppercase;
+        }
         @media (width < 48rem) {
           width: 200px;
           height: 200px;
@@ -1371,6 +1378,13 @@
             border-style: solid;
             border-color: var(--color-white);
             padding-inline: calc(var(--spacing) * 0);
+          }
+          .description {
+            font-size: 10px;
+          }
+          .name {
+            font-size: 12px;
+            text-transform: uppercase;
           }
         }
       }
@@ -1429,8 +1443,12 @@
         width: 18px;
         height: 18px;
       }
-      .name, .description {
+      .description {
         font-size: 20px;
+      }
+      .name {
+        font-size: 24px;
+        text-transform: uppercase;
       }
     }
     &.card-200 {
@@ -1441,8 +1459,12 @@
         width: 9px;
         height: 9px;
       }
-      .name, .description {
+      .description {
         font-size: 10px;
+      }
+      .name {
+        font-size: 12px;
+        text-transform: uppercase;
       }
       .stat-inline {
         height: calc(var(--spacing) * 4);
@@ -1463,8 +1485,12 @@
         width: 4px;
         height: 4px;
       }
-      .name, .description {
+      .description {
         font-size: 5px;
+      }
+      .name {
+        font-size: 6px;
+        text-transform: uppercase;
       }
       .stat-inline {
         height: calc(var(--spacing) * 2);
