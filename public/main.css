@@ -78,8 +78,16 @@
     --text-3xl--line-height: calc(2.25 / 1.875);
     --text-4xl: 2.25rem;
     --text-4xl--line-height: calc(2.5 / 2.25);
+    --text-5xl: 3rem;
+    --text-5xl--line-height: 1;
     --text-6xl: 3.75rem;
     --text-6xl--line-height: 1;
+    --text-7xl: 4.5rem;
+    --text-7xl--line-height: 1;
+    --text-8xl: 6rem;
+    --text-8xl--line-height: 1;
+    --text-9xl: 8rem;
+    --text-9xl--line-height: 1;
     --font-weight-light: 300;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
@@ -1293,23 +1301,62 @@
       display: inline-block;
     }
     .markdown {
+      .text-xl {
+        font-size: var(--text-xl);
+        line-height: var(--tw-leading, var(--text-xl--line-height));
+      }
+      .text-2xl {
+        font-size: var(--text-2xl);
+        line-height: var(--tw-leading, var(--text-2xl--line-height));
+      }
+      .text-3xl {
+        font-size: var(--text-3xl);
+        line-height: var(--tw-leading, var(--text-3xl--line-height));
+      }
+      .text-4xl {
+        font-size: var(--text-4xl);
+        line-height: var(--tw-leading, var(--text-4xl--line-height));
+      }
+      .text-5xl {
+        font-size: var(--text-5xl);
+        line-height: var(--tw-leading, var(--text-5xl--line-height));
+      }
+      .text-5xl {
+        font-size: var(--text-6xl);
+        line-height: var(--tw-leading, var(--text-6xl--line-height));
+      }
+      .text-6xl {
+        font-size: var(--text-7xl);
+        line-height: var(--tw-leading, var(--text-7xl--line-height));
+      }
+      .text-7xl {
+        font-size: var(--text-8xl);
+        line-height: var(--tw-leading, var(--text-8xl--line-height));
+      }
+      .text-8xl {
+        font-size: var(--text-9xl);
+        line-height: var(--tw-leading, var(--text-9xl--line-height));
+      }
       h1 {
         margin-block: calc(var(--spacing) * 8);
         font-size: var(--text-4xl);
         line-height: var(--tw-leading, var(--text-4xl--line-height));
         --tw-tracking: var(--tracking-widest);
         letter-spacing: var(--tracking-widest);
+        color: var(--color-amber-500);
         text-transform: uppercase;
       }
       h2 {
         margin-block: calc(var(--spacing) * 6);
         font-size: var(--text-3xl);
         line-height: var(--tw-leading, var(--text-3xl--line-height));
+        color: var(--color-amber-500);
       }
       h3 {
         margin-block: calc(var(--spacing) * 6);
         font-size: var(--text-2xl);
         line-height: var(--tw-leading, var(--text-2xl--line-height));
+        color: var(--color-amber-500);
       }
       p {
         margin-block: calc(var(--spacing) * 6);

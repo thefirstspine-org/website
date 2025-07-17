@@ -196,14 +196,41 @@
     }
 
     .markdown {
+      .text-xl {
+        @apply text-xl;
+      }
+      .text-2xl {
+        @apply text-2xl;
+      }
+      .text-3xl {
+        @apply text-3xl;
+      }
+      .text-4xl {
+        @apply text-4xl;
+      }
+      .text-5xl {
+        @apply text-5xl;
+      }
+      .text-5xl {
+        @apply text-6xl;
+      }
+      .text-6xl {
+        @apply text-7xl;
+      }
+      .text-7xl {
+        @apply text-8xl;
+      }
+      .text-8xl {
+        @apply text-9xl;
+      }
       h1 {
-        @apply text-4xl my-8 tracking-widest uppercase;
+        @apply text-4xl my-8 tracking-widest uppercase text-amber-500;
       }
       h2 {
-        @apply text-3xl my-6;
+        @apply text-3xl my-6 text-amber-500;
       }
       h3 {
-        @apply text-2xl my-6;
+        @apply text-2xl my-6 text-amber-500;
       }
       p {
         @apply my-6;
