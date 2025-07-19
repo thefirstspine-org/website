@@ -196,20 +196,47 @@
     }
 
     .markdown {
+      .text-xl {
+        @apply text-xl;
+      }
+      .text-2xl {
+        @apply text-2xl;
+      }
+      .text-3xl {
+        @apply text-3xl;
+      }
+      .text-4xl {
+        @apply text-4xl;
+      }
+      .text-5xl {
+        @apply text-5xl;
+      }
+      .text-5xl {
+        @apply text-6xl;
+      }
+      .text-6xl {
+        @apply text-7xl;
+      }
+      .text-7xl {
+        @apply text-8xl;
+      }
+      .text-8xl {
+        @apply text-9xl;
+      }
       h1 {
-        @apply text-4xl my-8 tracking-widest uppercase;
+        @apply text-4xl my-8 tracking-widest uppercase text-amber-500;
       }
       h2 {
-        @apply text-3xl my-4;
+        @apply text-3xl my-6 text-amber-500;
       }
       h3 {
-        @apply text-2xl my-4;
+        @apply text-2xl my-6 text-amber-500;
       }
       p {
-        @apply my-4;
+        @apply my-6;
       }
       ul {
-        @apply list-disc list-inside my-4;
+        @apply list-disc list-inside my-6;
       }
       img {
         @apply inline-block;
@@ -233,6 +260,13 @@
           width: 16px;
           height: 16px;
         }
+        .description {
+          font-size: 20px;
+        }
+        .name {
+          font-size: 24px;
+          text-transform: uppercase;
+        }
         @media (width < 48rem) {
           width: 200px;
           height: 200px;
@@ -243,6 +277,13 @@
           }
           .stat-inline {
             @apply px-0 w-4 h-4 border-1 border-solid border-white;
+          }
+          .description {
+            font-size: 10px;
+          }
+          .name {
+            font-size: 12px;
+            text-transform: uppercase;
           }
         }
       }
@@ -261,6 +302,19 @@
     }
   }
 
+  .card-stat-inline {
+    @apply rounded-full text-white px-1 w-8 h-8 text-center border-2 border-solid border-white inline-block;
+    &.str {
+      @apply bg-red-700;
+    }
+    &.def {
+      @apply bg-sky-700;
+    }
+    &.life, &.capacity {
+      @apply bg-gray-700;
+    }
+  }
+
   .card {
     @apply m-auto block relative text-white;
     aspect-ratio: 1/1;
@@ -272,8 +326,12 @@
         width: 18px;
         height: 18px;
       }
-      .name, .description {
+      .description {
         font-size: 20px;
+      }
+      .name {
+        font-size: 24px;
+        text-transform: uppercase;
       }
     }
     &.card-200 {
@@ -284,8 +342,12 @@
         width: 9px;
         height: 9px;
       }
-      .name, .description {
+      .description {
         font-size: 10px;
+      }
+      .name {
+        font-size: 12px;
+        text-transform: uppercase;
       }
       .stat-inline {
         @apply px-0 w-4 h-4 border-1 border-solid border-white;
@@ -299,8 +361,12 @@
         width: 4px;
         height: 4px;
       }
-      .name, .description {
+      .description {
         font-size: 5px;
+      }
+      .name {
+        font-size: 6px;
+        text-transform: uppercase;
       }
       .stat-inline {
         @apply px-0 w-2 h-2 border-0;

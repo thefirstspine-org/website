@@ -29,6 +29,12 @@ export class AppController {
     };
   }
 
+  @Get('robots.txt')
+  async robots() {
+    return `User-agent: *
+Disallow: /`;
+  }
+
   @Get('/blog')
   @Render('global')
   async blog(@Req() req: Request, @Query('category') category: string | undefined) {

@@ -5,6 +5,12 @@ import locales from './locales';
 @Injectable()
 export class LocaleMiddleware implements NestMiddleware {
   use(req: any, res: any, next: () => void) {
+    if (req?.query?.hl == 'fr' || req?.query?.hl == 'en') {
+      locales.setLocale(req.query.hl);
+      next();
+      return;
+    }
+
     // Set language stored in cookies
     if (req.cookies.language != undefined) {
       locales.setLocale(req.cookies.language);

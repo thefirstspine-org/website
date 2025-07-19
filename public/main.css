@@ -1,4 +1,4 @@
-/*! tailwindcss v4.1.8 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v4.1.11 | MIT License | https://tailwindcss.com */
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 @layer properties;
 @layer theme, base, components, utilities;
@@ -78,8 +78,16 @@
     --text-3xl--line-height: calc(2.25 / 1.875);
     --text-4xl: 2.25rem;
     --text-4xl--line-height: calc(2.5 / 2.25);
+    --text-5xl: 3rem;
+    --text-5xl--line-height: 1;
     --text-6xl: 3.75rem;
     --text-6xl--line-height: 1;
+    --text-7xl: 4.5rem;
+    --text-7xl--line-height: 1;
+    --text-8xl: 6rem;
+    --text-8xl--line-height: 1;
+    --text-9xl: 8rem;
+    --text-9xl--line-height: 1;
     --font-weight-light: 300;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
@@ -332,9 +340,6 @@
   .mt-16 {
     margin-top: calc(var(--spacing) * 16);
   }
-  .mt-24 {
-    margin-top: calc(var(--spacing) * 24);
-  }
   .mt-30 {
     margin-top: calc(var(--spacing) * 30);
   }
@@ -567,6 +572,9 @@
   }
   .pt-4 {
     padding-top: calc(var(--spacing) * 4);
+  }
+  .pb-20 {
+    padding-bottom: calc(var(--spacing) * 20);
   }
   .text-center {
     text-align: center;
@@ -1293,29 +1301,68 @@
       display: inline-block;
     }
     .markdown {
+      .text-xl {
+        font-size: var(--text-xl);
+        line-height: var(--tw-leading, var(--text-xl--line-height));
+      }
+      .text-2xl {
+        font-size: var(--text-2xl);
+        line-height: var(--tw-leading, var(--text-2xl--line-height));
+      }
+      .text-3xl {
+        font-size: var(--text-3xl);
+        line-height: var(--tw-leading, var(--text-3xl--line-height));
+      }
+      .text-4xl {
+        font-size: var(--text-4xl);
+        line-height: var(--tw-leading, var(--text-4xl--line-height));
+      }
+      .text-5xl {
+        font-size: var(--text-5xl);
+        line-height: var(--tw-leading, var(--text-5xl--line-height));
+      }
+      .text-5xl {
+        font-size: var(--text-6xl);
+        line-height: var(--tw-leading, var(--text-6xl--line-height));
+      }
+      .text-6xl {
+        font-size: var(--text-7xl);
+        line-height: var(--tw-leading, var(--text-7xl--line-height));
+      }
+      .text-7xl {
+        font-size: var(--text-8xl);
+        line-height: var(--tw-leading, var(--text-8xl--line-height));
+      }
+      .text-8xl {
+        font-size: var(--text-9xl);
+        line-height: var(--tw-leading, var(--text-9xl--line-height));
+      }
       h1 {
         margin-block: calc(var(--spacing) * 8);
         font-size: var(--text-4xl);
         line-height: var(--tw-leading, var(--text-4xl--line-height));
         --tw-tracking: var(--tracking-widest);
         letter-spacing: var(--tracking-widest);
+        color: var(--color-amber-500);
         text-transform: uppercase;
       }
       h2 {
-        margin-block: calc(var(--spacing) * 4);
+        margin-block: calc(var(--spacing) * 6);
         font-size: var(--text-3xl);
         line-height: var(--tw-leading, var(--text-3xl--line-height));
+        color: var(--color-amber-500);
       }
       h3 {
-        margin-block: calc(var(--spacing) * 4);
+        margin-block: calc(var(--spacing) * 6);
         font-size: var(--text-2xl);
         line-height: var(--tw-leading, var(--text-2xl--line-height));
+        color: var(--color-amber-500);
       }
       p {
-        margin-block: calc(var(--spacing) * 4);
+        margin-block: calc(var(--spacing) * 6);
       }
       ul {
-        margin-block: calc(var(--spacing) * 4);
+        margin-block: calc(var(--spacing) * 6);
         list-style-position: inside;
         list-style-type: disc;
       }
@@ -1354,6 +1401,13 @@
           width: 16px;
           height: 16px;
         }
+        .description {
+          font-size: 20px;
+        }
+        .name {
+          font-size: 24px;
+          text-transform: uppercase;
+        }
         @media (width < 48rem) {
           width: 200px;
           height: 200px;
@@ -1371,6 +1425,13 @@
             border-style: solid;
             border-color: var(--color-white);
             padding-inline: calc(var(--spacing) * 0);
+          }
+          .description {
+            font-size: 10px;
+          }
+          .name {
+            font-size: 12px;
+            text-transform: uppercase;
           }
         }
       }
@@ -1392,6 +1453,29 @@
       color: var(--color-neutral-300);
     }
   }
+  .card-stat-inline {
+    display: inline-block;
+    height: calc(var(--spacing) * 8);
+    width: calc(var(--spacing) * 8);
+    border-radius: calc(infinity * 1px);
+    border-style: var(--tw-border-style);
+    border-width: 2px;
+    --tw-border-style: solid;
+    border-style: solid;
+    border-color: var(--color-white);
+    padding-inline: calc(var(--spacing) * 1);
+    text-align: center;
+    color: var(--color-white);
+    &.str {
+      background-color: var(--color-red-700);
+    }
+    &.def {
+      background-color: var(--color-sky-700);
+    }
+    &.life, &.capacity {
+      background-color: var(--color-gray-700);
+    }
+  }
   .card {
     position: relative;
     margin: auto;
@@ -1406,8 +1490,12 @@
         width: 18px;
         height: 18px;
       }
-      .name, .description {
+      .description {
         font-size: 20px;
+      }
+      .name {
+        font-size: 24px;
+        text-transform: uppercase;
       }
     }
     &.card-200 {
@@ -1418,8 +1506,12 @@
         width: 9px;
         height: 9px;
       }
-      .name, .description {
+      .description {
         font-size: 10px;
+      }
+      .name {
+        font-size: 12px;
+        text-transform: uppercase;
       }
       .stat-inline {
         height: calc(var(--spacing) * 4);
@@ -1440,8 +1532,12 @@
         width: 4px;
         height: 4px;
       }
-      .name, .description {
+      .description {
         font-size: 5px;
+      }
+      .name {
+        font-size: 6px;
+        text-transform: uppercase;
       }
       .stat-inline {
         height: calc(var(--spacing) * 2);

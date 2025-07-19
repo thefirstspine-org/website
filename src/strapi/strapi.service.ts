@@ -10,7 +10,7 @@ export class StrapiService {
 
   async getGlobalData(): Promise<GlobalData | undefined> {
     // Get the page
-    const data = await this.callApiGet(`global?populate[0]=defaultSeo&populate[1]=defaultSeo.shareImage&populate[2]=navigation`, locales.getLocale());
+    const data = await this.callApiGet(`global?populate[0]=defaultSeo&populate[1]=defaultSeo.shareImage&populate[2]=navigation&populate[3]=favicon`, locales.getLocale());
     return data;
   }
 
@@ -283,6 +283,6 @@ export interface ComponentButton extends Component {
 
 export interface GlobalData extends Document {
   siteName: string;
-  siteDescription: string;
+  favicon: Media;
   defaultSeo: SEO;
 }
