@@ -1482,6 +1482,9 @@
     &.life, &.capacity {
       background-color: var(--color-gray-700);
     }
+    img {
+      margin-top: -7px;
+    }
   }
   .card {
     position: relative;
