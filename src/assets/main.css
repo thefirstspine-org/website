@@ -285,6 +285,13 @@
             font-size: 12px;
             text-transform: uppercase;
           }
+          .top-str, .top-def, .top-capacity, .bottom-str, .bottom-def, .bottom-capacity,
+            .left-str, .left-def, .left-capacity, .right-str, .right-def, .right-capacity, .life, .capacity {
+            width: 20px;
+            height: 20px;
+            margin-left: -10px;
+            margin-top: -10px;
+          }
         }
       }
     }
@@ -352,6 +359,13 @@
       .stat-inline {
         @apply px-0 w-4 h-4 border-1 border-solid border-white;
       }
+      .top-str, .top-def, .top-capacity, .bottom-str, .bottom-def, .bottom-capacity,
+        .left-str, .left-def, .left-capacity, .right-str, .right-def, .right-capacity, .life, .capacity {
+        width: 20px;
+        height: 20px;
+        margin-left: -10px;
+        margin-top: -10px;
+      }
     }
     &.card-100 {
       width: 100px;
@@ -370,6 +384,13 @@
       }
       .stat-inline {
         @apply px-0 w-2 h-2 border-0;
+      }
+      .top-str, .top-def, .top-capacity, .bottom-str, .bottom-def, .bottom-capacity,
+        .left-str, .left-def, .left-capacity, .right-str, .right-def, .right-capacity, .life, .capacity {
+        width: 20px;
+        height: 20px;
+        margin-left: -10px;
+        margin-top: -10px;
       }
     }
     img {

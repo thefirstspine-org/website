@@ -1433,6 +1433,13 @@
             font-size: 12px;
             text-transform: uppercase;
           }
+          .top-str, .top-def, .top-capacity, .bottom-str, .bottom-def, .bottom-capacity,
+            .left-str, .left-def, .left-capacity, .right-str, .right-def, .right-capacity, .life, .capacity {
+            width: 20px;
+            height: 20px;
+            margin-left: -10px;
+            margin-top: -10px;
+          }
         }
       }
     }
@@ -1523,6 +1530,13 @@
         border-color: var(--color-white);
         padding-inline: calc(var(--spacing) * 0);
       }
+      .top-str, .top-def, .top-capacity, .bottom-str, .bottom-def, .bottom-capacity,
+        .left-str, .left-def, .left-capacity, .right-str, .right-def, .right-capacity, .life, .capacity {
+        width: 20px;
+        height: 20px;
+        margin-left: -10px;
+        margin-top: -10px;
+      }
     }
     &.card-100 {
       width: 100px;
@@ -1545,6 +1559,13 @@
         border-style: var(--tw-border-style);
         border-width: 0px;
         padding-inline: calc(var(--spacing) * 0);
+      }
+      .top-str, .top-def, .top-capacity, .bottom-str, .bottom-def, .bottom-capacity,
+        .left-str, .left-def, .left-capacity, .right-str, .right-def, .right-capacity, .life, .capacity {
+        width: 20px;
+        height: 20px;
+        margin-left: -10px;
+        margin-top: -10px;
       }
     }
     img {
