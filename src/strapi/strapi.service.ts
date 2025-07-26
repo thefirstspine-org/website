@@ -133,7 +133,6 @@ export class StrapiService {
 
   async callApiGet(path: string, locale: string = 'en', deactivateCache = false): Promise<any[] | any> {
     // Check cache
-    /*
     const cacheKey = `path:${path},locale:${locale}`;
     if (!deactivateCache && this.cache[cacheKey] != undefined) {
       const cached = this.cache[cacheKey];
@@ -141,7 +140,7 @@ export class StrapiService {
         return JSON.parse(JSON.stringify(cached.data)); // deep clone response
       }
     }
-    */
+
     // Fetch data from API
     try {
         const response = await axios.default.get(
@@ -153,7 +152,7 @@ export class StrapiService {
           },
         }
       );
-      /*
+
       // Cache the response
       if (!deactivateCache) {
         this.cache[cacheKey] = {
@@ -161,7 +160,7 @@ export class StrapiService {
           data: response.data.data
         };
       }
-      */
+
       return response.data.data;
     } catch (error) {
       console.error(`Error fetching data from Strapi API: ${JSON.stringify(error?.response?.data) || error.message}`);
