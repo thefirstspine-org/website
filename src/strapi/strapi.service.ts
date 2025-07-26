@@ -234,7 +234,7 @@ export interface SEO {
 export interface PageData extends Document {
   canonicalUrl: string | null;
   blocks: Block[];
-  seo: Array<SEO>;
+  seo: SEO | null;
 }
 
 export interface Block extends Document {

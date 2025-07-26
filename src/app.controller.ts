@@ -438,7 +438,7 @@ Disallow: /`;
     }
     return {
       page: 'pages/global',
-      seo: pageData?.seo && pageData?.seo.length >= 1 ? pageData.seo[0] : templateData?.defaultSeo,
+      seo: pageData?.seo ? pageData.seo : templateData?.defaultSeo,
       pageData,
       templateData,
     };
