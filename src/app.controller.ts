@@ -31,8 +31,13 @@ export class AppController {
 
   @Get('robots.txt')
   async robots() {
-    return `User-agent: *
+    if (process.env.ENV === 'dev') {
+      return `User-agent: *
 Disallow: /`;
+    } else {
+      return `User-agent: *
+Allow: /`;
+    }
   }
 
   @Get('/blog')
