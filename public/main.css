@@ -1402,7 +1402,7 @@
           height: 16px;
         }
         .description {
-          font-size: 20px;
+          font-size: 18px;
         }
         .name {
           font-size: 24px;
@@ -1501,7 +1501,7 @@
         height: 18px;
       }
       .description {
-        font-size: 20px;
+        font-size: 18px;
       }
       .name {
         font-size: 24px;
@@ -1517,7 +1517,7 @@
         height: 9px;
       }
       .description {
-        font-size: 10px;
+        font-size: 9px;
       }
       .name {
         font-size: 12px;
@@ -1550,7 +1550,7 @@
         height: 4px;
       }
       .description {
-        font-size: 5px;
+        font-size: 4.5px;
       }
       .name {
         font-size: 6px;
