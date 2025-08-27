@@ -62,7 +62,6 @@
     --container-md: 28rem;
     --container-lg: 32rem;
     --container-2xl: 42rem;
-    --container-5xl: 64rem;
     --container-7xl: 80rem;
     --text-sm: 0.875rem;
     --text-sm--line-height: calc(1.25 / 0.875);
@@ -274,24 +273,6 @@
   .z-\[999\] {
     z-index: 999;
   }
-  .container {
-    width: 100%;
-    @media (width >= 40rem) {
-      max-width: 40rem;
-    }
-    @media (width >= 48rem) {
-      max-width: 48rem;
-    }
-    @media (width >= 64rem) {
-      max-width: 64rem;
-    }
-    @media (width >= 80rem) {
-      max-width: 80rem;
-    }
-    @media (width >= 96rem) {
-      max-width: 96rem;
-    }
-  }
   .m-0 {
     margin: calc(var(--spacing) * 0);
   }
@@ -411,9 +392,6 @@
   }
   .max-w-2xl {
     max-width: var(--container-2xl);
-  }
-  .max-w-5xl {
-    max-width: var(--container-5xl);
   }
   .max-w-\[75\%\] {
     max-width: 75%;
@@ -862,6 +840,24 @@
     font-family: "Lora", serif;
     font-optical-sizing: auto;
     font-style: normal;
+  }
+  .content {
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: calc(var(--spacing) * 4);
+    position: relative;
+    @media (width >= 40rem) {
+      max-width: 40rem;
+    }
+    @media (width >= 48rem) {
+      max-width: 48rem;
+    }
+    @media (width >= 64rem) {
+      max-width: 64rem;
+    }
+    @media (width >= 80rem) {
+      max-width: 80rem;
+    }
   }
   .container {
     margin-inline: auto;
