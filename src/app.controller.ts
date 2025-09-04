@@ -420,7 +420,8 @@ Allow: /`;
   @Get('*')
   @Render('global')
   async root(@Req() req: Request) {
-    const page = await this.getPage(req.url.replace(/^\//, ''));
+    const path = req.path.replace(/^\//, '');
+    const page = await this.getPage(path);
     const errorsFlashed = req.flash('errors');
     const successFlashed = req.flash('success');
     if (page.pageData) {
