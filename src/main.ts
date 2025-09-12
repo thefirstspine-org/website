@@ -3,7 +3,6 @@ import { NestExpressApplication } from '@nestjs/platform-express';
 import { join } from 'path';
 import { AppModule } from './app.module';
 import hbs from 'hbs';
-import showdown from 'showdown';
 import { ValidationPipe } from '@nestjs/common';
 import { LogsService } from '@thefirstspine/logs-nest';
 import session from 'express-session';
@@ -11,6 +10,7 @@ import flash from 'connect-flash';
 import locales from './locale/locales';
 import cookieParser from 'cookie-parser';
 import { ErrorFilter } from './errors.filter';
+import { registerHelpers } from './hb.helpers';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
@@ -39,40 +39,8 @@ async function bootstrap() {
   app.setViewEngine('hbs');
 
   hbs.registerPartials(join(__dirname, '..', 'views/partials'));
-  hbs.registerHelper('json', function(context) {
-    return JSON.stringify(context);
-  });
-  hbs.registerHelper('ifEquals', function(arg1, arg2, context) {
-    return (arg1 == arg2) ? context.fn(this) : context.inverse(this);
-  });
-  hbs.registerHelper('md', function(context) {
-    const converter = new showdown.Converter({simpleLineBreaks: true});
-    return converter.makeHtml(context);
-  });
-  hbs.registerHelper('env', function(arg1, context) {
-    return process.env[arg1];
-  });
-  hbs.registerHelper('__', function(arg1, context) {
-    return locales.__(arg1);
-  });
-  hbs.registerHelper('getLocale', function(context) {
-    return locales.getLocale();
-  });
-  hbs.registerHelper('localeDate', function(arg1, context) {
-    const date = new Date(arg1);
-    if (locales.getLocale() === 'fr') {
-      return date.toLocaleDateString('fr-FR', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-      });
-    }
-    return date.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    });
-  });
+  
+  registerHelpers(hbs);
 
   await app.listen(process.env.PORT ?? 3000);
 }
