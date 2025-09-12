@@ -1,3 +1,11 @@
 <div class="media">
+  {{#ifRegex media.url '[\/.](gif|jpg|jpeg|tiff|png)$'}}
   <img src="{{{env 'CMS_URL' }}}{{ media.url }}" />
+  {{/ifRegex}}
+  {{#ifRegex media.url '[\/.](mp4)$'}}
+  <video class="mx-auto" autoplay loop muted playsinline>
+    <source src="{{{env 'CMS_URL' }}}{{ media.url }}" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  {{/ifRegex}}
 </div>
