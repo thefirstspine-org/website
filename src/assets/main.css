@@ -273,34 +273,34 @@
       .card {
         width: 400px;
         height: 400px;
-        font-size: 16px;
+        font-size: 14px;
         img {
-          width: 16px;
-          height: 16px;
+          width: 14px;
+          height: 14px;
         }
         .description {
-          font-size: 18px;
+          font-size: 14px;
         }
         .name {
-          font-size: 24px;
+          font-size: 20px;
           text-transform: uppercase;
         }
         @media (width < 48rem) {
           width: 200px;
           height: 200px;
-          font-size: 8px;
+          font-size: 7px;
           img {
-            width: 8px;
-            height: 8px;
+            width: 7px;
+            height: 7px;
           }
           .stat-inline {
             @apply px-0 w-4 h-4 border-1 border-solid border-white;
           }
           .description {
-            font-size: 10px;
+            font-size: 7px;
           }
           .name {
-            font-size: 12px;
+            font-size: 10px;
             text-transform: uppercase;
           }
           .top-str, .top-def, .top-capacity, .bottom-str, .bottom-def, .bottom-capacity,
