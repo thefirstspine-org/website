@@ -30,8 +30,12 @@ PetiteVue.createApp({
           .replace(/\{\/spell\}/g, '</span>')
           .replace(/\{def\}/g, '<span class="stat-inline bg-blue-500">')
           .replace(/\{\/def\}/g, '</span>')
+          .replace(/\{defense\}/g, '<span class="stat-inline bg-blue-500">')
+          .replace(/\{\/defense\}/g, '</span>')
           .replace(/\{str\}/g, '<span class="stat-inline bg-red-500">')
           .replace(/\{\/str\}/g, '</span>')
+          .replace(/\{strength\}/g, '<span class="stat-inline bg-red-500">')
+          .replace(/\{\/strength\}/g, '</span>')
           .replace(/\{life\}/g, '<span class="stat-inline bg-gray-800">')
           .replace(/\{\/life\}/g, '</span>');
       }
