@@ -1395,6 +1395,16 @@
           font-size: 20px;
           text-transform: uppercase;
         }
+        .stat-inline {
+          height: calc(var(--spacing) * 6);
+          width: calc(var(--spacing) * 6);
+          border-style: var(--tw-border-style);
+          border-width: 1px;
+          --tw-border-style: solid;
+          border-style: solid;
+          border-color: var(--color-white);
+          padding-inline: calc(var(--spacing) * 0);
+        }
         @media (width < 48rem) {
           width: 200px;
           height: 200px;

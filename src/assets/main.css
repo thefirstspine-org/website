@@ -285,6 +285,9 @@
           font-size: 20px;
           text-transform: uppercase;
         }
+        .stat-inline {
+          @apply px-0 w-6 h-6 border-1 border-solid border-white;
+        }
         @media (width < 48rem) {
           width: 200px;
           height: 200px;
