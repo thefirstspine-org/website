@@ -91,5 +91,7 @@
   {{> vue/card }}
 
   <script src="/bundle.js" defer></script>
+  <script src="https://solid-pancake.thefirstspine.fr/sirup.js"></script>
+  <script>sirup.persistantSession('website', navigator.platform).then(() => { sirup.event('viewPage', 'navigation', document.location.href); })</script>
 </body>
 </html>
