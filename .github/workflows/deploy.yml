@@ -16,8 +16,6 @@ jobs:
           fetch-depth: 0
       - name: Install
         run: npm install
-      - name: Add test configuration
-        run: cp .env.unit.test.example .env.unit.test
       - name: Testing
         run: npm run test
   build-push:
