@@ -102,6 +102,10 @@ jobs:
                 docker_image: 'ghcr.io/${{ github.repository }}:${{ env.TAG }}'
                 # Container env
                 env: dev
+                game_assets_domain: 'dev.game-assets.thefirstspine.fr'
+                arena_domain: 'dev.arena.thefirstspine.fr'
+                auth_domain: 'dev.auth.thefirstspine.fr'
+                cms_domain: 'dev.cms.thefirstspine.fr'
                 cms_token: '${{ secrets.ansible_conf_cms_token_dev }}'
                 session_secret: '${{ secrets.ansible_conf_session_secret_dev }}'
                 # Host settings
@@ -135,6 +139,10 @@ jobs:
                 docker_image: 'ghcr.io/${{ github.repository }}:${{ env.TAG }}'
                 # Container prod
                 env: prod
+                game_assets_domain: 'game-assets.thefirstspine.fr'
+                arena_domain: 'arena.thefirstspine.fr'
+                auth_domain: 'auth.thefirstspine.fr'
+                cms_domain: 'cms.thefirstspine.fr'
                 cms_token: '${{ secrets.ansible_conf_cms_token_prod }}'
                 session_secret: '${{ secrets.ansible_conf_session_secret_prod }}'
                 # Host settings
