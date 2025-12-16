@@ -8,6 +8,14 @@ import { ArenaService } from './arena/arena.service';
 
 @Controller()
 export class AppController {
+
+  static readonly notAllowedDomainForEmails = [
+    'testform.xyz',
+    'example.com',
+    'example.org',
+    'example.net',
+  ];
+
   constructor(
     private readonly strapiService: StrapiService,
     private readonly accountService: AccountService,
@@ -120,6 +128,15 @@ Allow: /`;
     const dto = new EmailDto();
     Object.assign(dto, body);
     const errors = await validate(dto);
+
+    // Forbid domain email for
+    if (AppController.notAllowedDomainForEmails.some(domain => dto.email.endsWith('@' + domain))) {
+      req.flash(
+        'errors',
+        JSON.stringify(['the email is not allowed'])
+      );
+      return res.redirect(req.headers['referer'] ? req.headers['referer'] : '/');
+    }
 
     // Validation error
     if (errors.length) {
