@@ -148,7 +148,7 @@ jobs:
                 # Host settings
                 external_port: 8080
                 internal_port: 8089
-                domain: 'dev.website.thefirstspine.fr'
+                domain: 'www.thefirstspine.fr'
                 cerbot_email: '${{ secrets.ansible_conf_cerbot_email }}'
           YAML
       - name: Write keys (prod)
