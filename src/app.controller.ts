@@ -14,6 +14,9 @@ export class AppController {
     'example.com',
     'example.org',
     'example.net',
+    'forms-checker.online',
+    'tempmail.net',
+    '10minutemail.com',
   ];
 
   constructor(
