@@ -421,6 +421,20 @@ Allow: /`;
     }
   }
 
+  @Get('/go/:key')
+  async go(@Req() req: any, @Res({passthrough: true}) res: Response, @Param('key') key: string) {
+    const links = await this.strapiService.callApiGet('links?filters[key][$eq]=' + key, 'en', true);
+    if (links && links.length > 0 && links[0].redirection) {
+      await this.strapiService.callApiPost('link-clicks', {
+        link: links[0].documentId,
+        ip: req.ip,
+      });
+      return res.redirect(links[0].redirection);
+    }
+    const templateData = await this.strapiService.getGlobalData();
+    return res.redirect('/not-found');
+  }
+
   /**
    * Homepage route
    * @param req Request object
