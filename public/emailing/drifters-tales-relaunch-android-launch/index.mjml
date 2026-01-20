@@ -1,0 +1,128 @@
+<mjml>
+  <mj-head>
+    <mj-title>The First Spine - Drifter's Tales - We recasted everything</mj-title>
+    <mj-preview>It's time to get back to Drifter's Tales and discover the full recasted versio.</mj-preview>
+    <mj-attributes>
+      <mj-all font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"></mj-all>
+      <mj-text font-weight="400" font-size="16px" color="#000000" line-height="24px" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"></mj-text>
+    </mj-attributes>
+    <mj-style inline="inline">
+      .body-section {
+      -webkit-box-shadow: 1px 4px 11px 0px rgba(0, 0, 0, 0.15);
+      -moz-box-shadow: 1px 4px 11px 0px rgba(0, 0, 0, 0.15);
+      box-shadow: 1px 4px 11px 0px rgba(0, 0, 0, 0.15);
+      }
+    </mj-style>
+    <mj-style inline="inline">
+      .text-link {
+      color: #5e6ebf
+      }
+    </mj-style>
+    <mj-style inline="inline">
+      .footer-link {
+      color: #888888
+      }
+    </mj-style>
+
+  </mj-head>
+  <mj-body background-color="#111" width="600px">
+    <mj-section full-width="full-width" background-color="#000" padding-bottom="0">
+      <mj-column width="100%" padding-bottom="10px">
+        <mj-image src="logo.png" alt="" align="center" width="150px" />
+      </mj-column>
+      <mj-column width="100%">
+        <mj-image src="https://www.thefirstspine.fr/emailing/drifters-tales-relaunch-android-launch/top.png" width="600px" alt="" padding="0" href="https://www.thefirstspine.fr/drifters-tales" />
+      </mj-column>
+    </mj-section>
+    <mj-wrapper padding-top="0" padding-bottom="0" css-class="body-section">
+      <mj-section background-color="#ffffff" padding-left="15px" padding-right="15px">
+        <mj-column width="100%">
+          <mj-text color="#212b35" font-weight="bold" font-size="24px" align="center">
+            Say hello to Drifter's Tales on Android
+          </mj-text>
+          <mj-divider border-color="#DFE3E8" border-width="1px" />
+          <mj-text color="#637381" font-size="16px">
+            Embark on a captivating adventure wherever life takes you — Drifter's Tales is now available on Android!
+          </mj-text>
+          <mj-button background-color="#ffdd57" align="center" color="#000" font-size="17px" font-weight="bold" href="https://www.thefirstspine.fr/drifters-tales" width="300px">
+            Get the recasted version
+          </mj-button>
+        </mj-column>
+        <mj-column width="100%">
+          <mj-image align="center" src="https://www.thefirstspine.fr/emailing/drifters-tales-relaunch-android-launch/mobile1.png" alt="" />
+        </mj-column>
+        <mj-column width="50%">
+          <mj-image align="center" src="https://www.thefirstspine.fr/emailing/drifters-tales-relaunch-android-launch/mobile2.png" alt="" />
+        </mj-column>
+        <mj-column width="50%">
+          <mj-image align="center" src="https://www.thefirstspine.fr/emailing/drifters-tales-relaunch-android-launch/mobile3.png" alt="" />
+        </mj-column>
+        <mj-column width="100%">
+          <mj-divider border-color="#DFE3E8" border-width="1px" />
+          <mj-text color="#637381" font-size="16px">
+            Experience the thrilling, immersive journey you fell in love with on Steam, now adapted for your mobile device:
+          </mj-text>
+          <mj-text color="#637381" font-size="16px">
+            <strong>All the features you know and love:</strong> Dive into the complete gameplay experience, with every detail and mechanic from the Steam version faithfully preserved. No compromises — it's Drifter's Tales in all its glory!
+          </mj-text>
+          <mj-text color="#637381" font-size="16px">
+            <strong>Optimized for touch devices:</strong> Enjoy seamless and intuitive controls that bring the vibrant world of Drifter's Tales to life at your fingertips. Navigate, interact, and explore with ease as you uncover its mysteries.
+          </mj-text>
+          <mj-text color="#637381" font-size="16px">
+            <strong>Unwavering value:</strong> At just 5 euros, the price remains identical to the Steam version, offering affordable access to this unforgettable adventure without breaking the bank.
+          </mj-text>
+          <mj-text color="#637381" font-size="16px">
+            Whether you're exploring hidden paths, battling opponents with your deck, or unraveling the lore that binds the tales together, now you can carry the magic of Drifter's Tales wherever you go. Will you step into the adventure once more? The world awaits your story!
+          </mj-text>
+          <mj-text color="#637381" font-size="16px">
+            Download now and let the journey begin anew — Drifter's Tales is ready to accompany you.
+          </mj-text>
+        </mj-column>
+      </mj-section>
+      <mj-section background-color="#ffffff" padding-left="15px" padding-right="15px" padding-top="0">
+        <mj-column width="100%">
+          <mj-divider border-color="#DFE3E8" border-width="1px" />
+        </mj-column>
+      </mj-section>
+      <mj-section background-color="#ffffff" padding-left="15px" padding-right="15px">
+        <mj-column width="50%">
+          <mj-text color="#212b35" font-size="12px" text-transform="uppercase" font-weight="bold" padding-bottom="0">
+            All the games of The First Spine
+          </mj-text>
+          <mj-text color="#637381" font-size="14px" padding-top="0">
+            <a style="color:#637381" href="https://play.thefirstspine.fr/?utm_source=email&utm_campaign=drifters_tales_relaunch_android_launch">Play online with Arena</a>
+            <br />
+            <a style="color:#637381" href="https://www.thefirstspine.fr/pnp?utm_source=email&utm_campaign=drifters_tales_relaunch_android_launch">Download the PnP version</a>
+          </mj-text>
+        </mj-column>
+        <mj-column width="50%">
+          <mj-text color="#212b35" font-size="12px" text-transform="uppercase" font-weight="bold" padding-bottom="0">
+            Useful links
+          </mj-text>
+          <mj-text color="#637381" font-size="14px" padding-top="0">
+            <a style="color:#637381" href="https://www.thefirstspine.fr/blog?utm_source=email&utm_campaign=drifters_tales_relaunch_android_launch">News</a>
+            <br />
+            <a style="color:#637381" href="https://www.thefirstspine.fr/events?utm_source=email&utm_campaign=drifters_tales_relaunch_android_launch">Events</a>
+          </mj-text>
+        </mj-column>
+      </mj-section>
+    </mj-wrapper>
+
+    <mj-wrapper full-width="full-width">
+      <mj-section>
+        <mj-column width="100%" padding="0">
+          <mj-social font-size="15px" icon-size="30px" mode="horizontal" padding="0" align="center">
+            <mj-social-element name="facebook" href="https://fb.com/thefirstspine" background-color="#333">
+            </mj-social-element>
+            <mj-social-element name="twitter" href="https://twitter.com/thefirstspine" background-color="#333">
+            </mj-social-element>
+          </mj-social>
+          <mj-text color="#445566" font-size="11px" font-weight="bold" align="center">
+            <a href="https://www.thefirstspine.fr/emailing/drifters-tales-relaunch-android-launch/index.html">View this email in your browser</a>
+          </mj-text>
+        </mj-column>
+      </mj-section>
+    </mj-wrapper>
+
+  </mj-body>
+</mjml>

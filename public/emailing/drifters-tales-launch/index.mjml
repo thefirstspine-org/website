@@ -1,0 +1,155 @@
+<mjml>
+  <mj-head>
+    <mj-title>L'aventure The First Spine en solo commence</mj-title>
+    <mj-preview>Les Contes du Vagabond vous propose de petites histoires liées entre-elles dans l'univers de The First Spine.</mj-preview>
+    <mj-attributes>
+      <mj-all font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"></mj-all>
+      <mj-text font-weight="400" font-size="16px" color="#000000" line-height="24px" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"></mj-text>
+    </mj-attributes>
+    <mj-style inline="inline">
+      .body-section {
+      -webkit-box-shadow: 1px 4px 11px 0px rgba(0, 0, 0, 0.15);
+      -moz-box-shadow: 1px 4px 11px 0px rgba(0, 0, 0, 0.15);
+      box-shadow: 1px 4px 11px 0px rgba(0, 0, 0, 0.15);
+      }
+    </mj-style>
+    <mj-style inline="inline">
+      .text-link {
+      color: #5e6ebf
+      }
+    </mj-style>
+    <mj-style inline="inline">
+      .footer-link {
+      color: #888888
+      }
+    </mj-style>
+
+  </mj-head>
+  <mj-body background-color="#111" width="600px">
+    <mj-section full-width="full-width" background-color="#000" padding-bottom="0">
+      <mj-column width="100%" padding-bottom="10px">
+        <mj-image src="https://www.thefirstspine.fr/emailing/drifters-tales-launch/logo.png" alt="" align="center" width="150px" />
+      </mj-column>
+      <mj-column width="100%">
+        <mj-image src="https://www.thefirstspine.fr/emailing/drifters-tales-launch/header1.jpg" width="600px" alt="" padding="0" href="https://www.thefirstspine.fr/drifters-tales?utm_source=email&utm_campaign=drifters_tales_early_access" />
+      </mj-column>
+    </mj-section>
+    <mj-wrapper padding-top="0" padding-bottom="0" css-class="body-section">
+      <mj-section background-color="#ffffff" padding-left="15px" padding-right="15px">
+        <mj-column width="100%">
+          <mj-button background-color="#ffdd57" align="center" color="#000" font-size="17px" font-weight="bold" href="https://store.steampowered.com/app/1935960/Drifters_Tales" width="300px">
+            Jouez sur Steam
+          </mj-button>
+          <mj-button background-color="#ffdd57" align="center" color="#000" font-size="17px" font-weight="bold" href="https://thefirstspine.itch.io/drifters-tales" width="300px">
+            Téléchargez sur Itch.io
+          </mj-button>
+          <mj-text color="#212b35" font-size="20px" align="center">
+            Trois mois jour pour jour après la sortie de l'accès anticipé, nous sommes très fiers de vous annoncer la version finale de Drifter’s Tales, l'équivalent 100% solo et narratif de The First Spine.
+          </mj-text>
+          <mj-divider border-color="#DFE3E8" border-width="1px" />
+          <mj-text color="#637381" font-size="16px">
+            Inspiré des livres à jouer, nous avons voulu une nouvelle dimension au jeu afin de vous faire découvrir l’univers de The First Spine au travers de 8 histoires. Mais découvrir tous les secrets qui entoure cet univers ne sera pas chose aisé : les ennemis que vous affronterez seront sournois et retords.
+          </mj-text>
+        </mj-column>
+        <mj-column width="50%">
+          <mj-image align="center" src="https://www.thefirstspine.fr/emailing/drifters-tales-launch./drifters-tales-screenshot-2.jpg" alt="" />
+        </mj-column>
+        <mj-column width="50%">
+          <mj-image align="center" src="https://www.thefirstspine.fr/emailing/drifters-tales-launch/drifters-tales-screenshot-10.jpg" alt="" />
+        </mj-column>
+        <mj-column width="50%">
+          <mj-image align="center" src="https://www.thefirstspine.fr/emailing/drifters-tales-launch/drifters-tales-screenshot-4.jpg" alt="" />
+        </mj-column>
+        <mj-column width="50%">
+          <mj-image align="center" src="https://www.thefirstspine.fr/emailing/drifters-tales-launch/drifters-tales-screenshot-5.jpg" alt="" />
+        </mj-column>
+        <mj-column width="100%">
+          <mj-divider border-color="#DFE3E8" border-width="1px" />
+          <mj-text color="#637381" font-size="16px">
+            Comparé à la version d’accès anticipé, nous avons ajouté 3 nouvelles histoires qui font suite au rebondissement que vous avez pu expérimenter, ce qui porte à 8 le nombre d’aventures que vous pouvez vivre.
+          </mj-text>
+          <mj-text color="#637381" font-size="16px">
+            Chaque histoire dispose de ses propres mécaniques (serrures, course contre la montre, cartes placées aléatoirement, etc.) ainsi que de ses propres secrets.
+          </mj-text>
+          <mj-text color="#637381" font-size="16px">
+            Enfin, votre compte The First Spine pourra vous faire vivre des événements uniques déclenchés par les actions d’autres joueurs. 
+          </mj-text>
+        </mj-column>
+      </mj-section>
+      <mj-section background-color="#ffffff" padding-left="15px" padding-right="15px" padding-top="0">
+        <mj-column width="100%">
+          <mj-divider border-color="#DFE3E8" border-width="1px" />
+        </mj-column>
+      </mj-section>
+      <mj-section background-color="#ffffff" padding-left="15px" padding-right="15px" padding-top="0">
+        <mj-column width="100%">
+          <mj-text color="#212b35" font-size="20px" align="center">
+            Une mise à jour d’Arena pour fêter l'évènement
+          </mj-text>
+          <mj-text color="#637381" font-size="16px" align="center">
+            Arena n’est pas en reste. Pour fêter la sortie des Contes du Vagabond nous avons mis à jour Arena afin que vous puissiez vous amuser avec les cartes directement accessible depuis le jeu.
+          </mj-text>
+          <mj-text color="#637381" font-size="16px" align="center">
+            Pour cela, allez dans le Versus Thématique et lancez une partie !
+          </mj-text>
+          <mj-image align="center" src="https://www.thefirstspine.fr/emailing/drifters-tales-launch/arena.png" alt="" />
+          <mj-button background-color="#ffdd57" align="center" color="#000" font-size="17px" font-weight="bold" href="https://play.thefirstspine.fr/?utm_source=email&utm_campaign=drifters_tales_launch" width="300px">
+            Accédez à Arena
+          </mj-button
+        </mj-column>
+      </mj-section>
+      <mj-section background-color="#ffffff" padding-left="15px" padding-right="15px" padding-top="0">
+        <mj-column width="100%">
+          <mj-divider border-color="#DFE3E8" border-width="1px" />
+        </mj-column>
+      </mj-section>
+      <mj-section background-color="#ffffff" padding-left="15px" padding-right="15px">
+        <mj-column width="50%">
+          <mj-text color="#212b35" font-size="12px" text-transform="uppercase" font-weight="bold" padding-bottom="0">
+            Les produits The First Spine
+          </mj-text>
+          <mj-text color="#637381" font-size="14px" padding-top="0">
+            <a style="color:#637381" href="https://play.thefirstspine.fr/?utm_source=email&utm_campaign=drifters_tales_early_access">Jouez en ligne sur Arena</a>
+            <br />
+            <a style="color:#637381" href="https://www.thefirstspine.fr/pnp?utm_source=email&utm_campaign=drifters_tales_early_access">Téléchargez la version PnP</a>
+          </mj-text>
+        </mj-column>
+        <mj-column width="50%">
+          <mj-text color="#212b35" font-size="12px" text-transform="uppercase" font-weight="bold" padding-bottom="0">
+            Liens utiles
+          </mj-text>
+          <mj-text color="#637381" font-size="14px" padding-top="0">
+            <a style="color:#637381" href="https://www.thefirstspine.fr/blog?utm_source=email&utm_campaign=drifters_tales_early_access">Actualités</a>
+            <br />
+            <a style="color:#637381" href="https://www.thefirstspine.fr/events?utm_source=email&utm_campaign=drifters_tales_early_access">Evenements</a>
+          </mj-text>
+        </mj-column>
+      </mj-section>
+    </mj-wrapper>
+
+    <mj-wrapper full-width="full-width">
+      <mj-section>
+        <mj-column width="100%" padding="0">
+          <mj-social font-size="15px" icon-size="30px" mode="horizontal" padding="0" align="center">
+            <mj-social-element name="facebook" href="https://fb.com/thefirstspine" background-color="#A1A0A0">
+            </mj-social-element>
+          </mj-social>
+          <mj-text color="#445566" font-size="11px" font-weight="bold" align="center">
+            <a href="https://www.thefirstspine.fr/emailing/drifters-tales/index.html">View this email in your browser</a>
+          </mj-text>
+        </mj-column>
+      </mj-section>
+      <mj-section padding-top="0">
+        <mj-group>
+          <mj-column width="100%" padding-right="0">
+            <mj-text color="#445566" font-size="11px" align="center" line-height="16px" font-weight="bold">
+              <a class="footer-link" href="#">Unsubscribe</a>
+            </mj-text>
+          </mj-column>
+        </mj-group>
+
+      </mj-section>
+    </mj-wrapper>
+
+  </mj-body>
+</mjml>

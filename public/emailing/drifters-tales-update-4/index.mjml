@@ -1,0 +1,207 @@
+<mjml>
+  <mj-head>
+    <mj-title>Les Contes du Vagabond : une nouvelle mise à jour est disponible !</mj-title>
+    <mj-preview>Les Contes du Vagabond vous propose de petites histoires liées entre-elles dans l'univers de The First Spine.</mj-preview>
+    <mj-attributes>
+      <mj-all font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"></mj-all>
+      <mj-text font-weight="400" font-size="16px" color="#000000" line-height="24px" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"></mj-text>
+    </mj-attributes>
+    <mj-style inline="inline">
+      .body-section {
+      -webkit-box-shadow: 1px 4px 11px 0px rgba(0, 0, 0, 0.15);
+      -moz-box-shadow: 1px 4px 11px 0px rgba(0, 0, 0, 0.15);
+      box-shadow: 1px 4px 11px 0px rgba(0, 0, 0, 0.15);
+      }
+    </mj-style>
+    <mj-style inline="inline">
+      .text-link {
+      color: #5e6ebf
+      }
+    </mj-style>
+    <mj-style inline="inline">
+      .footer-link {
+      color: #888888
+      }
+    </mj-style>
+
+  </mj-head>
+  <mj-body background-color="#111" width="600px">
+    <mj-section full-width="full-width" background-color="#000" padding-bottom="0">
+      <mj-column width="100%" padding-bottom="10px">
+        <mj-image src="https://www.thefirstspine.fr/emailing/drifters-tales-update-4/logo.png" alt="" align="center" width="150px" />
+      </mj-column>
+      <mj-column width="100%">
+        <mj-image src="https://www.thefirstspine.fr/emailing/drifters-tales-update-4/header.png" width="600px" alt="" padding="0" href="https://www.thefirstspine.fr/drifters-tales?utm_source=email&utm_campaign=drifters_tales_update_4" />
+      </mj-column>
+    </mj-section>
+    <mj-wrapper padding-top="0" padding-bottom="0" css-class="body-section">
+      <mj-section background-color="#000" padding-left="15px" padding-right="15px">
+        <mj-column width="50%">
+          <mj-button background-color="#ffdd57" align="center" color="#000" font-size="17px" font-weight="bold" href="https://store.steampowered.com/app/1935960/Drifters_Tales" width="200px">
+            Jouez sur Steam
+          </mj-button>
+        </mj-column>
+        <mj-column width="50%">
+          <mj-button background-color="#ffdd57" align="center" color="#000" font-size="17px" font-weight="bold" href="https://thefirstspine.itch.io/drifters-tales" width="200px">
+            Jouez sur Itch.io
+          </mj-button>
+        </mj-column>
+        <mj-column width="100%">
+          <mj-text color="#FFF" font-size="20px" align="center">
+            Nous avons apporté de nombreuses mises à jour sur Les Contes du Vagabond grâce aux nombreux et précieux retours que vous nous avez remontés !
+          </mj-text>
+        </mj-column>
+      </mj-section>
+
+      <mj-section background-color="#ffffff" padding-left="15px" padding-right="15px" padding-top="0">
+        <mj-column width="100%">
+          <mj-divider border-color="#DFE3E8" border-width="1px" />
+        </mj-column>
+      </mj-section>
+      <mj-section background-color="#ffffff" padding-left="15px" padding-right="15px" padding-top="0">
+        <mj-column width="100%">
+          <mj-text color="#212b35" font-size="20px" align="center">
+            De nouvelles cartes, de nouveaux événements
+          </mj-text>
+          <mj-text color="#637381" font-size="16px" align="center">
+            Nous avons agrandi le pool de cartes disponibles dans le jeu ! Ce n’est pas moins de 17 nouvelles et puissantes cartes qui vous sont proposées qui vous permettent de développer de nouvelles synergies.
+          </mj-text>
+          <mj-text color="#637381" font-size="16px" align="center">
+            Ces cartes sont disponibles à partir de coffres et de rencontres aléatoires scénarisées. Vous pouvez trouver deux coffres par histoire et vous avez 10% de chance de débloquer une rencontre aléatoire en explorant.
+          </mj-text>
+        </mj-column>
+        <mj-column width="100%">
+          <mj-image align="center" src="https://www.thefirstspine.fr/emailing/drifters-tales-update-4/email1.png" alt="" />
+        </mj-column>
+        <mj-column width="50%">
+          <mj-image align="center" src="https://www.thefirstspine.fr/emailing/drifters-tales-update-4/email8.png" alt="" />
+        </mj-column>
+        <mj-column width="50%">
+          <mj-image align="center" src="https://www.thefirstspine.fr/emailing/drifters-tales-update-4/email2.png" alt="" />
+        </mj-column>
+      </mj-section>
+
+      <mj-section background-color="#ffffff" padding-left="15px" padding-right="15px" padding-top="0">
+        <mj-column width="100%">
+          <mj-divider border-color="#DFE3E8" border-width="1px" />
+        </mj-column>
+      </mj-section>
+      <mj-section background-color="#ffffff" padding-left="15px" padding-right="15px" padding-top="0">
+        <mj-column width="100%">
+          <mj-text color="#212b35" font-size="20px" align="center">
+            Personnalisez votre deck à 200%
+          </mj-text>
+          <mj-text color="#637381" font-size="16px" align="center">
+            Deux nouvelles fonctionnalités ont fait leur apparition, vous permettant de personnaliser votre deck comme vous l’entendez.
+          </mj-text>
+          <mj-text color="#637381" font-size="16px" align="center">
+            Premièrement, lors du choix d’une histoire, vous pouvez exclure certaines cartes que vous jugez inutiles pour votre partie. Ensuite, un nouveau personnage a fait son apparition. Le Créateur pourra vous vendre des cartes que vous possédez déjà moyennant quelques gemmes.
+          </mj-text>
+        </mj-column>
+        <mj-column width="50%">
+          <mj-image align="center" src="https://www.thefirstspine.fr/emailing/drifters-tales-update-4/email3.png" alt="" />
+        </mj-column>
+        <mj-column width="50%">
+          <mj-image align="center" src="https://www.thefirstspine.fr/emailing/drifters-tales-update-4/email4.png" alt="" />
+        </mj-column>
+      </mj-section>
+
+      <mj-section background-color="#ffffff" padding-left="15px" padding-right="15px" padding-top="0">
+        <mj-column width="100%">
+          <mj-divider border-color="#DFE3E8" border-width="1px" />
+        </mj-column>
+      </mj-section>
+      <mj-section background-color="#ffffff" padding-left="15px" padding-right="15px" padding-top="0">
+        <mj-column width="100%">
+          <mj-text color="#212b35" font-size="20px" align="center">
+            Ne recommencez plus depuis le début
+          </mj-text>
+          <mj-text color="#637381" font-size="16px" align="center">
+            En étudiant la télémétrie anonyme fournie par vos parties, il nous est apparu que nombre d’entre vous quittait le jeu après un échec. Nous avons donc ajouté des points de contrôle avant un pic de difficulté dans chaque histoire vous permettant de ne plus recommencer une histoire depuis le début.
+          </mj-text>
+        </mj-column>
+        <mj-column width="100%">
+          <mj-image align="center" src="https://www.thefirstspine.fr/emailing/drifters-tales-update-4/email5.png" alt="" />
+        </mj-column>
+      </mj-section>
+
+      <mj-section background-color="#ffffff" padding-left="15px" padding-right="15px" padding-top="0">
+        <mj-column width="100%">
+          <mj-divider border-color="#DFE3E8" border-width="1px" />
+        </mj-column>
+      </mj-section>
+      <mj-section background-color="#ffffff" padding-left="15px" padding-right="15px" padding-top="0">
+        <mj-column width="100%">
+          <mj-text color="#212b35" font-size="20px" align="center">
+            Et bien plus encore !
+          </mj-text>
+          <mj-text color="#637381" font-size="16px" align="center">
+            Ce n’est pas tout. Nous avons pris en charge la souris et les manettes les plus répandues. L’exploration a été accélérée, et de nouvelles illustrations ont été également ajoutées. Enfin, toute l'économie du jeu a été rééquilibrée pour vous permettre d’acheter plus souvent des cartes.
+          </mj-text>
+          <mj-text color="#637381" font-size="16px" align="center">
+            Enfin, nous profitons de cet e-mail pour vous annoncer que nous allons porter très prochainement Drifter’s Tales sur Nintendo Switch ! Nous passons actuellement les certifications de Nintendo, nous vous en parlerons très prochainement dès lors que nous aurons leur validation.
+          </mj-text>
+        </mj-column>
+        <mj-column width="50%">
+          <mj-image align="center" src="https://www.thefirstspine.fr/emailing/drifters-tales-update-4/email6.png" alt="" />
+        </mj-column>
+        <mj-column width="50%">
+          <mj-image align="center" src="https://www.thefirstspine.fr/emailing/drifters-tales-update-4/email7.png" alt="" />
+        </mj-column>
+      </mj-section>
+
+      <mj-section background-color="#ffffff" padding-left="15px" padding-right="15px" padding-top="0">
+        <mj-column width="100%">
+          <mj-divider border-color="#DFE3E8" border-width="1px" />
+        </mj-column>
+      </mj-section>
+      <mj-section background-color="#ffffff" padding-left="15px" padding-right="15px">
+        <mj-column width="50%">
+          <mj-text color="#212b35" font-size="12px" text-transform="uppercase" font-weight="bold" padding-bottom="0">
+            Les produits The First Spine
+          </mj-text>
+          <mj-text color="#637381" font-size="14px" padding-top="0">
+            <a style="color:#637381" href="https://play.thefirstspine.fr/?utm_source=email&utm_campaign=drifters_tales_update_4">Jouez en ligne sur Arena</a>
+            <br />
+            <a style="color:#637381" href="https://www.thefirstspine.fr/pnp?utm_source=email&utm_campaign=drifters_tales_update_4">Téléchargez la version PnP</a>
+          </mj-text>
+        </mj-column>
+        <mj-column width="50%">
+          <mj-text color="#212b35" font-size="12px" text-transform="uppercase" font-weight="bold" padding-bottom="0">
+            Liens utiles
+          </mj-text>
+          <mj-text color="#637381" font-size="14px" padding-top="0">
+            <a style="color:#637381" href="https://www.thefirstspine.fr/blog?utm_source=email&utm_campaign=drifters_tales_update_4">Actualités</a>
+            <br />
+            <a style="color:#637381" href="https://www.thefirstspine.fr/events?utm_source=email&utm_campaign=drifters_tales_update_4">Evénements</a>
+          </mj-text>
+        </mj-column>
+      </mj-section>
+    </mj-wrapper>
+
+    <mj-wrapper full-width="full-width">
+      <mj-section>
+        <mj-column width="100%" padding="0">
+          <mj-social font-size="15px" icon-size="30px" mode="horizontal" padding="0" align="center">
+            <mj-social-element name="facebook" href="https://fb.com/thefirstspine" background-color="#A1A0A0">
+            </mj-social-element>
+          </mj-social>
+          <mj-text color="#445566" font-size="11px" font-weight="bold" align="center">
+            <a href="https://www.thefirstspine.fr/emailing/drifters-tales/index.html">View this email in your browser</a>
+          </mj-text>
+        </mj-column>
+      </mj-section>
+      <mj-section padding-top="0">
+        <mj-group>
+          <mj-column width="100%" padding-right="0">
+            <mj-text color="#445566" font-size="11px" align="center" line-height="16px" font-weight="bold">
+              <a class="footer-link" href="#">Unsubscribe</a>
+            </mj-text>
+          </mj-column>
+        </mj-group>
+
+      </mj-section>
+    </mj-wrapper>
+
+  </mj-body>
+</mjml>

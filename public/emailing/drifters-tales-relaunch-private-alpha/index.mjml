@@ -1,0 +1,149 @@
+<mjml>
+  <mj-head>
+    <mj-title>The First Spine - Drifter's Tales - You private alpha access</mj-title>
+    <mj-preview>Here's your access for the private alpha of Drifter's Tales</mj-preview>
+    <mj-attributes>
+      <mj-all font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"></mj-all>
+      <mj-text font-weight="400" font-size="16px" color="#000000" line-height="24px" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"></mj-text>
+    </mj-attributes>
+    <mj-style inline="inline">
+      .body-section {
+      -webkit-box-shadow: 1px 4px 11px 0px rgba(0, 0, 0, 0.15);
+      -moz-box-shadow: 1px 4px 11px 0px rgba(0, 0, 0, 0.15);
+      box-shadow: 1px 4px 11px 0px rgba(0, 0, 0, 0.15);
+      }
+    </mj-style>
+    <mj-style inline="inline">
+      .text-link {
+      color: #5e6ebf
+      }
+    </mj-style>
+    <mj-style inline="inline">
+      .footer-link {
+      color: #888888
+      }
+    </mj-style>
+
+  </mj-head>
+  <mj-body background-color="#111" width="600px">
+    <mj-section full-width="full-width" background-color="#000" padding-bottom="0">
+      <mj-column width="100%" padding-bottom="10px">
+        <mj-image src="logo.png" alt="" align="center" width="150px" />
+      </mj-column>
+      <mj-column width="100%">
+        <mj-image src="https://placehold.co/600x400.jpg" width="600px" alt="" padding="0" href="https://www.thefirstspine.fr/drifters-tales?utm_source=email&utm_campaign=drifters_tales_relaunch_private_alpha" />
+      </mj-column>
+    </mj-section>
+    <mj-wrapper padding-top="0" padding-bottom="0" css-class="body-section">
+      <mj-section background-color="#ffffff" padding-left="15px" padding-right="15px">
+        <mj-column width="100%">
+          <mj-text color="#212b35" font-weight="bold" font-size="24px" align="center">
+            Il est temps de découvrir la première alpha privée
+          </mj-text>
+          <mj-divider border-color="#DFE3E8" border-width="1px" />
+          <mj-text color="#637381" font-size="16px">
+            Cette version contient les deux histoires qui sont disponibles directement après le tutoriel. Toutes les fonctionnalités (combat, serments, vendeurs, secrets, etc.) y sont intégrées.
+          </mj-text>
+          <mj-button background-color="#ffdd57" align="center" color="#000" font-size="17px" font-weight="bold" href="https://drive.google.com/drive/folders/1WlH4DwNZIc_hSnZuuqcNIKi_sGlzgU8s?usp=sharing " width="300px">
+            Accédez à l'alpha privée
+          </mj-button>
+        </mj-column>
+        <mj-column width="50%">
+          <mj-image align="center" src="https://placehold.co/300x200.jpg" alt="" />
+        </mj-column>
+        <mj-column width="50%">
+          <mj-image align="center" src="https://placehold.co/300x200.jpg" alt="" />
+        </mj-column>
+        <mj-column width="50%">
+          <mj-image align="center" src="https://placehold.co/300x200.jpg" alt="" />
+        </mj-column>
+        <mj-column width="50%">
+          <mj-image align="center" src="https://placehold.co/300x200.jpg" alt="" />
+        </mj-column>
+        <mj-column width="100%">
+          <mj-divider border-color="#DFE3E8" border-width="1px" />
+          <mj-text color="#212b35" font-weight="bold" font-size="18px">
+            Ce que vous pouvez faire avec cette alpha
+          </mj-text>
+          <mj-text color="#637381" font-size="16px">
+            Même s’il s’agit d’une alpha privée, n’hésitez pas à la montrer autour de vous. Nous serions très heureux d’avoir l’avis de nombreux joueurs ! Vous pouvez la streamer et la partager. N’oubliez pas de demander à vos amis de s’inscrire au formulaire ici <a href="https://forms.gle/wm9msbkRvgH73QLi9">forms.gle/wm9msbkRvgH73QLi9</a> s’ils désirent être crédités dans le générique !
+          </mj-text>
+        </mj-column>
+        <mj-column width="100%">
+          <mj-divider border-color="#DFE3E8" border-width="1px" />
+          <mj-text color="#212b35" font-weight="bold" font-size="18px">
+            Cycle et méthode de mise à jour
+          </mj-text>
+          <mj-text color="#637381" font-size="16px">
+            Nous mettrons fréquemment à jour cette version directement sur le Google Drive jusqu’au mois de décembre. Toutes les améliorations que nous apporterons grâce à vous et au fil de la production seront directement intégrées sur cette alpha.
+          </mj-text>
+        </mj-column>
+        <mj-column width="100%">
+          <mj-divider border-color="#DFE3E8" border-width="1px" />
+          <mj-text color="#212b35" font-weight="bold" font-size="18px">
+            Ce qui n’est pas intégrée à cette version mais qui fera partie du jeu final
+          </mj-text>
+          <mj-text color="#637381" font-size="16px">
+            Nous n’avons pas tout intégré dans cette version. Nous nous sommes concentrés sur l’essential et certaines fonctionnalités ne sont pas intégrées, mais le seront dans la version finale au printemps 2024. Voici un aperçu de ce que vous retrouverez en plus :
+          </mj-text>
+        </mj-column>
+        <mj-column width="100%">
+          <mj-divider border-color="#DFE3E8" border-width="1px" />
+          <mj-text color="#212b35" font-weight="bold" font-size="18px">
+            Et puis, merci
+          </mj-text>
+          <mj-text color="#637381" font-size="16px">
+            Merci à vous de vous intéresser à notre jeu. Nous savons que votre temps est précieux, et encore plus où tout le monde se bat pour avoir ne serait-ce que quelques minutes de votre attention.
+          </mj-text>
+          <mj-text color="#637381" font-size="16px">
+            Pour cela, merci du fond du cœur.
+          </mj-text>
+        </mj-column>
+      </mj-section>
+      <mj-section background-color="#ffffff" padding-left="15px" padding-right="15px" padding-top="0">
+        <mj-column width="100%">
+          <mj-divider border-color="#DFE3E8" border-width="1px" />
+        </mj-column>
+      </mj-section>
+      <mj-section background-color="#ffffff" padding-left="15px" padding-right="15px">
+        <mj-column width="50%">
+          <mj-text color="#212b35" font-size="12px" text-transform="uppercase" font-weight="bold" padding-bottom="0">
+            Les produits The First Spine
+          </mj-text>
+          <mj-text color="#637381" font-size="14px" padding-top="0">
+            <a style="color:#637381" href="https://play.thefirstspine.fr/?utm_source=email&utm_campaign=drifters_tales_relaunch_private_alpha">Jouez en ligne sur Arena</a>
+            <br />
+            <a style="color:#637381" href="https://www.thefirstspine.fr/pnp?utm_source=email&utm_campaign=drifters_tales_relaunch_private_alpha">Téléchargez la version PnP</a>
+          </mj-text>
+        </mj-column>
+        <mj-column width="50%">
+          <mj-text color="#212b35" font-size="12px" text-transform="uppercase" font-weight="bold" padding-bottom="0">
+            Liens utiles
+          </mj-text>
+          <mj-text color="#637381" font-size="14px" padding-top="0">
+            <a style="color:#637381" href="https://www.thefirstspine.fr/blog?utm_source=email&utm_campaign=drifters_tales_relaunch_private_alpha">Actualités</a>
+            <br />
+            <a style="color:#637381" href="https://www.thefirstspine.fr/events?utm_source=email&utm_campaign=drifters_tales_relaunch_private_alpha">Evenements</a>
+          </mj-text>
+        </mj-column>
+      </mj-section>
+    </mj-wrapper>
+
+    <mj-wrapper full-width="full-width">
+      <mj-section>
+        <mj-column width="100%" padding="0">
+          <mj-social font-size="15px" icon-size="30px" mode="horizontal" padding="0" align="center">
+            <mj-social-element name="facebook" href="https://fb.com/thefirstspine" background-color="#333">
+            </mj-social-element>
+            <mj-social-element name="twitter" href="https://twitter.com/thefirstspine" background-color="#333">
+            </mj-social-element>
+          </mj-social>
+          <mj-text color="#445566" font-size="11px" font-weight="bold" align="center">
+            <a href="https://www.thefirstspine.fr/emailing/drifters-tales-relaunch-private-alpha/index.html">View this email in your browser</a>
+          </mj-text>
+        </mj-column>
+      </mj-section>
+    </mj-wrapper>
+
+  </mj-body>
+</mjml>
