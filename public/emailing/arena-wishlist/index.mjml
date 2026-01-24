@@ -1,0 +1,163 @@
+<mjml>
+  <mj-head>
+    <mj-title>The First Spine - Get ready for the Early Access of Arena!</mj-title>
+    <mj-preview>Let's get straight to the point: Feb 9th, you will be able to play the demo publicly. On Feb 23rd, we will be present on the Steam Next Fest. Finally, the Early access will land on March 4th!</mj-preview>
+    <mj-attributes>
+      <mj-all font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"></mj-all>
+      <mj-text font-weight="400" font-size="16px" color="#000000" line-height="24px" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"></mj-text>
+    </mj-attributes>
+    <mj-style inline="inline">
+      .body-section {
+      -webkit-box-shadow: 1px 4px 11px 0px rgba(0, 0, 0, 0.15);
+      -moz-box-shadow: 1px 4px 11px 0px rgba(0, 0, 0, 0.15);
+      box-shadow: 1px 4px 11px 0px rgba(0, 0, 0, 0.15);
+      }
+    </mj-style>
+    <mj-style inline="inline">
+      .text-link {
+      color: #5e6ebf
+      }
+    </mj-style>
+    <mj-style inline="inline">
+      .footer-link {
+      color: #888888
+      }
+    </mj-style>
+
+  </mj-head>
+  <mj-body background-color="#111" width="600px">
+    <mj-section full-width="full-width" background-color="#000" padding-bottom="0">
+      <mj-column width="100%" padding-bottom="10px">
+        <mj-image src="logo.png" alt="" align="center" width="150px" />
+      </mj-column>
+      <mj-column width="100%">
+        <mj-image src="https://www.thefirstspine.fr/emailing/arena-wishlist/top.png" width="600px" alt="" padding="0" />
+      </mj-column>
+    </mj-section>
+    <mj-wrapper padding-top="0" padding-bottom="0" css-class="body-section">
+      <mj-section background-color="#ffffff" padding-left="15px" padding-right="15px">
+        <mj-column width="100%">
+          <mj-text color="#212b35" font-weight="bold" font-size="24px" align="center">
+            Get ready for the Early Access of Arena!
+          </mj-text>
+          <mj-divider border-color="#DFE3E8" border-width="1px" />
+          <mj-text color="#637381" font-size="16px">
+            Let's get straight to the point: <strong>Feb 9th</strong>, you will be able to play the demo publicly. On <strong>Feb 23rd</strong>, we will be present on the Steam Next Fest. Finally, the Early access will land on <strong>March 4th</strong>!
+          </mj-text>
+          <mj-button background-color="#ffdd57" align="center" color="#000" font-size="17px" font-weight="bold" href="https://store.steampowered.com/app/3307700/The_First_Spine__Arena/" width="300px">
+            Wishlist us
+          </mj-button>
+        </mj-column>
+        <!--
+        <mj-column width="50%">
+          <mj-image align="center" src="https://www.thefirstspine.fr/emailing/arena-wishlist/screenshot-1.png" alt="" />
+        </mj-column>
+        <mj-column width="50%">
+          <mj-image align="center" src="https://www.thefirstspine.fr/emailing/arena-wishlist/screenshot-2.png" alt="" />
+        </mj-column>
+        <mj-column width="50%">
+          <mj-image align="center" src="https://www.thefirstspine.fr/emailing/arena-wishlist/screenshot-3.png" alt="" />
+        </mj-column>
+        <mj-column width="50%">
+          <mj-image align="center" src="https://www.thefirstspine.fr/emailing/arena-wishlist/screenshot-4.png" alt="" />
+        </mj-column>
+        -->
+      </mj-section>
+
+      <mj-section background-color="#ffffff" padding-left="15px" padding-right="15px" padding-top="0">
+        <mj-column width="100%">
+          <mj-text color="#212b35" font-weight="bold" font-size="18px">
+            Feb 9th: Public demo
+          </mj-text>
+          <mj-image src="https://www.thefirstspine.fr/emailing/arena-wishlist/demo.png" width="600px" alt="" padding="0" />
+          <mj-text color="#637381" font-size="16px">
+            Influencers and press will be able to share their first impressions on that day. The demo will be available to everyone on Steam, so don't forget to wishlist the game to get notified when it's out!
+          </mj-text>
+          <mj-text color="#637381" font-size="16px">
+            The demo will feature two different game modes: beginner and advanced. The beginner mode will allow new players to discover the game mechanics with a guided tutorial, while the advanced mode will let experienced players jump right into the action with more complex strategies.
+          </mj-text>
+          <mj-button background-color="#ffdd57" align="center" color="#000" font-size="17px" font-weight="bold" href="https://store.steampowered.com/app/3307700/The_First_Spine__Arena/" width="300px">
+            Get ready and wishlist us
+          </mj-button>
+        </mj-column>
+      </mj-section>
+
+      <mj-section background-color="#ffffff" padding-left="15px" padding-right="15px" padding-top="0">
+        <mj-column width="100%">
+          <mj-text color="#212b35" font-weight="bold" font-size="18px">
+            Feb 23rd: Steam Next Fest
+          </mj-text>
+          <mj-image src="https://www.thefirstspine.fr/emailing/arena-wishlist/next-fest.png" width="600px" alt="" padding="0" />
+          <mj-text color="#637381" font-size="16px">
+            During the Steam Next Fest, we will host live streams and Q&A sessions to engage with the community and showcase the game's features. This is a great opportunity for players to ask questions, provide feedback, and get a deeper understanding of what makes Arena unique.
+          </mj-text>
+          <mj-button background-color="#ffdd57" align="center" color="#000" font-size="17px" font-weight="bold" href="https://www.twitch.tv/teddydeveloppeunjeu" width="300px">
+            Join us on Twitch
+          </mj-button>
+        </mj-column>
+      </mj-section>
+
+      <mj-section background-color="#ffffff" padding-left="15px" padding-right="15px" padding-top="0">
+        <mj-column width="100%">
+          <mj-text color="#212b35" font-weight="bold" font-size="18px">
+            March 4th: Early Access launch
+          </mj-text>
+          <mj-image src="https://www.thefirstspine.fr/emailing/arena-wishlist/early-access.png" width="600px" alt="" padding="0" />
+          <mj-text color="#637381" font-size="16px">
+            The Early Access launch will mark the beginning of Arena's journey with the community. Players will have access to a substantial portion of the game, allowing them to experience the core gameplay and provide valuable feedback. We are committed to continuously improving the game based on player input and plan to release regular updates throughout the Early Access period.
+          </mj-text>
+          <mj-button background-color="#ffdd57" align="center" color="#000" font-size="17px" font-weight="bold" href="https://www.thefirstspine.fr/arena" width="300px">
+            Discover all the features
+          </mj-button>
+        </mj-column>
+      </mj-section>
+
+      <mj-section background-color="#ffffff" padding-left="15px" padding-right="15px" padding-top="0">
+        <mj-column width="100%">
+          <mj-divider border-color="#DFE3E8" border-width="1px" />
+        </mj-column>
+      </mj-section>
+      <mj-section background-color="#ffffff" padding-left="15px" padding-right="15px">
+        <mj-column width="50%">
+          <mj-text color="#212b35" font-size="12px" text-transform="uppercase" font-weight="bold" padding-bottom="0">
+            More on The First Spine
+          </mj-text>
+          <mj-text color="#637381" font-size="14px" padding-top="0">
+            <a style="color:#637381" href="https://www.thefirstspine.fr/arena">Play online on Arena</a>
+            <br />
+            <a style="color:#637381" href="https://www.thefirstspine.fr/pnp">Get the PnP version</a>
+            <br />
+            <a style="color:#637381" href="https://www.thefirstspine.fr/drifters-tales">Play solo with Drifter's Tales</a>
+          </mj-text>
+        </mj-column>
+        <mj-column width="50%">
+          <mj-text color="#212b35" font-size="12px" text-transform="uppercase" font-weight="bold" padding-bottom="0">
+            Useful links
+          </mj-text>
+          <mj-text color="#637381" font-size="14px" padding-top="0">
+            <a style="color:#637381" href="https://www.thefirstspine.fr/blog">News</a>
+            <br />
+            <a style="color:#637381" href="https://www.thefirstspine.fr/events">Events</a>
+          </mj-text>
+        </mj-column>
+      </mj-section>
+    </mj-wrapper>
+
+    <mj-wrapper full-width="full-width">
+      <mj-section>
+        <mj-column width="100%" padding="0">
+          <mj-social font-size="15px" icon-size="30px" mode="horizontal" padding="0" align="center">
+            <mj-social-element name="facebook" href="https://fb.com/thefirstspine" background-color="#333">
+            </mj-social-element>
+            <mj-social-element name="twitter" href="https://twitter.com/thefirstspine" background-color="#333">
+            </mj-social-element>
+          </mj-social>
+          <mj-text color="#445566" font-size="11px" font-weight="bold" align="center">
+            <a href="https://www.thefirstspine.fr/emailing/arena-wishlist/index.html">View this email in your browser</a>
+          </mj-text>
+        </mj-column>
+      </mj-section>
+    </mj-wrapper>
+
+  </mj-body>
+</mjml>
