@@ -1,0 +1,136 @@
+<mjml>
+  <mj-head>
+    <mj-title>The First Spine Arena is available on Steam</mj-title>
+    <mj-preview>Discover the Early Access of The First Spine Arena on Steam!</mj-preview>
+    <mj-attributes>
+      <mj-all font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"></mj-all>
+      <mj-text font-weight="400" font-size="16px" color="#000000" line-height="24px" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"></mj-text>
+    </mj-attributes>
+    <mj-style inline="inline">
+      .body-section {
+      -webkit-box-shadow: 1px 4px 11px 0px rgba(0, 0, 0, 0.15);
+      -moz-box-shadow: 1px 4px 11px 0px rgba(0, 0, 0, 0.15);
+      box-shadow: 1px 4px 11px 0px rgba(0, 0, 0, 0.15);
+      }
+    </mj-style>
+    <mj-style inline="inline">
+      .text-link {
+      color: #5e6ebf
+      }
+    </mj-style>
+    <mj-style inline="inline">
+      .footer-link {
+      color: #888888
+      }
+    </mj-style>
+
+  </mj-head>
+  <mj-body background-color="#111" width="600px">
+    <mj-section full-width="full-width" background-color="#000" padding-bottom="0">
+      <mj-column width="100%" padding-bottom="10px">
+        <mj-image src="https://www.thefirstspine.fr/emailing/arena-early-access/logo.png" alt="" align="center" width="150px" />
+      </mj-column>
+      <mj-column width="100%">
+        <mj-image src="https://www.thefirstspine.fr/emailing/arena-early-access/top.png" width="600px" alt="" padding="0" />
+      </mj-column>
+    </mj-section>
+    <mj-wrapper padding-top="0" padding-bottom="0" css-class="body-section">
+      <mj-section background-color="#ffffff" padding-left="15px" padding-right="15px">
+        <mj-column width="100%">
+          <mj-text color="#212b35" font-weight="bold" font-size="24px" align="center">
+            Play now to The First Spine Arena
+          </mj-text>
+          <mj-divider border-color="#DFE3E8" border-width="1px" />
+          <mj-text color="#637381" font-size="16px">
+            <strong>Today is the day!</strong> The First Spine Arena is now available on Steam Early Access. We are thrilled to share this moment with you and can't wait for you to experience the game. Your support and feedback have been invaluable throughout the development process, and we are excited to continue this journey with you in the Early Access phase.
+          </mj-text>
+          <mj-button background-color="#ffdd57" align="center" color="#000" font-size="17px" font-weight="bold" href="https://store.steampowered.com/app/3307700/The_First_Spine__Arena/" width="300px">
+            Play now on Steam
+          </mj-button>
+        </mj-column>
+        <mj-column width="50%">
+          <mj-image align="center" src="https://www.thefirstspine.fr/emailing/arena-early-access/screenshot-1.jpg" alt="" />
+        </mj-column>
+        <mj-column width="50%">
+          <mj-image align="center" src="https://www.thefirstspine.fr/emailing/arena-early-access/screenshot-2.jpg" alt="" />
+        </mj-column>
+        <mj-column width="50%">
+          <mj-image align="center" src="https://www.thefirstspine.fr/emailing/arena-early-access/screenshot-3.jpg" alt="" />
+        </mj-column>
+        <mj-column width="50%">
+          <mj-image align="center" src="https://www.thefirstspine.fr/emailing/arena-early-access/screenshot-4.jpg" alt="" />
+        </mj-column>
+      </mj-section>
+
+      <mj-section background-color="#ffffff" padding-left="15px" padding-right="15px" padding-top="0">
+        <mj-column width="100%">
+          <mj-text color="#212b35" font-weight="bold" font-size="18px">
+            A robust Early Access foundation
+          </mj-text>
+          <mj-text color="#637381" font-size="16px">
+            The Early Access version already includes the core pillars of the game: a complete card collection system, matchmaking and PvP battles, deciphering for spell creation, and a fully functional forge for crafting creatures and artifacts. These systems have been tested and refined, offering a solid foundation for players to explore and shape through feedback. For us, Early Access is a collaborative journey, with a five‑month roadmap dedicated to expanding features, increasing the power cap, and polishing the experience alongside the community.
+          </mj-text>
+        </mj-column>
+      </mj-section>
+
+      <mj-section background-color="#ffffff" padding-left="15px" padding-right="15px" padding-top="0">
+        <mj-column width="100%">
+          <mj-text color="#212b35" font-weight="bold" font-size="18px">
+            Monthly updates begin after launch
+          </mj-text>
+          <mj-image src="https://www.thefirstspine.fr/emailing/arena-early-access/next-fest.png" width="600px" alt="" padding="0" />
+          <mj-text color="#637381" font-size="16px">
+            The Early Access release is only the beginning. The game will receive monthly updates, each expanding the world and deepening the tactical possibilities. The very first update will introduce new quests, a new method of generating cards, and an entirely new location to explore. This early expansion sets the tone for a live game designed to grow continuously, offering fresh challenges and new layers of strategy month after month.
+          </mj-text>
+        </mj-column>
+      </mj-section>
+
+      <mj-section background-color="#ffffff" padding-left="15px" padding-right="15px" padding-top="0">
+        <mj-column width="100%">
+          <mj-divider border-color="#DFE3E8" border-width="1px" />
+        </mj-column>
+      </mj-section>
+      <mj-section background-color="#ffffff" padding-left="15px" padding-right="15px">
+        <mj-column width="50%">
+          <mj-text color="#212b35" font-size="12px" text-transform="uppercase" font-weight="bold" padding-bottom="0">
+            More on The First Spine
+          </mj-text>
+          <mj-text color="#637381" font-size="14px" padding-top="0">
+            <a style="color:#637381" href="https://www.thefirstspine.fr/arena">Play online on Arena</a>
+            <br />
+            <a style="color:#637381" href="https://www.thefirstspine.fr/pnp">Get the PnP version</a>
+            <br />
+            <a style="color:#637381" href="https://www.thefirstspine.fr/drifters-tales">Play solo with Drifter's Tales</a>
+          </mj-text>
+        </mj-column>
+        <mj-column width="50%">
+          <mj-text color="#212b35" font-size="12px" text-transform="uppercase" font-weight="bold" padding-bottom="0">
+            Useful links
+          </mj-text>
+          <mj-text color="#637381" font-size="14px" padding-top="0">
+            <a style="color:#637381" href="https://www.thefirstspine.fr/blog">News</a>
+            <br />
+            <a style="color:#637381" href="https://www.thefirstspine.fr/events">Events</a>
+          </mj-text>
+        </mj-column>
+      </mj-section>
+    </mj-wrapper>
+
+    <mj-wrapper full-width="full-width">
+      <mj-section>
+        <mj-column width="100%" padding="0">
+          <mj-social font-size="15px" icon-size="30px" mode="horizontal" padding="0" align="center">
+            <mj-social-element name="facebook" href="https://fb.com/thefirstspine" background-color="#333">
+            </mj-social-element>
+            <mj-social-element name="twitter" href="https://twitter.com/thefirstspine" background-color="#333">
+            </mj-social-element>
+          </mj-social>
+          <mj-text color="#445566" font-size="11px" font-weight="bold" align="center">
+            <a href="https://www.thefirstspine.fr/emailing/arena-early-access/index.html">View this email in your browser</a>
+          </mj-text>
+        </mj-column>
+      </mj-section>
+    </mj-wrapper>
+
+  </mj-body>
+</mjml>
